@@ -1,10 +1,11 @@
 import scalafx.application.JFXApp
 import scalafx.scene.Scene
-import scalafx.scene.layout.{Background, BackgroundFill, ColumnConstraints, CornerRadii, GridPane, HBox, RowConstraints, VBox}
+import scalafx.scene.layout.{Background, BackgroundFill, ColumnConstraints, CornerRadii, GridPane, RowConstraints, VBox}
 import scalafx.scene.paint.Color.{Blue, Gray}
 import scalafx.Includes._
 import scalafx.geometry.Insets
 import scalafx.scene.canvas.Canvas
+import scalafx.scene.control.Button
 
 object Animator extends JFXApp {
   stage = new JFXApp.PrimaryStage {
@@ -13,13 +14,14 @@ object Animator extends JFXApp {
     height = 675
   }
 
+  //create a gridpane as the root of the scene. Then divide it into four main parts
   val root = new GridPane
   val scene = new Scene(root)
   stage.scene = scene
 
   val leftMenu = new VBox
   val rightMenu = new VBox
-  val timeline = new HBox
+  val timeline = new GridPane
   val viewer = new Canvas(720, 480)
 
   root.add(leftMenu, 0, 0)
@@ -46,4 +48,53 @@ object Animator extends JFXApp {
   leftMenu.background = new Background(Array(new BackgroundFill((Gray), CornerRadii.Empty, Insets.Empty)))
   rightMenu.background = new Background(Array(new BackgroundFill((Gray), CornerRadii.Empty, Insets.Empty)))
   timeline.background = new Background(Array(new BackgroundFill((Blue), CornerRadii.Empty, Insets.Empty)))
+
+  //buttons for the left side menu
+  val saveButton = new Button("Save")
+  val loadButton = new Button("Load")
+  val newButton = new Button("New")
+  val exitButton = new Button("Exit")
+
+  saveButton.onAction = (event) => {
+    println("saved")
+  }
+
+  loadButton.onAction = (event) => {
+    println("loaded")
+  }
+
+  newButton.onAction = (event) => {
+    println("new")
+  }
+
+  exitButton.onAction = (event) => {
+    println("Good Bye!")
+  }
+
+  leftMenu.children = Array [Button] (saveButton, loadButton, newButton, exitButton)
+
+  //buttons for the right side menu
+  val figureButton = new Button("Figure")
+  val speechButton = new Button("Speech")
+  val bgButton = new Button("BG")
+  val stepButton = new Button("Step")
+
+  figureButton.onAction = (event) => {
+    println("figure added")
+  }
+
+  speechButton.onAction = (event) => {
+    println("speech Bubble added")
+  }
+
+  bgButton.onAction = (event) => {
+    println("background changed")
+  }
+
+  stepButton.onAction = (event) => {
+    println("new step added")
+  }
+
+  rightMenu.children = Array [Button] (figureButton, speechButton, bgButton, stepButton)
+
 }
