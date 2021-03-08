@@ -10,8 +10,8 @@ import scalafx.scene.control.Button
 object Animator extends JFXApp {
   stage = new JFXApp.PrimaryStage {
     title.value = "Stick Figure Animator"
-    width = 1200
-    height = 675
+    width = 1280
+    height = 720
   }
 
   //create a gridpane as the root of the scene. Then divide it into four main parts
@@ -97,5 +97,4 @@ object Animator extends JFXApp {
   }
 
   rightMenu.children = Array [Button] (figureButton, speechButton, bgButton, stepButton)
-
 }
