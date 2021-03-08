@@ -69,6 +69,7 @@ object Animator extends JFXApp {
 
   exitButton.onAction = (event) => {
     println("Good Bye!")
+    stage.close()
   }
 
   leftMenu.children = Array [Button] (saveButton, loadButton, newButton, exitButton)
