@@ -1,0 +1,8 @@
+Inerim report 1 - 12.3.2021
+
+I have implemented some of the logic: namely classes Speechbubble, Pos, Joint, Head, Figure and Expression. They
+are not fully ready though. I also have implemented partially the class Frame. In the class animator some of
+the graphic user interface is implemented. I drew the basic outline and created the menu buttons, though currently
+all they do is print a small message to console.
+
+Currently there is some build error.

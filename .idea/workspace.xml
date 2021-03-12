@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Figure.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Frame.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Head.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Expression.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Expression.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/OS2 animator-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/OS2 animator-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/progress_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/progress_log.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,5 +219,9 @@
     <MESSAGE value="Classes Pos and Joint implemented" />
     <MESSAGE value="method calculatePos implemented for class Joint" />
     <option name="LAST_COMMIT_MESSAGE" value="method calculatePos implemented for class Joint" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
