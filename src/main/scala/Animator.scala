@@ -9,6 +9,7 @@ import scalafx.scene.control.Button
 import scala.collection.mutable.ArrayBuffer
 
 object Animator extends JFXApp {
+  //create stage for scalaFX
   stage = new JFXApp.PrimaryStage {
     title.value = "Stick Figure Animator"
     width = 1280
@@ -18,25 +19,26 @@ object Animator extends JFXApp {
   val frames = ArrayBuffer [Frame] (new Frame)  //all frames in current animation
   private var currFrame = frames(0)   //frame that the app currently shows
 
-  def getCurrFrame = this.currFrame   //return current frame
+  //return current frame
+  def getCurrFrame = this.currFrame
 
+  //set the current frame to a different one
   def setCurrFrame(newFrame: Frame): Unit = {
     this.currFrame = newFrame
   }
 
+  //delete current frame
   def delCurrFrame(): Unit = {
     this.frames -= this.currFrame
     if (frames.isEmpty) this.frames += new Frame
   }
 
-  //makes the new frame identical to the old frame
-  def copyFrame(oldFrame: Frame, newFrame: Frame) = ???
 
+  //add new frame next to the current one. The new frame and the current one
+  //are identical
   def addFrame() = {
     val currIdx = this.frames.indexOf(this.currFrame)
-    val newFrame = new Frame
-
-    this.copyFrame(this.currFrame, newFrame)
+    val newFrame = this.currFrame.getCopy
 
     this.frames.insert(currIdx, newFrame)
   }
@@ -92,6 +94,7 @@ object Animator extends JFXApp {
   val newButton = new Button("New")
   val exitButton = new Button("Exit")
 
+  //actions of the buttons
   saveButton.onAction = (event) => {
     println("saved")
   }

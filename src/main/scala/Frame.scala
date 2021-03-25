@@ -3,7 +3,21 @@ import scala.collection.mutable.ArrayBuffer
 class Frame {
     val figures = ArrayBuffer [Figure] ()
     val speechBubbles = ArrayBuffer [SpeechBubble] ()
-    val background = ???
+    private var background = ???
+
+    def getBackground = this.background
+
+    def setBackground(newBg: Nothing): Unit = {
+        this.background = newBg
+    }
+
+    def getCopy = {
+        val copy = new Frame
+        copy.background = this.background
+        this.figures.foreach(copy.figures += _.getCopy)
+        this.speechBubbles.foreach(copy.speechBubbles += _.getCopy)
+        copy
+    }
 
     def addFigure = ???
 

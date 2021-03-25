@@ -11,4 +11,10 @@ class SpeechBubble (private var pos: Pos) {
   def setText(newText: String): Unit = {
     this.text = newText
   }
+
+  def getCopy = {
+    val newBubble = new SpeechBubble(this.pos)
+    newBubble.setText(this.text)
+    newBubble
+  }
 }

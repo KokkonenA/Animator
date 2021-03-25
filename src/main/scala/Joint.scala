@@ -1,6 +1,7 @@
-import scala.math.{sin, cos}
+import scala.collection.mutable.ArrayBuffer
+import scala.math.{cos, sin}
 
-class Joint(val parent: Joint, val radius: Int, private var angle: Int, private var pos: Pos) {
+class Joint(val name: String, val parent: Joint, val radius: Int, private var angle: Int, private var pos: Pos) {
   private var locked = false
 
   def getLocked = this.locked
@@ -29,5 +30,9 @@ class Joint(val parent: Joint, val radius: Int, private var angle: Int, private 
     val newY = sin(this.angle) * this.radius + this.parent.getPos.y
 
     this.setPos(new Pos(newX.asInstanceOf[Int], newY.asInstanceOf[Int]))
+  }
+
+  def getCopy(copyJoints: ArrayBuffer[Joint]) = {
+    new Joint(this.name, copyJoints.find(_.name == this.parent.name).get, this.radius, this.angle, this.pos)
   }
 }
