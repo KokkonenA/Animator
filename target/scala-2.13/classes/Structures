@@ -1,0 +1,16 @@
+Basic
+    Joints
+        Neck, Center, 2, 90
+        LElbow, Neck, 1, 225
+        LArm, LElbow, 1, 135
+        RElbow, Neck, 1, 315
+        RArm, RElbow, 1, 45
+        LKnee, Center, 1, 225
+        LHeel, LKnee, 1, 270
+        LFoot, LHeel, 0.5, 180
+        RKnee, Center, 1, 315
+        RHeel, RKnee, 1, 270
+        RFoot, RHeel, 1, 0
+    /Joints
+    Head, Neck, Happy
+/Basic

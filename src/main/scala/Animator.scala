@@ -6,12 +6,49 @@ import scalafx.Includes._
 import scalafx.geometry.Insets
 import scalafx.scene.canvas.Canvas
 import scalafx.scene.control.Button
+import scala.collection.mutable.ArrayBuffer
 
 object Animator extends JFXApp {
   stage = new JFXApp.PrimaryStage {
     title.value = "Stick Figure Animator"
     width = 1280
     height = 720
+  }
+
+  val frames = ArrayBuffer [Frame] (new Frame)  //all frames in current animation
+  private var currFrame = frames(0)   //frame that the app currently shows
+
+  def getCurrFrame = this.currFrame   //return current frame
+
+  def setCurrFrame(newFrame: Frame): Unit = {
+    this.currFrame = newFrame
+  }
+
+  def delCurrFrame(): Unit = {
+    this.frames -= this.currFrame
+    if (frames.isEmpty) this.frames += new Frame
+  }
+
+  //makes the new frame identical to the old frame
+  def copyFrame(oldFrame: Frame, newFrame: Frame) = ???
+
+  def addFrame() = {
+    val currIdx = this.frames.indexOf(this.currFrame)
+    val newFrame = new Frame
+
+    this.copyFrame(this.currFrame, newFrame)
+
+    this.frames.insert(currIdx, newFrame)
+  }
+
+  def loadFile = ???
+
+  def saveFile = ???
+
+  def playAnimation = ???
+
+  def exit(): Unit = {
+    stage.close()
   }
 
   //create a gridpane as the root of the scene. Then divide it into four main parts
@@ -69,7 +106,7 @@ object Animator extends JFXApp {
 
   exitButton.onAction = (event) => {
     println("Good Bye!")
-    stage.close()
+    this.exit()
   }
 
   leftMenu.children = Array [Button] (saveButton, loadButton, newButton, exitButton)

@@ -1,0 +1,25 @@
+[debug] Packaging C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\os2-animator_2.13-0.1.jar ...
+[debug] Input file mappings:
+[debug] 	Animator$$anon$1.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Animator$$anon$1.class
+[debug] 	Animator$.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Animator$.class
+[debug] 	Animator$delayedInit$body.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Animator$delayedInit$body.class
+[debug] 	Animator.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Animator.class
+[debug] 	Expression.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Expression.class
+[debug] 	Figure.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Figure.class
+[debug] 	Frame.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Frame.class
+[debug] 	Head.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Head.class
+[debug] 	Joint.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Joint.class
+[debug] 	Pos.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Pos.class
+[debug] 	SpeechBubble.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\SpeechBubble.class
+[debug] Done packaging.
