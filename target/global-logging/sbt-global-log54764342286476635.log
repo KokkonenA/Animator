@@ -1,0 +1,9 @@
+[debug] > Exec(run, None, None)
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 7 Scala sources to C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes ...
+[info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.5. Compiling...
+[info]   Compilation completed in 11.944s.
+[info] done compiling
+[success] Total time: 28 s, completed Mar 29, 2021, 1:36:28 PM
+[debug] > Exec(idea-shell, None, None)

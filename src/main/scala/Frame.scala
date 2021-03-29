@@ -19,7 +19,7 @@ class Frame {
         copy
     }
 
-    def addFigure = ???
+    def addFigure = true
 
-    def addSpeech = ???
+    def addSpeech = true
 }
