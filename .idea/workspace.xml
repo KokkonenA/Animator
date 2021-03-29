@@ -6,17 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$fdd6d529126df31dae83$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$fdd6d529126df31dae83.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$fdd6d529126df31dae83.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/output_dsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Expression.scala" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Figure.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Figure.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Frame.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Frame.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Head.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Head.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Joint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Joint.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/test-classes/Test.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +63,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -138,8 +136,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Scala REPL.Scala REPL" />
         <item itemvalue="Application.Animator" />
+        <item itemvalue="Scala REPL.Scala REPL" />
         <item itemvalue="Application.Hello" />
       </list>
     </recent_temporary>
@@ -230,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616673736336</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Interim report 2 in project/progress_log.txt">
+      <created>1617012771061</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1617012771061</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,7 +264,8 @@
     <MESSAGE value="method calculatePos implemented for class Joint" />
     <MESSAGE value="Interim report 1 in project/progress_log.txt" />
     <MESSAGE value="New methods added for Animator, some which not yet implemented. Also a text file where Structures.txt was created. There we have a description of a figure structure which will be used in the program later." />
-    <option name="LAST_COMMIT_MESSAGE" value="New methods added for Animator, some which not yet implemented. Also a text file where Structures.txt was created. There we have a description of a figure structure which will be used in the program later." />
+    <MESSAGE value="Interim report 2 in project/progress_log.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interim report 2 in project/progress_log.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

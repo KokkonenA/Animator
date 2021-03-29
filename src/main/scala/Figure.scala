@@ -12,7 +12,7 @@ class Figure (private var pos: Pos, val joints: ArrayBuffer[Joint], val head: Op
 
     val copyJoints = ArrayBuffer[Joint] ()
 
-    this.joints.foreach(n => copyJoints += n.getCopy(copyJoints))
+    this.joints.foreach(copyJoints += _.getCopy(copyJoints))
 
     val copyHead = this.head match {
       case Some(head) => Some(head.getCopy(copyJoints))

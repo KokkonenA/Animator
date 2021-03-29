@@ -3,11 +3,11 @@ import scala.collection.mutable.ArrayBuffer
 class Frame {
     val figures = ArrayBuffer [Figure] ()
     val speechBubbles = ArrayBuffer [SpeechBubble] ()
-    private var background = ???
+    private var background = "basic"
 
     def getBackground = this.background
 
-    def setBackground(newBg: Nothing): Unit = {
+    def setBackground(newBg: String): Unit = {
         this.background = newBg
     }
 

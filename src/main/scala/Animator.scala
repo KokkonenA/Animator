@@ -29,8 +29,17 @@ object Animator extends JFXApp {
 
   //delete current frame
   def delCurrFrame(): Unit = {
+    val currIdx =this.frames.indexOf(this.currFrame)
     this.frames -= this.currFrame
-    if (frames.isEmpty) this.frames += new Frame
+
+    if (this.frames.isEmpty) {
+      this.frames += new Frame
+      this.currFrame = this.frames(0)
+    } else if(currIdx == this.frames.size) {
+      this.currFrame = this.frames(currIdx - 1)
+    } else {
+      this.currFrame = this.frames(currIdx)
+    }
   }
 
 
@@ -104,7 +113,11 @@ object Animator extends JFXApp {
   }
 
   newButton.onAction = (event) => {
-    println("new")
+    this.frames.subtractAll(this.frames)
+    this.frames += new Frame
+    this.currFrame = this.frames(0)
+
+    println("new animation created")
   }
 
   exitButton.onAction = (event) => {
@@ -118,7 +131,7 @@ object Animator extends JFXApp {
   val figureButton = new Button("Figure")
   val speechButton = new Button("Speech")
   val bgButton = new Button("BG")
-  val stepButton = new Button("Step")
+  val frameButton = new Button("Step")
 
   figureButton.onAction = (event) => {
     println("figure added")
@@ -132,9 +145,9 @@ object Animator extends JFXApp {
     println("background changed")
   }
 
-  stepButton.onAction = (event) => {
-    println("new step added")
+  frameButton.onAction = (event) => {
+    println("new frame added")
   }
 
-  rightMenu.children = Array [Button] (figureButton, speechButton, bgButton, stepButton)
+  rightMenu.children = Array [Button] (figureButton, speechButton, bgButton, frameButton)
 }
