@@ -1,4 +1,4 @@
-Inerim report 1 - 12.3.2021
+Interim report 1 - 12.3.2021
 
 I have implemented some of the logic: namely classes Speechbubble, Pos, Joint, Head, Figure and Expression. They
 are not fully ready though. I also have implemented partially the class Frame. In the class animator some of
@@ -6,3 +6,14 @@ the graphic user interface is implemented. I drew the basic outline and created 
 all they do is print a small message to console.
 
 Currently there is some build error.
+
+
+Interim report 2 - 29.3.2021
+
+Progress has been a bit slower this time. I had issues with building my project that only got resolved after I
+uninstalled and reinstalled the IDE. So that took some time to figure out. After that I implemented method
+addFrame for object Animator that adds new frame next to the current one. Regarding that I made methods for several
+other classes (cloneFrame, cloneFigure, cloneJoint etc.). The purpose of those methods is to make the new frame
+a copy of the previous one. I also made a text file with an idea what the format of the structure should look like.
+Some other small changes too, next I start to tackle the GUI a bit more. I have also forgotten about testing completely.
+Maybe I should focus on that more.
