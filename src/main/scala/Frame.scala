@@ -33,5 +33,10 @@ class Frame {
         true
     }
 
-    def addSpeech = true
+    def addSpeech = {
+        val newPos = new Pos(Animator.viewerW / 2, Animator.viewerH / 2)
+        val newSpeech = new SpeechBubble(newPos)
+        this.speechBubbles += newSpeech
+        true
+    }
 }
