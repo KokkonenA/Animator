@@ -8,20 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Frame.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Frame.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Frame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/SpeechBubble.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/SpeechBubble.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/os2-animator_2.13-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/os2-animator_2.13-0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/zinc/inc_compile_2.13.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/zinc/inc_compile_2.13.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/incOptions/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$delayedInit$body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$delayedInit$body.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,9 +132,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Animator" />
         <item itemvalue="Scala REPL.Scala REPL" />
         <item itemvalue="Application.Hello" />
+        <item itemvalue="Application.Animator" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617020151490</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added new buttons for the controller unit (play, next frame, previous frame). Also there were some mistakes in the layout which I fixed">
+      <created>1617032015217</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1617032015217</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,7 +276,8 @@
     <MESSAGE value="New methods added for Animator, some which not yet implemented. Also a text file where Structures.txt was created. There we have a description of a figure structure which will be used in the program later." />
     <MESSAGE value="Interim report 2 in project/progress_log.txt" />
     <MESSAGE value="Implemented actions on &quot;newButton.&quot; Also refactored &quot;stepButton&quot; to &quot;frameButton&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented actions on &quot;newButton.&quot; Also refactored &quot;stepButton&quot; to &quot;frameButton&quot;" />
+    <MESSAGE value="Added new buttons for the controller unit (play, next frame, previous frame). Also there were some mistakes in the layout which I fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new buttons for the controller unit (play, next frame, previous frame). Also there were some mistakes in the layout which I fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

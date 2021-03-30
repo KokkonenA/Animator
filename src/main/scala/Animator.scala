@@ -10,6 +10,9 @@ import scalafx.scene.control.Button
 import scala.collection.mutable.ArrayBuffer
 
 object Animator extends JFXApp {
+  def viewerW = 720
+  def viewerH = 480
+
   //create stage for scalaFX
   stage = new JFXApp.PrimaryStage {
     title.value = "Stick Figure Animator"
@@ -112,7 +115,7 @@ object Animator extends JFXApp {
   val leftMenu = new VBox
   val rightMenu = new VBox
   val controller = new GridPane
-  val viewer = new Canvas(720, 480)
+  val viewer = new Canvas(this.viewerW, this.viewerH)
 
   root.add(leftMenu, 0, 0)
   root.add(rightMenu, 2, 0)
