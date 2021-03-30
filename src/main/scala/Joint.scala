@@ -4,6 +4,10 @@ import scala.math.{cos, sin}
 class Joint(val name: String, val parent: Joint, val radius: Int, private var angle: Int, private var pos: Pos) {
   private var locked = false
 
+  def draw(): Unit = {
+
+  }
+
   def getLocked = this.locked
   def getAngle = this.angle
   def getPos = this.pos

@@ -1,2 +1,8 @@
 [debug] Acquiring lock on file C:\Users\User1\IdeaProjects\OS2 animator\project\target\.sbt-compilation-infos\os2-animator-compile\.sbt-idea-lock ...
+[error] C:\Users\User1\IdeaProjects\OS2 animator\src\main\scala\Animator.scala:254:36: type mismatch;
+[error]  found   : Unit
+[error]  required: () => Unit
+[error]   val ticker = new Ticker(this.draw())
+[error]                                    ^
+[error] one error found
 [debug] Releasing lock on file C:\Users\User1\IdeaProjects\OS2 animator\project\target\.sbt-compilation-infos\os2-animator-compile\.sbt-idea-lock.

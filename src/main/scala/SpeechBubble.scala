@@ -1,6 +1,10 @@
 class SpeechBubble (private var pos: Pos) {
   private var text = ""
 
+  def draw(): Unit = {
+    
+  }
+
   def getPos = this.pos
   def getText = this.text
 

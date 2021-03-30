@@ -242,4 +242,15 @@ object Animator extends JFXApp {
   playButton.onAction = (event) => {
     if (this.playAnimation) println("Animation Played")
   }
+
+  //canvas
+  //graphics context
+  val g = this.viewer.graphicsContext2D
+
+  def draw(): Unit = {
+    this.frames.foreach(_.draw())
+  }
+
+  val ticker = new Ticker(() => this.draw())
+  ticker.start()
 }

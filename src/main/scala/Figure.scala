@@ -1,6 +1,10 @@
 import scala.collection.mutable.ArrayBuffer
 
 class Figure (private var pos: Pos, val joints: ArrayBuffer[Joint], val head: Option[Head]) {
+  def draw(): Unit = {
+    this.joints.foreach(_.draw())
+  }
+
   def getPos = this.pos
 
   def moveJoint(moving: Joint, newPos: Pos): Unit = {
