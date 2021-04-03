@@ -17,3 +17,6 @@ other classes (cloneFrame, cloneFigure, cloneJoint etc.). The purpose of those m
 a copy of the previous one. I also made a text file with an idea what the format of the structure should look like.
 Some other small changes too, next I start to tackle the GUI a bit more. I have also forgotten about testing completely.
 Maybe I should focus on that more.
+
+Workload has been roughly 10 hours. I am behind schedule at this point. But luckily I have two weeks ahead without
+much school work from other courses so I try to catch up.
