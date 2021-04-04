@@ -1,10 +1,6 @@
 class SpeechBubble (private var pos: Pos) {
   private var text = ""
 
-  def draw(): Unit = {
-    
-  }
-
   def getPos = this.pos
   def getText = this.text
 
@@ -20,5 +16,9 @@ class SpeechBubble (private var pos: Pos) {
     val newBubble = new SpeechBubble(this.pos)
     newBubble.setText(this.text)
     newBubble
+  }
+
+  def draw(): Unit = {
+    Animator.getG.fillOval(this.pos.x, this.pos.y, 10, 10)
   }
 }

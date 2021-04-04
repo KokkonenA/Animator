@@ -246,9 +246,10 @@ object Animator extends JFXApp {
   //canvas
   //graphics context
   val g = this.viewer.graphicsContext2D
+  def getG = this.g
 
   def draw(): Unit = {
-    this.frames.foreach(_.draw())
+    this.currFrame.draw()
   }
 
   val ticker = new Ticker(() => this.draw())

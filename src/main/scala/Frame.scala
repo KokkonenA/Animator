@@ -5,11 +5,6 @@ class Frame {
     val speechBubbles = ArrayBuffer [SpeechBubble] ()
     private var background = "basic"
 
-    def draw(): Unit = {
-        this.figures.foreach(_.draw())
-        this.speechBubbles.foreach(_.draw())
-    }
-
     def getBackground = this.background
 
     def setBackground(newBg: String): Unit = {
@@ -43,5 +38,10 @@ class Frame {
         val newSpeech = new SpeechBubble(newPos)
         this.speechBubbles += newSpeech
         true
+    }
+
+    def draw(): Unit = {
+        this.figures.foreach(_.draw())
+        this.speechBubbles.foreach(_.draw())
     }
 }

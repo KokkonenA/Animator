@@ -4,10 +4,6 @@ import scala.math.{cos, sin}
 class Joint(val name: String, val parent: Joint, val radius: Int, private var angle: Int, private var pos: Pos) {
   private var locked = false
 
-  def draw(): Unit = {
-
-  }
-
   def getLocked = this.locked
   def getAngle = this.angle
   def getPos = this.pos
@@ -38,5 +34,9 @@ class Joint(val name: String, val parent: Joint, val radius: Int, private var an
 
   def getCopy(copyJoints: ArrayBuffer[Joint]) = {
     new Joint(this.name, copyJoints.find(_.name == this.parent.name).get, this.radius, this.angle, this.pos)
+  }
+
+  def draw(): Unit = {
+    Animator.getG.fillOval(this.pos.x, this.pos.y, 10, 10)
   }
 }

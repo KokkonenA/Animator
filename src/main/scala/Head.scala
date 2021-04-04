@@ -10,4 +10,8 @@ class Head (val parent: Joint, private var expression: String) {
   def getCopy(copyJoints: ArrayBuffer[Joint]) = {
     new Head(copyJoints.find(_.name == this.parent.name).get, this.expression)
   }
+
+  def draw(): Unit = {
+    Animator.getG.fillOval(this.parent.getPos.x, this.parent.getPos.y, 10, 10)
+  }
 }

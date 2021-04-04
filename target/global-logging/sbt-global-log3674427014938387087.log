@@ -1,0 +1,103 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(early(addPluginSbtFile="""C:\Users\User1\AppData\Local\Temp\idea1.sbt"""), None, None)
+[debug] > Exec(addPluginSbtFile="""C:\Users\User1\AppData\Local\Temp\idea1.sbt""", None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.4.7 (Oracle Corporation Java 15.0.2)
+[debug]       Load.loadUnit: plugins took 91.7891ms
+[debug]       Load.loadUnit: defsScala took 0.3633ms
+[debug] [Loading] Scanning directory C:\Users\User1\.sbt\1.0\plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\User1\.sbt\1.0\plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 20.7271 ms
+[debug]           Load.resolveProject(global-plugins) took 46.2ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: C:\Users\User1\.sbt\1.0\plugins, plugins: List(<none>))) took 92.3181ms
+[debug] [Loading] Done in C:\Users\User1\.sbt\1.0\plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 116.8225ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.2154ms
+[debug]     Load.loadUnit(file:/C:/Users/User1/.sbt/1.0/plugins/, ...) took 218.8211ms
+[debug]   Load.apply: load took 468.5852ms
+[debug]   Load.apply: resolveProjects took 7.5491ms
+[debug]   Load.apply: finalTransforms took 202.093ms
+[debug]   Load.apply: config.delegates took 42.157ms
+[debug]   Load.apply: Def.make(settings)... took 3163.2214ms
+[debug]   Load.apply: structureIndex took 106.6113ms
+[debug]   Load.apply: mkStreams took 2.2226ms
+[info] loading global plugins from C:\Users\User1\.sbt\1.0\plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 6168.0547ms
+[debug]           Load.loadUnit: plugins took 29.3336ms
+[debug]           Load.loadUnit: defsScala took 0.0042ms
+[debug] [Loading] Scanning directory C:\Users\User1\IdeaProjects\OS2 animator\project
+[debug]             Load.loadUnit: mkEval took 6.2338ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\User1\IdeaProjects\OS2 animator\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 1.9581 ms
+[info] loading settings for project os2-animator-build from idea1.sbt ...
+[debug]               Load.resolveProject(os2-animator-build) took 2.6251ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id os2-animator-build, base: C:\Users\User1\IdeaProjects\OS2 animator\project, plugins: List(<none>))) took 5.113ms
+[debug] [Loading] Done in C:\Users\User1\IdeaProjects\OS2 animator\project, returning: (os2-animator-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 219.4213ms
+[debug]           Load.loadUnit: cleanEvalClasses took 4.6566ms
+[debug]         Load.loadUnit(file:/C:/Users/User1/IdeaProjects/OS2%20animator/project/, ...) took 254.6095ms
+[debug]       Load.apply: load took 256.389ms
+[debug]       Load.apply: resolveProjects took 0.0872ms
+[debug]       Load.apply: finalTransforms took 10.805ms
+[debug]       Load.apply: config.delegates took 0.3761ms
+[debug]       Load.apply: Def.make(settings)... took 97.3133ms
+[debug]       Load.apply: structureIndex took 30.4478ms
+[debug]       Load.apply: mkStreams took 0.002ms
+[info] loading project definition from C:\Users\User1\IdeaProjects\OS2 animator\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 1056.0635ms
+[debug]     Load.loadUnit: defsScala took 0.0035ms
+[debug] [Loading] Scanning directory C:\Users\User1\IdeaProjects\OS2 animator
+[debug]       Load.loadUnit: mkEval took 0.2917ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\User1\IdeaProjects\OS2 animator, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(org.jetbrains.sbt.StructurePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(org.jetbrains.sbt.IdeaShellPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.StructurePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.IdeaShellPlugin))), Clause(And(Set(Atom(sbt.plugins.CorePlugin), Atom(sbt.plugins.JvmPlugin))),Set(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.SemanticdbPlugin,org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin,sbt.plugins.JUnitXmlReportPlugin,org.jetbrains.sbt.IdeaShellPlugin,org.jetbrains.sbt.StructurePlugin,sbt.plugins.MiniDependencyTreePlugin)
+[debug] Plugins.deducer#function took 3.1207 ms
+[info] loading settings for project os2-animator from build.sbt ...
+[debug]         Load.resolveProject(os2-animator) took 41.0177ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id os2-animator, base: C:\Users\User1\IdeaProjects\OS2 animator, plugins: List(<none>))) took 45.4518ms
+[debug] [Loading] Done in C:\Users\User1\IdeaProjects\OS2 animator, returning: (os2-animator)
+[debug]     Load.loadUnit: loadedProjectsRaw took 862.4923ms
+[debug]     Load.loadUnit: cleanEvalClasses took 16.7535ms
+[debug]   Load.loadUnit(file:/C:/Users/User1/IdeaProjects/OS2%20animator/, ...) took 1936.2404ms
+[debug] Load.apply: load took 1938.1484ms
+[debug] Load.apply: resolveProjects took 0.1822ms
+[debug] Load.apply: finalTransforms took 30.1685ms
+[debug] Load.apply: config.delegates took 0.4023ms
+[debug] Load.apply: Def.make(settings)... took 95.2459ms
+[debug] Load.apply: structureIndex took 25.7013ms
+[debug] Load.apply: mkStreams took 0.0024ms
+[info] set current project to OS2 animator (in build file:/C:/Users/User1/IdeaProjects/OS2%20animator/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(; set ideaPort in Global := 54075 ; idea-shell, None, None)
+[debug] > Exec(set ideaPort in Global := 54075, None, None)
+[info] Defining Global / ideaPort
+[info] The new value will be used by Compile / compile, Test / compile
+[debug] Defining 
+[debug] 	Global / ideaPort
+[debug] 
+[debug] The new value will be used by 
+[debug] 	Compile / compile
+[debug] 	Test / compile
+[info] Reapplying settings...
+[info] set current project to OS2 animator (in build file:/C:/Users/User1/IdeaProjects/OS2%20animator/)
+[debug] > Exec(idea-shell, None, None)
