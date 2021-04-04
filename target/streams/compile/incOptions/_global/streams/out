@@ -21,17 +21,16 @@
 [debug] 	Animator$delayedInit$body.class
 [debug] 	Figure.class
 [debug] 	Joint.class
-[debug] Rolling back changes to class files.
-[debug] Removing generated classes:
-[debug] Restoring class files: 
-[debug] 	Frame.class
-[debug] 	Animator$.class
-[debug] 	Joint.class
-[debug] 	Animator$delayedInit$body.class
-[debug] 	Animator.class
-[debug] 	Animator$$anon$1.class
-[debug] 	Figure.class
-[debug] 	Pos.class
+[debug] Registering generated classes:
 [debug] 	SpeechBubble.class
+[debug] 	Animator$.class
+[debug] 	Animator.class
+[debug] 	Ticker.class
+[debug] 	Pos.class
+[debug] 	Frame.class
+[debug] 	Animator$$anon$1.class
 [debug] 	Head.class
+[debug] 	Animator$delayedInit$body.class
+[debug] 	Figure.class
+[debug] 	Joint.class
 [debug] Removing the temporary directory used for backing up class files: C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes.bak

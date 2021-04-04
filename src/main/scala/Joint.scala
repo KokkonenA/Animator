@@ -1,7 +1,8 @@
 import scala.collection.mutable.ArrayBuffer
 import scala.math.{cos, sin}
 
-class Joint(val name: String, val parent: Joint, val radius: Int, private var angle: Int, private var pos: Pos) {
+class Joint(val name: String, val parent: Option[Joint], val radius: Int, private var angle: Int) {
+  private var pos = new Pos(Animator.viewerW / 2, Animator.viewerH / 2)
   private var locked = false
 
   def getLocked = this.locked
@@ -22,18 +23,23 @@ class Joint(val name: String, val parent: Joint, val radius: Int, private var an
   }
 
   def calculatePos(): Unit = {
-    val newX = {
-      if (this.angle <= 90 || angle >= 270) cos(this.angle) * this.radius + this.parent.getPos.y
-      else -cos(this.angle) * this.radius + this.parent.getPos.x
-    }
+    val parentPos = if (this.parent.isDefined) this.parent.get.getPos else this.pos
+    val angleRadian = Math.toRadians(this.angle)
 
-    val newY = sin(this.angle) * this.radius + this.parent.getPos.y
+    val newX = cos(angleRadian) * this.radius + parentPos.x
 
-    this.setPos(new Pos(newX.asInstanceOf[Int], newY.asInstanceOf[Int]))
+    val newY = -sin(angleRadian) * this.radius + parentPos.y
+
+    this.setPos(new Pos(newX.toInt, newY.toInt))
   }
+  this.calculatePos()
+  println(this.pos.x + " " + this.pos.y)
 
   def getCopy(copyJoints: ArrayBuffer[Joint]) = {
-    new Joint(this.name, copyJoints.find(_.name == this.parent.name).get, this.radius, this.angle, this.pos)
+    val copyParent = if (this.parent.isDefined) {
+      Some(copyJoints.find(_.name == this.parent.get.name).get)
+    } else None
+    new Joint(this.name, copyParent, this.radius, this.angle)
   }
 
   def draw(): Unit = {

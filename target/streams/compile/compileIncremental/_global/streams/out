@@ -2,32 +2,32 @@
 [debug] IncrementalCompile.incrementalCompile
 [debug] previous = Stamps for: 10 products, 7 sources, 4 libraries
 [debug] current source = Set(${BASE}/src/main/scala/Head.scala, ${BASE}/src/main/scala/Joint.scala, ${BASE}/src/main/scala/Pos.scala, ${BASE}/src/main/scala/Ticker.scala, ${BASE}/src/main/scala/SpeechBubble.scala, ${BASE}/src/main/scala/Animator.scala, ${BASE}/src/main/scala/Frame.scala, ${BASE}/src/main/scala/Figure.scala)
-[debug] > initialChanges = InitialChanges(Changes(added = Set(${BASE}/src/main/scala/Ticker.scala), removed = Set(), changed = Set(${BASE}/src/main/scala/Figure.scala, ${BASE}/src/main/scala/Joint.scala, ${BASE}/src/main/scala/Frame.scala, ${BASE}/src/main/scala/Animator.scala, ${BASE}/src/main/scala/SpeechBubble.scala), unmodified = ...),Set(${BASE}/target/scala-2.13/classes/Animator$.class, ${BASE}/target/scala-2.13/classes/Animator.class, ${BASE}/target/scala-2.13/classes/Frame.class, ${BASE}/target/scala-2.13/classes/Animator$$anon$1.class, ${BASE}/target/scala-2.13/classes/Animator$delayedInit$body.class),Set(),API Changes: Set())
+[debug] > initialChanges = InitialChanges(Changes(added = Set(${BASE}/src/main/scala/Ticker.scala), removed = Set(), changed = Set(${BASE}/src/main/scala/Figure.scala, ${BASE}/src/main/scala/Joint.scala, ${BASE}/src/main/scala/Frame.scala, ${BASE}/src/main/scala/Animator.scala, ${BASE}/src/main/scala/SpeechBubble.scala, ${BASE}/src/main/scala/Head.scala), unmodified = ...),Set(${BASE}/target/scala-2.13/classes/SpeechBubble.class, ${BASE}/target/scala-2.13/classes/Animator$.class, ${BASE}/target/scala-2.13/classes/Animator.class, ${BASE}/target/scala-2.13/classes/Frame.class, ${BASE}/target/scala-2.13/classes/Animator$$anon$1.class, ${BASE}/target/scala-2.13/classes/Head.class, ${BASE}/target/scala-2.13/classes/Animator$delayedInit$body.class, ${BASE}/target/scala-2.13/classes/Figure.class, ${BASE}/target/scala-2.13/classes/Joint.class),Set(),API Changes: Set())
 [debug] 
 [debug] Initial source changes:
 [debug] 	removed: Set()
 [debug] 	added: Set(${BASE}/src/main/scala/Ticker.scala)
-[debug] 	modified: Set(${BASE}/src/main/scala/Joint.scala, ${BASE}/src/main/scala/SpeechBubble.scala, ${BASE}/src/main/scala/Animator.scala, ${BASE}/src/main/scala/Frame.scala, ${BASE}/src/main/scala/Figure.scala)
-[debug] Invalidated products: Set(${BASE}/target/scala-2.13/classes/Animator$.class, ${BASE}/target/scala-2.13/classes/Animator.class, ${BASE}/target/scala-2.13/classes/Frame.class, ${BASE}/target/scala-2.13/classes/Animator$$anon$1.class, ${BASE}/target/scala-2.13/classes/Animator$delayedInit$body.class)
+[debug] 	modified: Set(${BASE}/src/main/scala/Head.scala, ${BASE}/src/main/scala/Joint.scala, ${BASE}/src/main/scala/SpeechBubble.scala, ${BASE}/src/main/scala/Animator.scala, ${BASE}/src/main/scala/Frame.scala, ${BASE}/src/main/scala/Figure.scala)
+[debug] Invalidated products: Set(${BASE}/target/scala-2.13/classes/SpeechBubble.class, ${BASE}/target/scala-2.13/classes/Animator$.class, ${BASE}/target/scala-2.13/classes/Animator.class, ${BASE}/target/scala-2.13/classes/Frame.class, ${BASE}/target/scala-2.13/classes/Animator$$anon$1.class, ${BASE}/target/scala-2.13/classes/Head.class, ${BASE}/target/scala-2.13/classes/Animator$delayedInit$body.class, ${BASE}/target/scala-2.13/classes/Figure.class, ${BASE}/target/scala-2.13/classes/Joint.class)
 [debug] External API changes: API Changes: Set()
 [debug] Modified binary dependencies: Set()
-[debug] Initial directly invalidated classes: Set(Frame, Animator, Figure, Joint, SpeechBubble)
+[debug] Initial directly invalidated classes: Set(Frame, Animator, Figure, Head, Joint, SpeechBubble)
 [debug] Sources indirectly invalidated by:
-[debug] 	product: Set(${BASE}/src/main/scala/Animator.scala, ${BASE}/src/main/scala/Frame.scala)
+[debug] 	product: Set(${BASE}/src/main/scala/Head.scala, ${BASE}/src/main/scala/Joint.scala, ${BASE}/src/main/scala/SpeechBubble.scala, ${BASE}/src/main/scala/Animator.scala, ${BASE}/src/main/scala/Frame.scala, ${BASE}/src/main/scala/Figure.scala)
 [debug] 	binary dep: Set()
 [debug] 	external source: Set()
-[debug] All initially invalidated classes: Set(Frame, Animator, Figure, Joint, SpeechBubble)
-[debug] All initially invalidated sources:Set(${BASE}/src/main/scala/Joint.scala, ${BASE}/src/main/scala/Ticker.scala, ${BASE}/src/main/scala/SpeechBubble.scala, ${BASE}/src/main/scala/Animator.scala, ${BASE}/src/main/scala/Frame.scala, ${BASE}/src/main/scala/Figure.scala)
-[debug] Initial set of included nodes: Frame, Animator, Figure, Joint, SpeechBubble
+[debug] All initially invalidated classes: Set(Frame, Animator, Figure, Head, Joint, SpeechBubble)
+[debug] All initially invalidated sources:Set(${BASE}/src/main/scala/Head.scala, ${BASE}/src/main/scala/Joint.scala, ${BASE}/src/main/scala/Ticker.scala, ${BASE}/src/main/scala/SpeechBubble.scala, ${BASE}/src/main/scala/Animator.scala, ${BASE}/src/main/scala/Frame.scala, ${BASE}/src/main/scala/Figure.scala)
+[debug] Initial set of included nodes: Frame, Animator, Figure, Head, Joint, SpeechBubble
 [debug] Recompiling all sources: number of invalidated sources > 50.0% of all sources
 [debug] compilation cycle 1
 [info] compiling 8 Scala sources to C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes ...
 [debug] Getting org.scala-sbt:compiler-bridge_2.13:1.4.4:compile for Scala 2.13.5
-[debug] [zinc] Running cached compiler 6ff81dc5 for Scala compiler version 2.13.5
+[debug] [zinc] Running cached compiler 1b757873 for Scala compiler version 2.13.5
 [debug] [zinc] The Scala compiler is invoked with:
 [debug] 	-bootclasspath
 [debug] 	C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.5\scala-library-2.13.5.jar
 [debug] 	-classpath
 [debug] 	C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes;C:\Users\User1\IdeaProjects\OS2 animator\lib\kotlin-stdlib-jdk7-sources.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalafx\scalafx_2.13\14-R19\scalafx_2.13-14-R19.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\openjfx\javafx-base\14.0.1\javafx-base-14.0.1-win.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\openjfx\javafx-controls\14.0.1\javafx-controls-14.0.1-win.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\openjfx\javafx-fxml\14.0.1\javafx-fxml-14.0.1-win.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\openjfx\javafx-graphics\14.0.1\javafx-graphics-14.0.1-win.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\openjfx\javafx-media\14.0.1\javafx-media-14.0.1-win.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\openjfx\javafx-swing\14.0.1\javafx-swing-14.0.1-win.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\openjfx\javafx-web\14.0.1\javafx-web-14.0.1-win.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scalactic\scalactic_2.13\3.1.2\scalactic_2.13-3.1.2.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.13.5\scala-reflect-2.13.5.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\openjfx\javafx-graphics\14.0.1\javafx-graphics-14.0.1.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\openjfx\javafx-controls\14.0.1\javafx-controls-14.0.1.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\openjfx\javafx-base\14.0.1\javafx-base-14.0.1.jar;C:\Users\User1\AppData\Local\Coursier\cache\v1\https\repo1.maven.org\maven2\org\openjfx\javafx-media\14.0.1\javafx-media-14.0.1.jar
-[debug] Compilation failed (CompilerInterface)
-[error] (Compile / compileIncremental) Compilation failed
+[debug] Scala compilation took 5.3068127 s
+[info] done compiling

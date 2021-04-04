@@ -19,17 +19,10 @@ class Frame {
         copy
     }
 
-    def loadJoints = {
-        (ArrayBuffer [Joint] (), None: Option[Head])
-    }
-
     def addFigure = {
-        val structure = this.loadJoints
         val newPos = new Pos(Animator.viewerW / 2, Animator.viewerH / 2)
-        val newJoints = structure._1
-        val newHead = structure._2
 
-        this.figures += new Figure(newPos, newJoints, newHead)
+        this.figures += new Figure()
         true
     }
 
