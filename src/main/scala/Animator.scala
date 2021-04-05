@@ -184,7 +184,6 @@ object Animator extends JFXApp {
   }
 
   bgButton.onAction = (event) => {
-    this.currFrame.setBackground("basic")
     println("background changed")
   }
 

@@ -1,13 +1,16 @@
+import scalafx.scene.image.Image
 import scala.collection.mutable.ArrayBuffer
 
 class Frame {
     val figures = ArrayBuffer [Figure] ()
     val speechBubbles = ArrayBuffer [SpeechBubble] ()
-    private var background = "basic"
+    private var background = {
+        new Image("file:basic.png")
+    }
 
     def getBackground = this.background
 
-    def setBackground(newBg: String): Unit = {
+    def setBackground(newBg: Image): Unit = {
         this.background = newBg
     }
 
@@ -34,6 +37,7 @@ class Frame {
     }
 
     def draw(): Unit = {
+        Animator.getG.drawImage(this.background, 0, 0)
         this.figures.foreach(_.draw())
         this.speechBubbles.foreach(_.draw())
     }
