@@ -4,8 +4,16 @@ import scala.collection.mutable.ArrayBuffer
 class Frame {
     val figures = ArrayBuffer [Figure] ()
     val speechBubbles = ArrayBuffer [SpeechBubble] ()
+
     private var background = {
         new Image("file:basic.png")
+    }
+
+    def cpoints = {
+        val resArray = Array [ControlPoint] ()
+        figures.foreach(n => (resArray +: n.cpoints) :+ n.cpoint)
+        speechBubbles.foreach(resArray :+ _.cpoint)
+        resArray
     }
 
     def getBackground = this.background
@@ -36,9 +44,8 @@ class Frame {
         true
     }
 
-    def draw(): Unit = {
-        Animator.getG.drawImage(this.background, 0, 0, Animator.viewerW, Animator.viewerH)
-        this.figures.foreach(_.draw())
-        this.speechBubbles.foreach(_.draw())
+    def update(): Unit = {
+        this.figures.foreach(_.update())
+        this.speechBubbles.foreach(_.update())
     }
 }

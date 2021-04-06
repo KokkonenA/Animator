@@ -5,11 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/Component.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/ControlPoint.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/Controller.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/LeftMenu.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/Viewer.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Figure.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Figure.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Frame.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Frame.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Head.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Head.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Joint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Joint.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$delayedInit$body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$delayedInit$body.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Frame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/SpeechBubble.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/SpeechBubble.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +73,13 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Scala Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -297,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617666886193</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Resized the canvas">
+      <created>1617668768144</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1617668768144</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,7 +368,8 @@
     <MESSAGE value="Method draw partially implemented for classes Animator, Frame, Head, Joint, SpeechBubble. Currently draws only a circle." />
     <MESSAGE value="Adding a new figure now draws the joints based on structures.txt in to the frame" />
     <MESSAGE value="Background image added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Background image added" />
+    <MESSAGE value="Resized the canvas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resized the canvas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
