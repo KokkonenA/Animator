@@ -37,7 +37,7 @@ class Frame {
     }
 
     def draw(): Unit = {
-        Animator.getG.drawImage(this.background, 0, 0)
+        Animator.getG.drawImage(this.background, 0, 0, Animator.viewerW, Animator.viewerH)
         this.figures.foreach(_.draw())
         this.speechBubbles.foreach(_.draw())
     }

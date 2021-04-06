@@ -10,8 +10,8 @@ import scalafx.scene.control.Button
 import scala.collection.mutable.ArrayBuffer
 
 object Animator extends JFXApp {
-  def viewerW = 720
-  def viewerH = 480
+  def viewerW = 885
+  def viewerH = 575
 
   //create stage for scalaFX
   stage = new JFXApp.PrimaryStage {
