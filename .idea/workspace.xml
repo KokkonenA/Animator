@@ -5,27 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Component.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ControlPoint.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Controller.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/LeftMenu.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Viewer.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1097e2f3a7c398dd0430$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1097e2f3a7c398dd0430.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1097e2f3a7c398dd0430.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1a1c7fdac1e939bdea0e$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1a1c7fdac1e939bdea0e.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1a1c7fdac1e939bdea0e.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1d0a710bc8636db42e8b$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1d0a710bc8636db42e8b.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1d0a710bc8636db42e8b.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2f3f2ec324bbc4378cbf$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2f3f2ec324bbc4378cbf.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2f3f2ec324bbc4378cbf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$92327a8ee10b3c91d4b4$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$92327a8ee10b3c91d4b4.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$92327a8ee10b3c91d4b4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$b00ae0a8cb657ba9083c$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$b00ae0a8cb657ba9083c.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$b00ae0a8cb657ba9083c.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c41c72cc2eab46572ea1$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c41c72cc2eab46572ea1.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c41c72cc2eab46572ea1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c9da8aae0764946a6907$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c9da8aae0764946a6907.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c9da8aae0764946a6907.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$e18791dbc88948f050ec$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$e18791dbc88948f050ec.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$e18791dbc88948f050ec.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/input_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/input_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/_global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Component.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/ControlPoint.scala" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Figure.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Figure.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Frame.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Frame.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Head.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Head.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Joint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Joint.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Pos.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$delayedInit$body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$delayedInit$body.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Frame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Pos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/SpeechBubble.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/SpeechBubble.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -328,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617668768144</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="New files LeftMenu, RightMenu, Viewer and Controller added. They are just separate objects for the layout components.&#10;&#10;Added trait Component that is base for classes Figure, Joint, SpeechBubble, Head&#10;&#10;Viewer is now Pane. That caused a lot of changes. Currently nothing is drawn on the viewer">
+      <created>1617710781215</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1617710781215</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,7 +413,8 @@
     <MESSAGE value="Adding a new figure now draws the joints based on structures.txt in to the frame" />
     <MESSAGE value="Background image added" />
     <MESSAGE value="Resized the canvas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resized the canvas" />
+    <MESSAGE value="New files LeftMenu, RightMenu, Viewer and Controller added. They are just separate objects for the layout components.&#10;&#10;Added trait Component that is base for classes Figure, Joint, SpeechBubble, Head&#10;&#10;Viewer is now Pane. That caused a lot of changes. Currently nothing is drawn on the viewer" />
+    <option name="LAST_COMMIT_MESSAGE" value="New files LeftMenu, RightMenu, Viewer and Controller added. They are just separate objects for the layout components.&#10;&#10;Added trait Component that is base for classes Figure, Joint, SpeechBubble, Head&#10;&#10;Viewer is now Pane. That caused a lot of changes. Currently nothing is drawn on the viewer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

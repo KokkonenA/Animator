@@ -1,33 +1,41 @@
 import scala.collection.mutable.ArrayBuffer
 import scala.math.{cos, sin}
+import scalafx.Includes._
+import scalafx.scene.paint.Color.Gray
+import scalafx.scene.shape.Circle
 
-class Joint(val name: String, val parent: Option[Joint], val radius: Int, private var angle: Int) extends Component {
-  private var pos = new Pos(Animator.viewerW / 2, Animator.viewerH / 2)
+class Joint (val name: String,
+             val parentJoint: Option[Joint],
+             val jointRadius: Int,
+             private var angle: Int) extends Circle {
+
+  this.centerX = Animator.viewerW / 2
+  this.centerY = Animator.viewerH / 2
+  this.radius = 10
+  this.fill = Gray
+
   private var locked = false
 
   def calculatePos(): Unit = {
-    val parentPos = if (this.parent.isDefined) this.parent.get.getPos else this.pos
+    val parentX = if (this.parentJoint.isDefined) this.parentJoint.get.centerX else this.centerX
+    val parentY = if (this.parentJoint.isDefined) this.parentJoint.get.centerX else this.centerY
     val angleRadian = Math.toRadians(this.angle)
 
-    val newX = cos(angleRadian) * this.radius + parentPos.x
+    val newX = cos(angleRadian) * this.jointRadius + parentX.toInt
 
-    val newY = -sin(angleRadian) * this.radius + parentPos.y
+    val newY = -sin(angleRadian) * this.jointRadius + parentY.toInt
 
-    this.setPos(new Pos(newX.toInt, newY.toInt))
+    this.centerX = newX
+    this.centerY = newY
   }
   this.calculatePos()
 
   def getLocked = this.locked
   def getAngle = this.angle
-  def getPos = this.pos
 
   def toggleLocked(): Unit = {
     if (this.locked) this.locked = false
     else this.locked = true
-  }
-
-  def setPos(newPos: Pos): Unit = {
-    this.pos = newPos
   }
 
   def setAngle(newAngle: Int): Unit = {
@@ -35,13 +43,15 @@ class Joint(val name: String, val parent: Option[Joint], val radius: Int, privat
   }
 
   def getCopy(copyJoints: ArrayBuffer[Joint]) = {
-    val copyParent = if (this.parent.isDefined) {
-      Some(copyJoints.find(_.name == this.parent.get.name).get)
+    val copyParent = if (this.parentJoint.isDefined) {
+      Some(copyJoints.find(_.name == this.parentJoint.get.name).get)
     } else None
-    new Joint(this.name, copyParent, this.radius, this.angle)
+    new Joint(this.name, copyParent, this.jointRadius, this.angle)
   }
 
   def update(): Unit = {
     //Animator.getG.fillOval(this.pos.x, this.pos.y, 10, 10)
   }
+
+  Viewer.children += this
 }

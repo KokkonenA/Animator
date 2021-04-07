@@ -1,5 +1,6 @@
 import scalafx.scene.image.Image
 import scala.collection.mutable.ArrayBuffer
+import scalafx.Includes._
 
 class Frame {
     val figures = ArrayBuffer [Figure] ()
@@ -9,17 +10,28 @@ class Frame {
         new Image("file:basic.png")
     }
 
-    def cpoints = {
-        val resArray = Array [ControlPoint] ()
-        figures.foreach(n => (resArray +: n.cpoints) :+ n.cpoint)
-        speechBubbles.foreach(resArray :+ _.cpoint)
-        resArray
-    }
-
     def getBackground = this.background
 
-    def setBackground(newBg: Image): Unit = {
-        this.background = newBg
+    def setBackground(newBg: String): Unit = {
+        this.background = new Image(newBg)
+    }
+
+    def addAll(): Unit = {
+        this.figures.foreach(_.joints.foreach(Viewer.children += _))
+        this.figures.foreach {
+            n => if (n.head.isDefined) Viewer.children += n.head.get
+        }
+        this.speechBubbles.foreach(Viewer.children += _)
+    }
+
+    def addFigure(): Unit = {
+        val newFigure = new Figure
+        this.figures += newFigure
+    }
+
+    def addSpeech(): Unit = {
+        val newBubble = new SpeechBubble
+        this.speechBubbles += newBubble
     }
 
     def getCopy = {
@@ -28,20 +40,6 @@ class Frame {
         this.figures.foreach(copy.figures += _.getCopy)
         this.speechBubbles.foreach(copy.speechBubbles += _.getCopy)
         copy
-    }
-
-    def addFigure = {
-        val newPos = new Pos(Animator.viewerW / 2, Animator.viewerH / 2)
-
-        this.figures += new Figure()
-        true
-    }
-
-    def addSpeech = {
-        val newPos = new Pos(Animator.viewerW / 2, Animator.viewerH / 2)
-        val newSpeech = new SpeechBubble(newPos)
-        this.speechBubbles += newSpeech
-        true
     }
 
     def update(): Unit = {

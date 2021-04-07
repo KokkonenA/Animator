@@ -1,15 +1,7 @@
 import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 
-class Figure extends Component {
-  private var pos = new Pos(Animator.viewerW/2, Animator.viewerH/2)
-
-  def getPos = this.pos
-
-  def setPos(newPos: Pos): Unit = {
-    this.pos = newPos
-  }
-
+class Figure {
   private def loadJoints() = {
     val lines = ArrayBuffer [String] ()
     
@@ -52,16 +44,7 @@ class Figure extends Component {
 
   val head = this.structure._2
 
-  def cpoints = {
-    val resArray = Array [ControlPoint] ()
-    this.joints.foreach(resArray :+ _.cpoint)
-    if (this.head.isDefined) resArray :+ this.head.get.cpoint
-    resArray
-  }
-
   def getCopy = {
-    val copyPos = this.pos
-
     val copyJoints = ArrayBuffer[Joint] ()
 
     this.joints.foreach(copyJoints += _.getCopy(copyJoints))

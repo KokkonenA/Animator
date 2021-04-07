@@ -2,7 +2,6 @@ import scalafx.application.JFXApp
 import scalafx.scene.Scene
 import scalafx.scene.layout.{ColumnConstraints, GridPane, RowConstraints}
 import scala.collection.mutable.ArrayBuffer
-import scalafx.Includes._
 
 object Animator extends JFXApp {
   def viewerW = 885
@@ -26,9 +25,9 @@ object Animator extends JFXApp {
 
   //set the current frame to a different one
   def setCurrFrame(newFrame: Frame): Unit = {
-    this.viewer.children.removeAll()
+    this.viewer.children.clear()
     this.currFrame = newFrame
-    this.viewer.children ++ this.currFrame.cpoints
+    this.currFrame.addAll()
   }
 
   //set the next frame as the current one
