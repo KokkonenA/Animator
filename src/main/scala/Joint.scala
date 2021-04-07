@@ -1,7 +1,7 @@
 import scala.collection.mutable.ArrayBuffer
 import scala.math.{cos, sin}
 import scalafx.Includes._
-import scalafx.scene.paint.Color.Gray
+import scalafx.scene.paint.Color.{Gray, Red}
 import scalafx.scene.shape.Circle
 
 class Joint (val name: String,
@@ -34,8 +34,13 @@ class Joint (val name: String,
   def getAngle = this.angle
 
   def toggleLocked(): Unit = {
-    if (this.locked) this.locked = false
-    else this.locked = true
+    if (this.locked) {
+      this.locked = false
+      this.fill = Gray
+    } else {
+      this.locked = true
+      this.fill = Red
+    }
   }
 
   def setAngle(newAngle: Int): Unit = {
@@ -50,7 +55,10 @@ class Joint (val name: String,
   }
 
   def update(): Unit = {
-    //Animator.getG.fillOval(this.pos.x, this.pos.y, 10, 10)
+  }
+
+  this.onMouseClicked = (event) => {
+    this.toggleLocked()
   }
 
   Viewer.children += this

@@ -16,6 +16,5 @@ class SpeechBubble extends Circle {
   }
 
   def update(): Unit = {
-    //Animator.getG.fillOval(this.pos.x, this.pos.y, 10, 10)
   }
 }
