@@ -13,13 +13,14 @@ class Figure {
     bufferedSource.close()
 
     val newJoints = ArrayBuffer [Joint] ()
+    newJoints += new Joint("Center", None, 0, 0)
     var i = 2
 
     while (lines(i).trim != "/Joints") {
       val line = lines(i).split(",")
       val name = line(0)
       val parentName = line(1)
-      val parent = if(parentName == "Center") None else newJoints.find(_.name == parentName)
+      val parent = newJoints.find(_.name == parentName)
       val radius = line(2).toInt
       val angle = line(3).toInt
       newJoints += new Joint(name, parent, radius, angle)

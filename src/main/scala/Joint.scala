@@ -9,8 +9,8 @@ class Joint (val name: String,
              val jointRadius: Int,
              private var angle: Int) extends Circle {
 
-  this.centerX = Animator.viewerW / 2
-  this.centerY = Animator.viewerH / 2
+  this.centerX = (Viewer.width / 2).toInt
+  this.centerY = (Viewer.width / 2).toInt
   this.radius = 10
   this.fill = Gray
 
@@ -18,7 +18,7 @@ class Joint (val name: String,
 
   def calculatePos(): Unit = {
     val parentX = if (this.parentJoint.isDefined) this.parentJoint.get.centerX else this.centerX
-    val parentY = if (this.parentJoint.isDefined) this.parentJoint.get.centerX else this.centerY
+    val parentY = if (this.parentJoint.isDefined) this.parentJoint.get.centerY else this.centerY
     val angleRadian = Math.toRadians(this.angle)
 
     val newX = cos(angleRadian) * this.jointRadius + parentX.toInt

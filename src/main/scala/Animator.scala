@@ -4,10 +4,7 @@ import scalafx.scene.layout.{ColumnConstraints, GridPane, RowConstraints}
 import scala.collection.mutable.ArrayBuffer
 
 object Animator extends JFXApp {
-  def viewerW = 885
-  def viewerH = 575
-
-  //create stage for scalaFX
+//create stage for scalaFX
   stage = new JFXApp.PrimaryStage {
     title.value = "Stick Figure Animator"
     width = 1280
