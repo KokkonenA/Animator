@@ -13,6 +13,7 @@ object RightMenu extends VBox {
     val bgButton = new Button("BG")
     val frameButton = new Button("Frame")
 
+    //Actions for the buttons
     figureButton.onAction = (event) => {
         Animator.getCurrFrame.addFigure()
     }
@@ -30,7 +31,6 @@ object RightMenu extends VBox {
     frameButton.onAction = (event) => {
         if (Animator.addFrame) println("New frame added")
         else println("Couldn't add new frame")
-        //println("Now there are " + Animator.frames.size + " frames")
     }
 
     //add the buttons as the children of the rightMenu

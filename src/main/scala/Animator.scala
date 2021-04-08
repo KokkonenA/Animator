@@ -72,8 +72,9 @@ object Animator extends JFXApp {
       println("You have reached the maximum number of key frames")
       false
     } else {
-      val newFrame = this.currFrame.getCopy
-      this.frames.insert(this.getCurrIdx + 1, newFrame)
+      val idx = this.getCurrIdx + 1
+      this.setCurrFrame(this.currFrame.getCopy)
+      this.frames.insert(idx, this.currFrame)
       true
     }
   }

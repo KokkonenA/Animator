@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="partially implemented the rotation of the joints by clicking and dragging">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/arm.scala" afterDir="false" />
+    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="there are now lines as arms betweeen the joints">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Controller.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Controller.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Frame.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Frame.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Joint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Joint.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Expression.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Frame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/arm.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Arm.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Arm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Arm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617877023546</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="there are now lines as arms betweeen the joints">
+      <created>1617878767719</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1617878767719</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,7 +374,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Buttons for the right and left side menus added. Currently the actions are simply text printed to the console." />
     <MESSAGE value="Buttons added for the right and left side menus. Currently the actions are simply text printed to the console" />
     <MESSAGE value="exit button closes the program" />
     <MESSAGE value="class Expression implemented" />
@@ -394,7 +398,8 @@
     <MESSAGE value="calculatePos() now works correctly" />
     <MESSAGE value="clicking on the joints toggles the variable locked between true and false and the color of the circle between red and grey" />
     <MESSAGE value="partially implemented the rotation of the joints by clicking and dragging" />
-    <option name="LAST_COMMIT_MESSAGE" value="partially implemented the rotation of the joints by clicking and dragging" />
+    <MESSAGE value="there are now lines as arms betweeen the joints" />
+    <option name="LAST_COMMIT_MESSAGE" value="there are now lines as arms betweeen the joints" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

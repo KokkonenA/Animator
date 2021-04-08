@@ -81,7 +81,7 @@ class Joint (val name: String,
   }
 
   def getCopy(copyJoints: ArrayBuffer[Joint]) = {
-    val copyParent = if (this.parentJoint.isDefined) {
+    val copyParent = if (this.hasParent) {
       Some(copyJoints.find(_.name == this.parentJoint.get.name).get)
     } else None
     new Joint(this.name, copyParent, this.jointRadius, this.angle)
