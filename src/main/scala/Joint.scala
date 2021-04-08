@@ -21,6 +21,14 @@ class Joint (val name: String,
 
   val hasParent = this.parentJoint.isDefined
 
+  val arm: Option[Arm] = if (this.hasParent) Some(new Arm {
+    startX = Joint.this.centerX.toDouble
+    startY = Joint.this.centerY.toDouble
+    endX = Joint.this.parentJoint.get.centerX.toDouble
+    endY = Joint.this.parentJoint.get.centerY.toDouble
+  }) else None
+
+
   def setPos(x: Double, y: Double): Unit = {
     this.centerX = x
     this.centerY = y
@@ -111,7 +119,14 @@ class Joint (val name: String,
   }
 
   def update(): Unit = {
-    if ((hasParent && this.parentJoint.get.isMoved) || this.rotated) this.calculatePos()
+    if (hasParent && (this.parentJoint.get.isMoved) || this.rotated) {
+      this.calculatePos()
+
+      this.arm.get.startX = Joint.this.centerX.toDouble
+      this.arm.get.startY = Joint.this.centerY.toDouble
+      this.arm.get.endX = Joint.this.parentJoint.get.centerX.toDouble
+      this.arm.get.endY = Joint.this.parentJoint.get.centerY.toDouble
+    }
   }
 
   this.calculatePos()

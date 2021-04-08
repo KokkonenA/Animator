@@ -1,7 +1,7 @@
 import scalafx.geometry.Insets
 import scalafx.scene.canvas.Canvas
 import scalafx.scene.control.Button
-import scalafx.scene.layout.{Background, BackgroundFill, ColumnConstraints, CornerRadii, GridPane, HBox, RowConstraints}
+import scalafx.scene.layout._
 import scalafx.scene.paint.Color.{Blue, Green, Red}
 import scalafx.Includes._
 

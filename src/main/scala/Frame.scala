@@ -17,7 +17,10 @@ class Frame {
     }
 
     def addAll(): Unit = {
-        this.figures.foreach(_.joints.foreach(Viewer.children += _))
+        this.figures.foreach(_.joints.foreach(n => {
+            Viewer.children += n
+            if (n.hasParent) Viewer.children += n.arm.get
+        }))
         this.figures.foreach {
             n => if (n.head.isDefined) Viewer.children += n.head.get
         }
