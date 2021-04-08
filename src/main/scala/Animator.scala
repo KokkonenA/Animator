@@ -22,7 +22,7 @@ object Animator extends JFXApp {
 
   //set the current frame to a different one
   def setCurrFrame(newFrame: Frame): Unit = {
-    this.viewer.children.clear()
+    Viewer.children.clear()
     this.currFrame = newFrame
     this.currFrame.addAll()
   }
@@ -113,15 +113,10 @@ object Animator extends JFXApp {
   val scene = new Scene(root)
   stage.scene = scene
 
-  val leftMenu = LeftMenu
-  val rightMenu = RightMenu
-  val controller = Controller
-  val viewer = Viewer
-
-  root.add(leftMenu, 0, 0)
-  root.add(rightMenu, 2, 0)
-  root.add(controller, 0, 1, 3, 1)
-  root.add(viewer, 1, 0)
+  root.add(LeftMenu, 0, 0)
+  root.add(RightMenu, 2, 0)
+  root.add(Controller, 0, 1, 3, 1)
+  root.add(Viewer, 1, 0)
 
   //Define grid row and column size
   val column0 = new ColumnConstraints

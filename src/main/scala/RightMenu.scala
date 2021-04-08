@@ -14,7 +14,6 @@ object RightMenu extends VBox {
     val frameButton = new Button("Frame")
 
     figureButton.onAction = (event) => {
-        println("figure added")
         Animator.getCurrFrame.addFigure()
     }
 

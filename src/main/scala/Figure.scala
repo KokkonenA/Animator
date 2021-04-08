@@ -30,7 +30,6 @@ class Figure {
 
     val newHead = if (lines(i)(0) != '/') {
       val split = lines(i).split(",")
-      println(split(0))
       val parent = newJoints.find(_.name == split(0)).get
       val expression = split(1)
       Some(new Head(parent, expression))
@@ -60,6 +59,7 @@ class Figure {
 
   def update(): Unit = {
     this.joints.foreach(_.update())
+    this.joints.foreach(_.reset())
     if (this.head.isDefined) this.head.get.update()
   }
 }

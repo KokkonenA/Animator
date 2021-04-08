@@ -7,10 +7,8 @@ Basic
         RArm,RElbow,50,45
         LKnee,Center,50,225
         LHeel,LKnee,50,270
-        LFoot,LHeel,20,180
         RKnee,Center,50,315
         RHeel,RKnee,50,270
-        RFoot,RHeel,20,0
     /Joints
     Neck,Happy
 /Basic

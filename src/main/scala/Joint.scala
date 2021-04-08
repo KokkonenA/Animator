@@ -1,7 +1,7 @@
 import scala.collection.mutable.ArrayBuffer
-import scala.math.{cos, sin}
+import scala.math._
 import scalafx.Includes._
-import scalafx.scene.paint.Color.{Gray, Red}
+import scalafx.scene.paint.Color.{Gray, Red, White}
 import scalafx.scene.shape.Circle
 
 class Joint (val name: String,
@@ -12,39 +12,64 @@ class Joint (val name: String,
   this.centerX = (Viewer.width / 2).toInt
   this.centerY = (Viewer.width / 2).toInt
   this.radius = 10
-  this.fill = Gray
+  this.stroke = Gray
+  this.fill = White
 
   private var locked = false
+  private var moved = false
+  private var rotated = false
 
-  def calculatePos(): Unit = {
-    val parentX = if (this.parentJoint.isDefined) this.parentJoint.get.centerX else this.centerX
-    val parentY = if (this.parentJoint.isDefined) this.parentJoint.get.centerY else this.centerY
-    val angleRadian = Math.toRadians(this.angle)
+  val hasParent = this.parentJoint.isDefined
 
-    val newX = cos(angleRadian) * this.jointRadius + parentX.toInt
-
-    val newY = -sin(angleRadian) * this.jointRadius + parentY.toInt
-
-    this.centerX = newX
-    this.centerY = newY
+  def setPos(x: Double, y: Double): Unit = {
+    this.centerX = x
+    this.centerY = y
+    this.moved = true
   }
-  this.calculatePos()
+
+  def getAngle = this.angle
+
+  def setAngle(newAngle: Int): Unit = {
+    this.angle = if (newAngle < 0) 359 else if (newAngle > 360) 1 else newAngle
+    this.rotated = true
+  }
+
+  def rotateClockwise() = {
+    this.setAngle(this.angle + 1)
+  }
+  def rotateCounterclockwise() = {
+    this.setAngle(this.angle - 1)
+  }
+
 
   def getLocked = this.locked
-  def getAngle = this.angle
 
   def toggleLocked(): Unit = {
     if (this.locked) {
       this.locked = false
-      this.fill = Gray
+      this.fill = White
     } else {
       this.locked = true
       this.fill = Red
     }
   }
 
-  def setAngle(newAngle: Int): Unit = {
-    this.angle = newAngle
+  def isMoved = this.moved
+  def reset() = {
+    this.moved = false
+    this.rotated = false
+  }
+
+  def calculatePos(): Unit = {
+    val parentX = if (hasParent) this.parentJoint.get.centerX else this.centerX
+    val parentY = if (hasParent) this.parentJoint.get.centerY else this.centerY
+    val angleRadian = toRadians(this.angle)
+
+    val newX = cos(angleRadian) * this.jointRadius + parentX.toInt
+
+    val newY = -sin(angleRadian) * this.jointRadius + parentY.toInt
+
+    this.setPos(newX, newY)
   }
 
   def getCopy(copyJoints: ArrayBuffer[Joint]) = {
@@ -54,12 +79,41 @@ class Joint (val name: String,
     new Joint(this.name, copyParent, this.jointRadius, this.angle)
   }
 
-  def update(): Unit = {
-  }
-
   this.onMouseClicked = (event) => {
     this.toggleLocked()
   }
 
+  this.onMouseDragged = (event) => {
+    val mouseX = event.getX
+    val mouseY = event.getY
+
+    val x = this.centerX.toInt
+    val y = this.centerY.toInt
+
+    if (hasParent) {
+      val parentX = this.parentJoint.get.centerX.toInt
+      val parentY = this.parentJoint.get.centerY.toInt
+
+      val dxParentToMouse = mouseX - parentX
+      val dyParentToMouse = mouseY - parentY
+
+      val dParentToMouse = sqrt(pow(dxParentToMouse, 2) + pow(dyParentToMouse, 2))
+
+      val angleMouse = if (dParentToMouse != 0) {
+        if (dyParentToMouse <= 0) acos(dxParentToMouse / dParentToMouse).toDegrees
+        else acos(-dxParentToMouse / dParentToMouse).toDegrees + 180
+      } else 0
+
+      this.setAngle(angleMouse.toInt)
+    } else {
+      this.setPos(mouseX, mouseY)
+    }
+  }
+
+  def update(): Unit = {
+    if ((hasParent && this.parentJoint.get.isMoved) || this.rotated) this.calculatePos()
+  }
+
+  this.calculatePos()
   Viewer.children += this
 }
