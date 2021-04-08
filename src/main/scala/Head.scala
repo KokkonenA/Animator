@@ -11,7 +11,10 @@ class Head (val parentJoint: Joint, private var expression: String) extends Circ
   }
 
   def getCopy(copyJoints: ArrayBuffer[Joint]) = {
-    new Head(copyJoints.find(_.name == this.parentJoint.name).get, this.expression)
+    new Head(copyJoints.find(_.name == this.parentJoint.name).get, this.expression) {
+      this.centerX = Head.this.centerX.toDouble
+      this.centerY = Head.this.centerY.toDouble
+    }
   }
 
   def update(): Unit = {

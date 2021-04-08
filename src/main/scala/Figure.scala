@@ -2,7 +2,7 @@ import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 
 class Figure {
-  private def loadJoints() = {
+  def loadJoints = {
     val lines = ArrayBuffer [String] ()
     
     val bufferedSource = Source.fromFile("Structures")
@@ -38,7 +38,7 @@ class Figure {
     (newJoints, newHead)
   }
 
-  val structure = this.loadJoints()
+  val structure = this.loadJoints
 
   val joints = this.structure._1
 
@@ -54,7 +54,9 @@ class Figure {
       case None => None
     }
 
-    new Figure()
+    new Figure() {
+      override def loadJoints = (copyJoints, copyHead)
+    }
   }
 
   def update(): Unit = {

@@ -84,7 +84,10 @@ class Joint (val name: String,
     val copyParent = if (this.hasParent) {
       Some(copyJoints.find(_.name == this.parentJoint.get.name).get)
     } else None
-    new Joint(this.name, copyParent, this.jointRadius, this.angle)
+    new Joint(this.name, copyParent, this.jointRadius, this.angle) {
+      this.centerX = Joint.this.centerX.toDouble
+      this.centerY = Joint.this.centerY.toDouble
+    }
   }
 
   this.onMouseClicked = (event) => {

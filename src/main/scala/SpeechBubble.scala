@@ -1,4 +1,5 @@
 import scalafx.scene.shape.Circle
+import scalafx.Includes._
 
 class SpeechBubble extends Circle {
   private var text = ""
@@ -10,11 +11,16 @@ class SpeechBubble extends Circle {
   }
 
   def getCopy = {
-    val newBubble = new SpeechBubble
+    val newBubble = new SpeechBubble {
+      this.centerX = SpeechBubble.this.centerX.toDouble
+      this.centerY = SpeechBubble.this.centerY.toDouble
+    }
     newBubble.setText(this.text)
     newBubble
   }
 
   def update(): Unit = {
   }
+
+  Viewer.children += this
 }
