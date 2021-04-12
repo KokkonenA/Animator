@@ -20,3 +20,20 @@ Maybe I should focus on that more.
 
 Workload has been roughly 10 hours. I am behind schedule at this point. But luckily I have two weeks ahead without
 much school work from other courses so I try to catch up.
+
+
+Interim report 3 12.4.2021
+
+During this time I've mainly focused on getting the stick figure in to the frame so that the joints can be moved.
+I realised that using Canvas was not working as the Viewer so I changed it to a simple Pane so I can add scalafx
+Shapes. I changed the classes Joint, SpeechBubble and Head so they inherit from scalafx.scene.shape. With that I can
+add the objects straight to Viewer.children. I also created class Arm that represent the lines between the joints. Now
+you can add figures and move the arms by clicking and dragging the joints.
+The rotation doesnt yet work as its supposed to but it's getting there.
+
+I wrote the components of the main GridPane in their own separate files. Really the only reason is that the code of the
+file Animator.scala is easier to read.
+
+I estimate my workload has been roughly 15 to 20 hours. I am still a bit behind and I fear I'll be in hurry soon.
+There is also some bigger changes I'd like to do so that implementing new features would be simpler but I fear
+it would take too long time so I just keep going forward and if I have time in the end I'll polish the code.

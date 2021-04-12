@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="fixed bug regarding adding a new frame to the timeline">
+    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Another fixed bug regarding adding a new frame to the timeline">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Figure.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Figure.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Head.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Head.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Joint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Joint.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/SpeechBubble.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/SpeechBubble.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/progress_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project/progress_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
