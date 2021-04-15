@@ -15,21 +15,19 @@ object LeftMenu extends VBox {
 
     //actions of the buttons
     saveButton.onAction = (event) => {
-        if (Animator.saveFile) println("saved")
+        Animator.saveAnimation()
     }
 
     loadButton.onAction = (event) => {
-        if (Animator.loadFile) println("loaded")
+        Animator.loadAnimation()
     }
 
     newButton.onAction = (event) => {
-        Animator.deleteFrames()
-        println("new animation initilized")
+        Animator.newAnimation()
     }
 
     exitButton.onAction = (event) => {
         Animator.exit()
-        println("Good Bye!")
     }
 
     this.children = Array [Button] (saveButton, loadButton, newButton, exitButton)

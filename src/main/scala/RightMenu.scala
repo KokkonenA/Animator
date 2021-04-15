@@ -9,30 +9,22 @@ object RightMenu extends VBox {
 
     //buttons for the right side menu
     val figureButton = new Button("Figure")
-    val speechButton = new Button("Speech")
     val bgButton = new Button("BG")
     val frameButton = new Button("Frame")
 
     //Actions for the buttons
     figureButton.onAction = (event) => {
-        Animator.getCurrFrame.addFigure()
-    }
-
-    speechButton.onAction = (event) => {
-        Animator.getCurrFrame.addSpeech()
-        println("speech Bubble added")
+        Animator.addFigure()
     }
 
     bgButton.onAction = (event) => {
-        Animator.getCurrFrame.setBackground("file:Basic.png")
-        println("background changed")
+        Animator.setBackground("file:basic.png")
     }
 
     frameButton.onAction = (event) => {
-        if (Animator.addFrame) println("New frame added")
-        else println("Couldn't add new frame")
+        Animator.addFrame()
     }
 
     //add the buttons as the children of the rightMenu
-    this.children = Array [Button] (figureButton, speechButton, bgButton, frameButton)
+    this.children = Array [Button] (figureButton, bgButton, frameButton)
 }

@@ -39,18 +39,16 @@ object Controller extends GridPane {
 
     //actions of the buttons
     previousButton.onAction = (event) => {
-        if (Animator.previousFrame) println("Moved 1 frame backward")
-        else println("Could not change frame")
+        Animator.previousFrame()
     }
 
     nextButton.onAction = (event) => {
-        if (Animator.nextFrame) println("Moved 1 frame forward")
-        else println("Could not change frame")
+        Animator.nextFrame()
     }
 
     switchFrames.children = Array [Button] (previousButton, nextButton)
 
     playButton.onAction = (event) => {
-        if (Animator.playAnimation) println("Animation Played")
+        Animator.playAnimation()
     }
 }

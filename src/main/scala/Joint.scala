@@ -1,54 +1,24 @@
-import scala.collection.mutable.ArrayBuffer
-import scala.math._
-import scalafx.Includes._
-import scalafx.scene.paint.Color.{Gray, Red, White}
-import scalafx.scene.shape.Circle
+import scalafx.scene.paint.Color.{Red, White}
+import scala.math.{acos, cos, pow, sin, sqrt, toRadians}
 
-class Joint (val name: String,
-             val parentJoint: Option[Joint],
-             val jointRadius: Int,
-             private var angle: Int) extends Circle {
-
-  this.centerX = (Viewer.width / 2).toInt
-  this.centerY = (Viewer.width / 2).toInt
-  this.radius = 10
-  this.stroke = Gray
-  this.fill = White
+class Joint(val parentCP: ControlPoint,
+            val jointRadius: Double,
+            private var angle: Double)
+      extends ControlPoint with ChildComponent {
 
   private var locked = false
-  private var moved = false
-  private var rotated = false
-
-  val hasParent = this.parentJoint.isDefined
-
-  val arm: Option[Arm] = if (this.hasParent) Some(new Arm {
-    startX = Joint.this.centerX.toDouble
-    startY = Joint.this.centerY.toDouble
-    endX = Joint.this.parentJoint.get.centerX.toDouble
-    endY = Joint.this.parentJoint.get.centerY.toDouble
-  }) else None
-
 
   def setPos(x: Double, y: Double): Unit = {
     this.centerX = x
     this.centerY = y
-    this.moved = true
   }
 
   def getAngle = this.angle
 
-  def setAngle(newAngle: Int): Unit = {
+  def setAngle(newAngle: Double): Unit = {
     this.angle = if (newAngle < 0) 359 else if (newAngle > 360) 1 else newAngle
-    this.rotated = true
+    this.update()
   }
-
-  def rotateClockwise() = {
-    this.setAngle(this.angle + 1)
-  }
-  def rotateCounterclockwise() = {
-    this.setAngle(this.angle - 1)
-  }
-
 
   def getLocked = this.locked
 
@@ -62,76 +32,34 @@ class Joint (val name: String,
     }
   }
 
-  def isMoved = this.moved
-  def reset() = {
-    this.moved = false
-    this.rotated = false
-  }
-
-  def calculatePos(): Unit = {
-    val parentX = if (hasParent) this.parentJoint.get.centerX else this.centerX
-    val parentY = if (hasParent) this.parentJoint.get.centerY else this.centerY
-    val angleRadian = toRadians(this.angle)
-
-    val newX = cos(angleRadian) * this.jointRadius + parentX.toInt
-
-    val newY = -sin(angleRadian) * this.jointRadius + parentY.toInt
-
-    this.setPos(newX, newY)
-  }
-
-  def getCopy(copyJoints: ArrayBuffer[Joint]) = {
-    val copyParent = if (this.hasParent) {
-      Some(copyJoints.find(_.name == this.parentJoint.get.name).get)
-    } else None
-    new Joint(this.name, copyParent, this.jointRadius, this.angle) {
-      this.centerX = Joint.this.centerX.toDouble
-      this.centerY = Joint.this.centerY.toDouble
-    }
-  }
-
   this.onMouseClicked = (event) => {
     this.toggleLocked()
   }
 
   this.onMouseDragged = (event) => {
-    val mouseX = event.getX
-    val mouseY = event.getY
+    val dxParentToMouse = event.getX - this.parentCP.centerX.toDouble
+    val dyParentToMouse = event.getY - this.parentCP.centerY.toDouble
 
-    val x = this.centerX.toInt
-    val y = this.centerY.toInt
+    val dParentToMouse = sqrt(pow(dxParentToMouse, 2) + pow(dyParentToMouse, 2))
 
-    if (hasParent) {
-      val parentX = this.parentJoint.get.centerX.toInt
-      val parentY = this.parentJoint.get.centerY.toInt
+    val angleMouse = if (dParentToMouse != 0) {
+      if (dyParentToMouse <= 0) acos(dxParentToMouse / dParentToMouse).toDegrees
+      else acos(-dxParentToMouse / dParentToMouse).toDegrees + 180
+    } else 0
 
-      val dxParentToMouse = mouseX - parentX
-      val dyParentToMouse = mouseY - parentY
-
-      val dParentToMouse = sqrt(pow(dxParentToMouse, 2) + pow(dyParentToMouse, 2))
-
-      val angleMouse = if (dParentToMouse != 0) {
-        if (dyParentToMouse <= 0) acos(dxParentToMouse / dParentToMouse).toDegrees
-        else acos(-dxParentToMouse / dParentToMouse).toDegrees + 180
-      } else 0
-
-      this.setAngle(angleMouse.toInt)
-    } else {
-      this.setPos(mouseX, mouseY)
-    }
+    this.setAngle(angleMouse)
   }
 
   def update(): Unit = {
-    if (hasParent && (this.parentJoint.get.isMoved) || this.rotated) {
-      this.calculatePos()
+    val angleRadian = toRadians(this.angle)
 
-      this.arm.get.startX = Joint.this.centerX.toDouble
-      this.arm.get.startY = Joint.this.centerY.toDouble
-      this.arm.get.endX = Joint.this.parentJoint.get.centerX.toDouble
-      this.arm.get.endY = Joint.this.parentJoint.get.centerY.toDouble
-    }
+    val newX = cos(angleRadian) * this.jointRadius + this.parentCP.centerX.toDouble
+
+    val newY = -sin(angleRadian) * this.jointRadius + this.parentCP.centerY.toDouble
+
+    this.setPos(newX, newY)
+    this.children.foreach(_.update())
   }
 
-  this.calculatePos()
-  Viewer.children += this
+  this.children += new Arm(this)
 }

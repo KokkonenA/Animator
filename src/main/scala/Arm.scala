@@ -1,7 +1,11 @@
 import scalafx.scene.shape.Line
-import scalafx.Includes._
 
-class Arm extends Line {
-    this.toBack()
-    Viewer.children += this
+class Arm(val parentCP: Joint) extends Line with ChildComponent {
+    def update(): Unit = {
+        this.startX = this.parentCP.centerX.toDouble
+        this.startY = this.parentCP.centerY.toDouble
+
+        this.endX = this.parentCP.parentCP.centerX.toDouble
+        this.endY = this.parentCP.parentCP.centerY.toDouble
+    }
 }

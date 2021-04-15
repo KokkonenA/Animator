@@ -1,25 +1,19 @@
+import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Circle
-import scalafx.Includes._
 
-import scala.collection.mutable.ArrayBuffer
+class Head (val parentCP: ControlPoint, private var expression: String) extends Circle with ChildComponent {
+    this.radius = 20
+    this.stroke = Gray
+    this.fill = White
 
-class Head (val parentJoint: Joint, private var expression: String) extends Circle {
-  def getExpression = this.expression
+    def getExpression = this.expression
 
-  def setExpression(newExpression: String): Unit = {
-    this.expression = newExpression
-  }
-
-  def getCopy(copyJoints: ArrayBuffer[Joint]) = {
-    new Head(copyJoints.find(_.name == this.parentJoint.name).get, this.expression) {
-      this.centerX = Head.this.centerX.toDouble
-      this.centerY = Head.this.centerY.toDouble
+    def setExpression(newExpression: String): Unit = {
+        this.expression = newExpression
     }
-  }
 
-  def update(): Unit = {
-
-  }
-
-  Viewer.children += this
+    def update(): Unit = {
+        this.centerX = this.parentCP.centerX.toDouble
+        this.centerY = this.parentCP.centerY.toDouble - this.radius.toDouble
+    }
 }

@@ -1,8 +1,15 @@
+import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Circle
-import scalafx.Includes._
 
-class SpeechBubble extends Circle {
+class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildComponent {
   private var text = ""
+
+  this.radius = 30
+  this.stroke = Gray
+  this.fill = White
+
+  private var dxToParent = 0.0
+  private var dyToParent = -50.0
 
   def getText = this.text
 
@@ -10,17 +17,23 @@ class SpeechBubble extends Circle {
     this.text = newText
   }
 
-  def getCopy = {
-    val newBubble = new SpeechBubble {
-      this.centerX = SpeechBubble.this.centerX.toDouble
-      this.centerY = SpeechBubble.this.centerY.toDouble
-    }
-    newBubble.setText(this.text)
-    newBubble
+  this.onMouseDragged = (event) => {
+    val x = this.centerX.toDouble
+    val y = this.centerY.toDouble
+
+    val mouseX = event.getX
+    val mouseY = event.getY
+
+    this.centerX = mouseX
+    this.centerY = mouseY
+
+    this.dxToParent += mouseX - x
+    this.dyToParent += mouseY - y
+
   }
 
   def update(): Unit = {
+    this.centerX = this.parentCP.centerX.toDouble + dxToParent
+    this.centerY = this.parentCP.centerY.toDouble + dyToParent
   }
-
-  Viewer.children += this
 }
