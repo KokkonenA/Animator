@@ -4,6 +4,16 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
     this.centerX = (Viewer.width / 2).toInt
     this.centerY = (Viewer.width / 2).toInt
 
+    private var angle = 0.0
+
+    def angleToScene = this.angle
+
+    def isLocked = false
+
+    def setAngle(newAngle: Double): Unit = {
+        this.angle += newAngle
+    }
+
     this.onMouseDragged = (event) => {
         val x = this.centerX.toDouble
         val y = this.centerY.toDouble

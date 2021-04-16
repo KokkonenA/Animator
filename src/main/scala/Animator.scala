@@ -11,16 +11,21 @@ object Animator extends JFXApp {
         height = 720
     }
 
+    //current animation
     private var animation = new Animation
 
+    //create new Animation
     def newAnimation(): Unit = {
+        Viewer.children.clear() //clear current objects in viewer
         this.animation = new Animation
     }
 
+    //select one frame later as the current frame
     def nextFrame(): Unit = {
 
     }
 
+    //select one frame earlier as the current frame
     def previousFrame(): Unit = {
 
     }
@@ -40,10 +45,12 @@ object Animator extends JFXApp {
 
     }
 
+    //change background
     def setBackground(newBG: String): Unit = {
         this.animation.setBackground(newBG)
     }
 
+    //add new Figure to current animation
     def addFigure(): Unit = {
         val dialog = new TextInputDialog(defaultValue = "Basic") {
             initOwner(stage)
@@ -57,6 +64,7 @@ object Animator extends JFXApp {
         if (result.isDefined) this.animation.addFigure(result.get)
     }
 
+    //add new Frame to current Animation
     def addFrame(): Unit = {
 
     }
@@ -72,12 +80,13 @@ object Animator extends JFXApp {
     val scene = new Scene(root)
     stage.scene = scene
 
+    //add objects LeftMenu, RightMenu, Controller and Viewer to root GridPane
     root.add(LeftMenu, 0, 0)
     root.add(RightMenu, 2, 0)
     root.add(Controller, 0, 1, 3, 1)
     root.add(Viewer, 1, 0)
 
-    //Define grid row and column size
+    //Define grid row and column sizes
     val column0 = new ColumnConstraints
     val column1 = new ColumnConstraints
     val column2 = new ColumnConstraints
@@ -90,6 +99,7 @@ object Animator extends JFXApp {
     row0.percentHeight = 84
     row1.percentHeight = 16
 
+    //implement constraints to root Gridpane
     root.columnConstraints = Array[ColumnConstraints](column0, column1, column2)
     root.rowConstraints = Array[RowConstraints](row0, row1)
 }

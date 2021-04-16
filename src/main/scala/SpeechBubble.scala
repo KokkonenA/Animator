@@ -9,7 +9,7 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildCompone
   this.fill = White
 
   private var dxToParent = 0.0
-  private var dyToParent = -50.0
+  private var dyToParent = -200.0
 
   def getText = this.text
 
