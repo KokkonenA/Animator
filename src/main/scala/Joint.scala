@@ -10,6 +10,8 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
 
     private val frameData = ArrayBuffer.fill(this.frameCount)(this.angleToParent)
 
+    override def getParent = if (!this.parentCP.isLocked) this.parentCP else this.parentCP.getParent
+
     def setPos(x: Double, y: Double): Unit = {
         this.centerX = x
         this.centerY = y
@@ -63,10 +65,11 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
         this.toggleLocked()
     }
 
+
     this.onMouseDragged = (event) => {
         if (!this.isLocked) {
-            val dxParentToMouse = event.getX - this.parentCP.centerX.toDouble
-            val dyParentToMouse = event.getY - this.parentCP.centerY.toDouble
+            val dxParentToMouse = event.getX - this.getParent.centerX.toDouble
+            val dyParentToMouse = event.getY - this.getParent.centerY.toDouble
 
             val dParentToMouse = sqrt(pow(dxParentToMouse, 2) + pow(dyParentToMouse, 2))
 

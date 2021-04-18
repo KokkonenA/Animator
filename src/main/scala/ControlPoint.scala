@@ -6,6 +6,7 @@ trait ControlPoint extends Circle with FrameComponent {
     this.stroke = Gray
     this.fill = White
 
+    def getParent = this
     def angleToScene: Double
     def isLocked: Boolean
     def rotate(dAngleToParent: Double): Unit
