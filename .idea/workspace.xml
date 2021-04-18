@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Classes Frame and CurrentFrameCurosor implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Ticker.scala" afterDir="false" />
+    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="updating the positions of frame and timelinecomponents are now done via a ticker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Animation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animation.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Arm.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Arm.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Component.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Component.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Figure.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Figure.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Head.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Head.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Joint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Joint.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Timeline.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Timeline.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -395,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618763235489</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="updating the positions of frame and timelinecomponents are now done via a ticker">
+      <created>1618764363243</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1618764363243</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -412,7 +415,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="method calculatePos implemented for class Joint" />
     <MESSAGE value="Interim report 1 in project/progress_log.txt" />
     <MESSAGE value="New methods added for Animator, some which not yet implemented. Also a text file where Structures.txt was created. There we have a description of a figure structure which will be used in the program later." />
     <MESSAGE value="Interim report 2 in project/progress_log.txt" />
@@ -437,7 +439,8 @@
     <MESSAGE value="Joint angle relative to parent stays now constant when parent moved.&#10;If parent is moved it will rotate with its child when the child is moved. It is still a bit buggy when mouse is close to the center of the rotation.&#10;Progress regarding speech bubble. It is now a white cicle above the head of the structure that can be moved." />
     <MESSAGE value="Implemented parts of the actual timeline. There is now a timeline that shows how many frames you have. You can add and remove frames. At this moment key frames are not implemented. So no change in the position of a figure stays after switching frames." />
     <MESSAGE value="Classes Frame and CurrentFrameCurosor implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classes Frame and CurrentFrameCurosor implemented" />
+    <MESSAGE value="updating the positions of frame and timelinecomponents are now done via a ticker" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating the positions of frame and timelinecomponents are now done via a ticker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,6 +1,8 @@
 import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Circle
+
 import scala.collection.mutable.ArrayBuffer
+import scala.math.{cos, sin}
 
 class Head (val parentCP: ControlPoint, private var expression: String) extends Circle with ChildFrameComponent {
     this.radius = 20
@@ -13,11 +15,6 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
 
     def setExpression(newExpression: String): Unit = {
         this.expression = newExpression
-    }
-
-    def update(): Unit = {
-        this.centerX = this.parentCP.centerX.toDouble
-        this.centerY = this.parentCP.centerY.toDouble - this.radius.toDouble
     }
 
     def addFrame(): Unit = {
@@ -36,5 +33,12 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
 
     def saveFrameData(): Unit = {
         this.frameData(this.currIdx) = this.expression
+    }
+
+    def update(): Unit = {
+        val angle = this.parentCP.angleToScene.toRadians
+
+        this.centerX = this.parentCP.centerX.toDouble + this.radius.toDouble * cos(angle)
+        this.centerY = this.parentCP.centerY.toDouble - this.radius.toDouble * sin(angle)
     }
 }

@@ -1,10 +1,8 @@
 import scalafx.scene.paint.Color.{Red, White}
 import scala.collection.mutable.ArrayBuffer
-import scala.math.{acos, cos, pow, sin, sqrt, toRadians}
+import scala.math._
 
-class Joint(val parentCP: ControlPoint,
-            val jointRadius: Double,
-            angle: Double)
+class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
     extends ControlPoint with ChildFrameComponent {
 
     private var locked = false
@@ -41,6 +39,26 @@ class Joint(val parentCP: ControlPoint,
         }
     }
 
+    def loadFrameData(): Unit = {
+        this.rotate(this.frameData(this.currIdx) - this.angleToParent)
+        this.children.foreach(_.loadFrameData())
+    }
+
+    def saveFrameData(): Unit = {
+        this.frameData(this.currIdx) = this.angleToParent
+        this.children.foreach(_.saveFrameData())
+    }
+
+    def addFrame(): Unit = {
+        this.frameData += this.frameData.last
+        this.children.foreach(_.addFrame())
+    }
+
+    def deleteFrame(): Unit = {
+        this.frameData -= this.frameData.last
+        this.children.foreach(_.deleteFrame())
+    }
+
     this.onMouseClicked = (event) => {
         this.toggleLocked()
     }
@@ -61,26 +79,6 @@ class Joint(val parentCP: ControlPoint,
 
             this.rotate(dAngleToParent)
         }
-    }
-
-    def loadFrameData(): Unit = {
-        this.rotate(this.frameData(this.currIdx) - this.angleToParent)
-        this.children.foreach(_.loadFrameData())
-    }
-
-    def saveFrameData(): Unit = {
-        this.frameData(this.currIdx) = this.angleToParent
-        this.children.foreach(_.saveFrameData())
-    }
-
-    def addFrame(): Unit = {
-        this.frameData += this.frameData.last
-        this.children.foreach(_.addFrame())
-    }
-
-    def deleteFrame(): Unit = {
-        this.frameData -= this.frameData.last
-        this.children.foreach(_.deleteFrame())
     }
 
     def update(): Unit = {
