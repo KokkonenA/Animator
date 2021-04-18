@@ -30,8 +30,6 @@ class Animation {
     }
 
     def nextFrame(): Unit = {
-        println(this.currIdx + " " + this.frameCount)
-
         if (this.currIdx < this.frameCount - 1) {
             this.currIdx += 1
             this.figures.foreach(_.updateFrame())
@@ -83,6 +81,5 @@ class Animation {
     def play(): Unit = {
 
     }
-
     this.setBackground("file:basic.png")
 }

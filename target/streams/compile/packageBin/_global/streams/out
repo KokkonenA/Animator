@@ -1,29 +1,87 @@
 [debug] Packaging C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\os2-animator_2.13-0.1.jar ...
 [debug] Input file mappings:
+[debug] 	Animation$$anon$1.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Animation$$anon$1.class
+[debug] 	Animation.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Animation.class
 [debug] 	Animator$$anon$1.class
 [debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Animator$$anon$1.class
+[debug] 	Animator$$anon$2.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Animator$$anon$2.class
 [debug] 	Animator$.class
 [debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Animator$.class
 [debug] 	Animator$delayedInit$body.class
 [debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Animator$delayedInit$body.class
 [debug] 	Animator.class
 [debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Animator.class
-[debug] 	Expression.class
-[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Expression.class
+[debug] 	Arm.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Arm.class
+[debug] 	ChildFrameComponent.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\ChildFrameComponent.class
+[debug] 	Controller$.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Controller$.class
+[debug] 	Controller.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Controller.class
+[debug] 	ControlPoint.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\ControlPoint.class
+[debug] 	CurrentFrameCursor$.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\CurrentFrameCursor$.class
+[debug] 	CurrentFrameCursor.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\CurrentFrameCursor.class
 [debug] 	Figure.class
 [debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Figure.class
 [debug] 	Frame.class
 [debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Frame.class
+[debug] 	FrameComponent.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\FrameComponent.class
+[debug] 	FrameController$$anon$1.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\FrameController$$anon$1.class
+[debug] 	FrameController$$anon$2.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\FrameController$$anon$2.class
+[debug] 	FrameController$.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\FrameController$.class
+[debug] 	FrameController.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\FrameController.class
 [debug] 	Head.class
 [debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Head.class
 [debug] 	Joint.class
 [debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Joint.class
-[debug] 	Pos.class
-[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Pos.class
+[debug] 	KeyFrame.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\KeyFrame.class
+[debug] 	LeftMenu$$anon$1.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\LeftMenu$$anon$1.class
+[debug] 	LeftMenu$$anon$2.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\LeftMenu$$anon$2.class
+[debug] 	LeftMenu$$anon$3.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\LeftMenu$$anon$3.class
+[debug] 	LeftMenu$$anon$4.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\LeftMenu$$anon$4.class
+[debug] 	LeftMenu$.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\LeftMenu$.class
+[debug] 	LeftMenu.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\LeftMenu.class
+[debug] 	PlayController$.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\PlayController$.class
+[debug] 	PlayController.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\PlayController.class
+[debug] 	RightMenu$$anon$1.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\RightMenu$$anon$1.class
+[debug] 	RightMenu$$anon$2.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\RightMenu$$anon$2.class
+[debug] 	RightMenu$.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\RightMenu$.class
+[debug] 	RightMenu.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\RightMenu.class
 [debug] 	SpeechBubble.class
 [debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\SpeechBubble.class
-[debug] 	Structures
-[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Structures
-[debug] 	Ticker.class
-[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Ticker.class
+[debug] 	Timeline$.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Timeline$.class
+[debug] 	Timeline.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Timeline.class
+[debug] 	TimelineComponent.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\TimelineComponent.class
+[debug] 	Viewer$.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Viewer$.class
+[debug] 	Viewer.class
+[debug] 	  C:\Users\User1\IdeaProjects\OS2 animator\target\scala-2.13\classes\Viewer.class
 [debug] Done packaging.

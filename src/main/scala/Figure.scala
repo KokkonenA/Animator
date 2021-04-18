@@ -45,7 +45,6 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
 
         if (structure(i)(0) != '/') {
             val split = structure(i).split(",")
-            println(split(0))
             val parent = newJoints(split(0))
             val expression = split(1)
 
