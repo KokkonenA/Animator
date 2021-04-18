@@ -26,7 +26,6 @@ class Joint(val parentCP: ControlPoint,
                 else if (dAngleToParent > 360) dAngleToParent - 360
                 else dAngleToParent
             }
-            this.updatePos()
         } else this.parentCP.rotate(dAngleToParent)
     }
 
@@ -61,29 +60,17 @@ class Joint(val parentCP: ControlPoint,
             val dAngleToParent = angleMouse - this.angleToScene
 
             this.rotate(dAngleToParent)
-            this.updatePos()
         }
     }
 
-    def updatePos(): Unit = {
-        val angleRadian = toRadians(this.angleToScene)
-
-        val newX = cos(angleRadian) * this.jointRadius + this.parentCP.centerX.toDouble
-
-        val newY = -sin(angleRadian) * this.jointRadius + this.parentCP.centerY.toDouble
-
-        this.setPos(newX, newY)
-        this.children.foreach(_.updatePos())
-    }
-
-    def updateFrame(): Unit = {
+    def loadFrameData(): Unit = {
         this.rotate(this.frameData(this.currIdx) - this.angleToParent)
-        this.children.foreach(_.updateFrame())
+        this.children.foreach(_.loadFrameData())
     }
 
-    def updateFrameData(): Unit = {
+    def saveFrameData(): Unit = {
         this.frameData(this.currIdx) = this.angleToParent
-        this.children.foreach(_.updateFrameData())
+        this.children.foreach(_.saveFrameData())
     }
 
     def addFrame(): Unit = {
@@ -94,6 +81,17 @@ class Joint(val parentCP: ControlPoint,
     def deleteFrame(): Unit = {
         this.frameData -= this.frameData.last
         this.children.foreach(_.deleteFrame())
+    }
+
+    def update(): Unit = {
+        val angleRadian = toRadians(this.angleToScene)
+
+        val newX = cos(angleRadian) * this.jointRadius + this.parentCP.centerX.toDouble
+
+        val newY = -sin(angleRadian) * this.jointRadius + this.parentCP.centerY.toDouble
+
+        this.setPos(newX, newY)
+        this.children.foreach(_.update())
     }
 
     this.children += new Arm(this)

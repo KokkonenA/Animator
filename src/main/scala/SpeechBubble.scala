@@ -46,12 +46,12 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
         this.children.foreach(_.deleteFrame())
     }
 
-    def updatePos(): Unit = {
+    def update(): Unit = {
         this.centerX = this.parentCP.centerX.toDouble + dxToParent
         this.centerY = this.parentCP.centerY.toDouble + dyToParent
     }
 
-    def updateFrame(): Unit = {
+    def loadFrameData(): Unit = {
         val frame = this.frameData(this.currIdx)
 
         this.dxToParent = frame._1
@@ -59,7 +59,7 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
         this.setText(frame._3)
     }
 
-    def updateFrameData(): Unit = {
+    def saveFrameData(): Unit = {
         this.frameData(this.currIdx) = Tuple3(this.dxToParent, this.dyToParent, this.text)
     }
 }

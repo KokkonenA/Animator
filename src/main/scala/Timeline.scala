@@ -3,6 +3,7 @@ import scalafx.scene.layout.{Background, BackgroundFill, CornerRadii, Pane}
 import scalafx.scene.paint.Color.Gray
 import scalafx.scene.shape.Line
 import scalafx.Includes._
+
 import scala.collection.mutable.ArrayBuffer
 
 object Timeline extends Pane {
@@ -20,6 +21,15 @@ object Timeline extends Pane {
 
     def frameCount = Animator.frameCount
 
+    def addFrame(): Unit = {
+        this.frames += new Frame
+    }
+
+    def deleteFrame(): Unit = {
+        this.children -= this.frames.last
+        this.frames -= this.frames.last
+    }
+
     def updateCursor(): Unit = {
         CurrentFrameCursor.relocate(currFrame.startX.toDouble - 20, currFrame.startY.toDouble - 20)
     }
@@ -33,18 +43,10 @@ object Timeline extends Pane {
                 this.line.startX.toDouble + i * (this.line.endX.toDouble - this.line.startX.toDouble) / length
             currFrame.endX = currFrame.startX.toDouble
         }
+    }
+
+    def update(): Unit = {
+        this.updateFrames()
         this.updateCursor()
     }
-
-    def addFrame(): Unit = {
-        this.frames += new Frame
-        this.updateFrames()
-    }
-
-    def deleteFrame(): Unit = {
-        this.children -= this.frames.last
-        this.frames -= this.frames.last
-        this.updateFrames()
-    }
-    this.updateFrames()
 }

@@ -63,16 +63,16 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
         this.children.foreach(_.deleteFrame())
     }
 
-    def updateFrame(): Unit = {
+    def loadFrameData(): Unit = {
         val data = this.frameData(this.currIdx)
         this.setPos(data._1, data._2)
-        this.children.foreach(_.updateFrame())
-        this.children.foreach(_.updatePos())
+        this.children.foreach(_.loadFrameData())
+        this.children.foreach(_.update())
     }
 
-    def updateFrameData(): Unit = {
+    def saveFrameData(): Unit = {
         this.frameData(this.currIdx) = (this.centerX.toDouble, this.centerY.toDouble)
-        this.children.foreach(_.updateFrameData())
+        this.children.foreach(_.saveFrameData())
     }
 
     this.onMouseDragged = (event) => {
@@ -88,8 +88,13 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
         val dx = mouseX - x
         val dy = mouseY - y
 
-        this.children.foreach(_.updatePos())
+        this.children.foreach(_.update())
     }
+
+    def update(): Unit = {
+        this.children.foreach(_.update())
+    }
+
     this.loadStructure(structure)
-    this.children.foreach(_.updatePos())
+    this.children.foreach(_.update())
 }

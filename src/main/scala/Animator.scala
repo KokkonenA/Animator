@@ -110,4 +110,13 @@ object Animator extends JFXApp {
     //implement constraints to root Gridpane
     root.columnConstraints = Array[ColumnConstraints](column0, column1, column2)
     root.rowConstraints = Array[RowConstraints](row0, row1)
+
+
+    def update() = {
+        this.animation.update()
+        Timeline.update()
+    }
+
+    val ticker = new Ticker(update)
+    ticker.start() // Remember this!
 }

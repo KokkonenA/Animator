@@ -4,28 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Implemented parts of the actual timeline. There is now a timeline that shows how many frames you have. You can add and remove frames. At this moment key frames are not implemented. So no change in the position of a figure stays after switching frames.">
+    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Classes Frame and CurrentFrameCurosor implemented">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/Ticker.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Animation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animation.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/CurrentFrameCursor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/CurrentFrameCursor.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Arm.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Arm.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Component.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Component.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Figure.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Figure.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Frame.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Frame.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Head.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Head.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Joint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Joint.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/SpeechBubble.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Timeline.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Timeline.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animation$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animation$$anon$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/CurrentFrameCursor$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/CurrentFrameCursor$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Frame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Timeline$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Timeline$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Timeline.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Timeline.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/os2-animator_2.13-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/os2-animator_2.13-0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/zinc/inc_compile_2.13.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/zinc/inc_compile_2.13.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/incOptions/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageBin/_global/streams/out" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +82,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -395,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618761544509</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Classes Frame and CurrentFrameCurosor implemented">
+      <created>1618763235489</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1618763235489</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -412,7 +412,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Classes Pos and Joint implemented" />
     <MESSAGE value="method calculatePos implemented for class Joint" />
     <MESSAGE value="Interim report 1 in project/progress_log.txt" />
     <MESSAGE value="New methods added for Animator, some which not yet implemented. Also a text file where Structures.txt was created. There we have a description of a figure structure which will be used in the program later." />
@@ -437,7 +436,8 @@
     <MESSAGE value="Large commit&#10;Added file component.scala that includes traits for the objects&#10;Implemented class Animation.&#10;Deleted class Frame. New frame system implementation is coming up.&#10;Deleted ticker.&#10;Every frame object now has reference both to their parent and children&#10;+ some smaller changes" />
     <MESSAGE value="Joint angle relative to parent stays now constant when parent moved.&#10;If parent is moved it will rotate with its child when the child is moved. It is still a bit buggy when mouse is close to the center of the rotation.&#10;Progress regarding speech bubble. It is now a white cicle above the head of the structure that can be moved." />
     <MESSAGE value="Implemented parts of the actual timeline. There is now a timeline that shows how many frames you have. You can add and remove frames. At this moment key frames are not implemented. So no change in the position of a figure stays after switching frames." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented parts of the actual timeline. There is now a timeline that shows how many frames you have. You can add and remove frames. At this moment key frames are not implemented. So no change in the position of a figure stays after switching frames." />
+    <MESSAGE value="Classes Frame and CurrentFrameCurosor implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Classes Frame and CurrentFrameCurosor implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

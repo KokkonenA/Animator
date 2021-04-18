@@ -32,7 +32,7 @@ class Animation {
     def nextFrame(): Unit = {
         if (this.currIdx < this.frameCount - 1) {
             this.currIdx += 1
-            this.figures.foreach(_.updateFrame())
+            this.figures.foreach(_.loadFrameData())
             Timeline.updateCursor()
         }
     }
@@ -40,7 +40,7 @@ class Animation {
     def previousFrame(): Unit = {
         if (this.currIdx > 0) {
             this.currIdx -= 1
-            this.figures.foreach(_.updateFrame())
+            this.figures.foreach(_.loadFrameData())
             Timeline.updateCursor()
         }
     }
@@ -81,5 +81,10 @@ class Animation {
     def play(): Unit = {
 
     }
+
+    def update(): Unit = {
+        this.figures.foreach(_.update())
+    }
+
     this.setBackground("file:basic.png")
 }

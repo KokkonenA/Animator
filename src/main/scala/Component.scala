@@ -7,8 +7,8 @@ trait FrameComponent extends Node {
 
     def addFrame(): Unit
     def deleteFrame(): Unit
-    def updateFrame(): Unit
-    def updateFrameData(): Unit
+    def loadFrameData(): Unit
+    def saveFrameData(): Unit
 
     val children = ArrayBuffer[ChildFrameComponent] ()
 
@@ -22,12 +22,9 @@ trait FrameComponent extends Node {
 
 trait ChildFrameComponent extends FrameComponent {
     val parentCP: ControlPoint
-    def updatePos(): Unit
+    def update(): Unit
 }
 
 trait TimelineComponent extends Node {
-    def remove(): Unit = {
-        Timeline.children.remove(this)
-    }
     Timeline.children.add(this)
 }

@@ -15,7 +15,7 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
         this.expression = newExpression
     }
 
-    def updatePos(): Unit = {
+    def update(): Unit = {
         this.centerX = this.parentCP.centerX.toDouble
         this.centerY = this.parentCP.centerY.toDouble - this.radius.toDouble
     }
@@ -30,11 +30,11 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
         this.children.foreach(_.deleteFrame())
     }
 
-    def updateFrame(): Unit = {
+    def loadFrameData(): Unit = {
         this.expression = this.frameData(this.currIdx)
     }
 
-    def updateFrameData(): Unit = {
+    def saveFrameData(): Unit = {
         this.frameData(this.currIdx) = this.expression
     }
 }
