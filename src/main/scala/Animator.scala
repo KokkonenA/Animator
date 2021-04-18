@@ -18,6 +18,7 @@ object Animator extends JFXApp {
     def newAnimation(): Unit = {
         Viewer.children.clear() //clear current objects in viewer
         this.animation = new Animation
+        Timeline.newAnimation()
     }
 
     //select one frame later as the current frame

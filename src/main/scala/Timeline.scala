@@ -13,7 +13,7 @@ object Timeline extends Pane {
 
     this.children.add(line)
 
-    val frames = ArrayBuffer.fill(this.frameCount)(new Frame)
+    private var frames = ArrayBuffer.fill(this.frameCount)(new Frame)
 
     def currIdx = Animator.currIdx
 
@@ -43,6 +43,12 @@ object Timeline extends Pane {
                 this.line.startX.toDouble + i * (this.line.endX.toDouble - this.line.startX.toDouble) / length
             currFrame.endX = currFrame.startX.toDouble
         }
+    }
+
+    def newAnimation(): Unit = {
+        frames.foreach(children.remove(_))
+        frames.clear()
+        frames = ArrayBuffer.fill(this.frameCount)(new Frame)
     }
 
     def update(): Unit = {
