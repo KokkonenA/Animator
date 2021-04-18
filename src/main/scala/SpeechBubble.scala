@@ -1,39 +1,65 @@
 import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Circle
 
-class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildComponent {
-  private var text = ""
+import scala.collection.mutable.ArrayBuffer
 
-  this.radius = 30
-  this.stroke = Gray
-  this.fill = White
+class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameComponent {
+    private var text = ""
 
-  private var dxToParent = 0.0
-  private var dyToParent = -200.0
+    this.radius = 30
+    this.stroke = Gray
+    this.fill = White
 
-  def getText = this.text
+    private var dxToParent = 0.0
+    private var dyToParent = -200.0
 
-  def setText(newText: String): Unit = {
-    this.text = newText
-  }
+    private val frameData = ArrayBuffer.fill(this.frameCount)((this.dxToParent, this.dyToParent, this.text))
 
-  this.onMouseDragged = (event) => {
-    val x = this.centerX.toDouble
-    val y = this.centerY.toDouble
+    def getText = this.text
 
-    val mouseX = event.getX
-    val mouseY = event.getY
+    def setText(newText: String): Unit = {
+        this.text = newText
+    }
 
-    this.centerX = mouseX
-    this.centerY = mouseY
+    this.onMouseDragged = (event) => {
+        val x = this.centerX.toDouble
+        val y = this.centerY.toDouble
 
-    this.dxToParent += mouseX - x
-    this.dyToParent += mouseY - y
+        val mouseX = event.getX
+        val mouseY = event.getY
 
-  }
+        this.centerX = mouseX
+        this.centerY = mouseY
 
-  def update(): Unit = {
-    this.centerX = this.parentCP.centerX.toDouble + dxToParent
-    this.centerY = this.parentCP.centerY.toDouble + dyToParent
-  }
+        this.dxToParent += mouseX - x
+        this.dyToParent += mouseY - y
+
+    }
+
+    def addFrame(): Unit = {
+        this.frameData += this.frameData.last
+        this.children.foreach(_.addFrame())
+    }
+
+    def deleteFrame(): Unit = {
+        this.frameData -= this.frameData.last
+        this.children.foreach(_.deleteFrame())
+    }
+
+    def updatePos(): Unit = {
+        this.centerX = this.parentCP.centerX.toDouble + dxToParent
+        this.centerY = this.parentCP.centerY.toDouble + dyToParent
+    }
+
+    def updateFrame(): Unit = {
+        val frame = this.frameData(this.currIdx)
+
+        this.dxToParent = frame._1
+        this.dyToParent = frame._2
+        this.setText(frame._3)
+    }
+
+    def updateFrameData(): Unit = {
+        this.frameData(this.currIdx) = Tuple3(this.dxToParent, this.dyToParent, this.text)
+    }
 }

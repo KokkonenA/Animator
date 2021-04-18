@@ -22,12 +22,16 @@ object Animator extends JFXApp {
 
     //select one frame later as the current frame
     def nextFrame(): Unit = {
-
+        this.animation.nextFrame()
     }
+
+    def currIdx = this.animation.getCurrIdx
+
+    def frameCount = this.animation.getFrameCount
 
     //select one frame earlier as the current frame
     def previousFrame(): Unit = {
-
+        this.animation.previousFrame()
     }
 
     //load an animation
@@ -42,7 +46,7 @@ object Animator extends JFXApp {
 
     //play the animation once from start to finnish
     def playAnimation() = {
-
+        this.animation.play()
     }
 
     //change background
@@ -66,7 +70,11 @@ object Animator extends JFXApp {
 
     //add new Frame to current Animation
     def addFrame(): Unit = {
+        this.animation.addFrame()
+    }
 
+    def deleteFrame(): Unit = {
+        this.animation.deleteFrame()
     }
 
     //exit the app

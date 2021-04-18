@@ -1,13 +1,16 @@
 import scalafx.scene.paint.Color.{Red, White}
+import scala.collection.mutable.ArrayBuffer
 import scala.math.{acos, cos, pow, sin, sqrt, toRadians}
 
 class Joint(val parentCP: ControlPoint,
             val jointRadius: Double,
             angle: Double)
-    extends ControlPoint with ChildComponent {
+    extends ControlPoint with ChildFrameComponent {
 
     private var locked = false
     private var angleToParent = angle - this.parentCP.angleToScene
+
+    private val frameData = ArrayBuffer.fill(this.frameCount)(this.angleToParent)
 
     def setPos(x: Double, y: Double): Unit = {
         this.centerX = x
@@ -16,15 +19,15 @@ class Joint(val parentCP: ControlPoint,
 
     def angleToScene = this.parentCP.angleToScene + this.angleToParent
 
-    def setAngle(newAngle: Double): Unit = {
+    def rotate(dAngleToParent: Double): Unit = {
         if (!this.parentCP.isLocked) {
             this.angleToParent += {
-                if (newAngle < 0) newAngle + 360
-                else if (newAngle > 360) newAngle - 360
-                else newAngle
+                if (dAngleToParent < 0) dAngleToParent + 360
+                else if (dAngleToParent > 360) dAngleToParent - 360
+                else dAngleToParent
             }
-            this.update()
-        } else this.parentCP.setAngle(newAngle)
+            this.updatePos()
+        } else this.parentCP.rotate(dAngleToParent)
     }
 
     def isLocked = this.locked
@@ -57,11 +60,12 @@ class Joint(val parentCP: ControlPoint,
 
             val dAngleToParent = angleMouse - this.angleToScene
 
-            this.setAngle(dAngleToParent)
+            this.rotate(dAngleToParent)
+            this.updatePos()
         }
     }
 
-    def update(): Unit = {
+    def updatePos(): Unit = {
         val angleRadian = toRadians(this.angleToScene)
 
         val newX = cos(angleRadian) * this.jointRadius + this.parentCP.centerX.toDouble
@@ -69,7 +73,27 @@ class Joint(val parentCP: ControlPoint,
         val newY = -sin(angleRadian) * this.jointRadius + this.parentCP.centerY.toDouble
 
         this.setPos(newX, newY)
-        this.children.foreach(_.update())
+        this.children.foreach(_.updatePos())
+    }
+
+    def updateFrame(): Unit = {
+        this.rotate(this.frameData(this.currIdx) - this.angleToParent)
+        this.children.foreach(_.updateFrame())
+    }
+
+    def updateFrameData(): Unit = {
+        this.frameData(this.currIdx) = this.angleToParent
+        this.children.foreach(_.updateFrameData())
+    }
+
+    def addFrame(): Unit = {
+        this.frameData += this.frameData.last
+        this.children.foreach(_.addFrame())
+    }
+
+    def deleteFrame(): Unit = {
+        this.frameData -= this.frameData.last
+        this.children.foreach(_.deleteFrame())
     }
 
     this.children += new Arm(this)

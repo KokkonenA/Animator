@@ -8,5 +8,5 @@ trait ControlPoint extends Circle with FrameComponent {
 
     def angleToScene: Double
     def isLocked: Boolean
-    def setAngle(newAngle: Double): Unit
+    def rotate(dAngleToParent: Double): Unit
 }
