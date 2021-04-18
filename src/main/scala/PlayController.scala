@@ -5,7 +5,7 @@ import scalafx.scene.shape.Polygon
 import scalafx.Includes._
 
 object PlayController extends Pane {
-    this.background = new Background(Array(new BackgroundFill((Gray), CornerRadii.Empty, Insets.Empty)))
+    background = new Background(Array(new BackgroundFill((Gray), CornerRadii.Empty, Insets.Empty)))
 
     val previousButton = Polygon (50, 30, 70.0, 20.0, 70.0, 40.0)
     previousButton.fill = White
@@ -30,5 +30,5 @@ object PlayController extends Pane {
         Animator.playAnimation()
     }
 
-    this.children.addAll(previousButton, nextButton, playButton)
+    children.addAll(previousButton, nextButton, playButton)
 }

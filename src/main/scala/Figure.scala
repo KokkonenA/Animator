@@ -1,24 +1,24 @@
 import scala.collection.mutable.ArrayBuffer
 
 class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
-    this.centerX = (Viewer.width / 2).toInt
-    this.centerY = (Viewer.height / 2).toInt
+    centerX = (Viewer.width / 2).toInt
+    centerY = (Viewer.height / 2).toInt
 
     private var angle = 0.0
 
-    private var frameData = ArrayBuffer.fill(this.frameCount)(this.centerX.toDouble, this.centerY.toDouble)
+    private var frameData = ArrayBuffer.fill(frameCount)(centerX.toDouble, centerY.toDouble)
 
-    def angleToScene = this.angle
+    def angleToScene = angle
 
     def isLocked = false
 
     def rotate(dAngleToParent: Double): Unit = {
-        this.angle += dAngleToParent
+        angle += dAngleToParent
     }
 
     def setPos(x: Double, y: Double): Unit = {
-        this.centerX = x
-        this.centerY = y
+        centerX = x
+        centerY = y
     }
 
     private def loadStructure(structure: ArrayBuffer [String]) {
@@ -39,7 +39,7 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
             i += 1
         }
 
-        this.children +: newJoints.values.toArray
+        children +: newJoints.values.toArray
 
         i += 1
 
@@ -50,47 +50,47 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
 
             parent.children += new Head(parent, expression)
         }
-        this.children += new SpeechBubble(this)
+        children += new SpeechBubble(this)
     }
 
     def addFrame(): Unit = {
-        this.frameData += this.frameData.last
-        this.children.foreach(_.addFrame())
+        frameData += frameData.last
+        children.foreach(_.addFrame())
     }
 
     def deleteFrame(): Unit = {
-        this.frameData -= this.frameData.last
-        this.children.foreach(_.deleteFrame())
+        frameData -= frameData.last
+        children.foreach(_.deleteFrame())
     }
 
     def loadFrameData(): Unit = {
-        val data = this.frameData(this.currIdx)
-        this.setPos(data._1, data._2)
-        this.children.foreach(_.loadFrameData())
+        val data = frameData(currIdx)
+        setPos(data._1, data._2)
+        children.foreach(_.loadFrameData())
     }
 
     def saveFrameData(): Unit = {
-        this.frameData(this.currIdx) = (this.centerX.toDouble, this.centerY.toDouble)
-        this.children.foreach(_.saveFrameData())
+        frameData(currIdx) = (centerX.toDouble, centerY.toDouble)
+        children.foreach(_.saveFrameData())
     }
 
-    this.onMouseDragged = (event) => {
-        val x = this.centerX.toDouble
-        val y = this.centerY.toDouble
+    onMouseDragged = (event) => {
+        val x = centerX.toDouble
+        val y = centerY.toDouble
 
         val mouseX = event.getX
         val mouseY = event.getY
 
-        this.centerX = mouseX
-        this.centerY = mouseY
+        centerX = mouseX
+        centerY = mouseY
 
         val dx = mouseX - x
         val dy = mouseY - y
     }
 
     def update(): Unit = {
-        this.children.foreach(_.update())
+        children.foreach(_.update())
     }
 
-    this.loadStructure(structure)
+    loadStructure(structure)
 }

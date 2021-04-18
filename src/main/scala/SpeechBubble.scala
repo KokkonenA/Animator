@@ -6,60 +6,60 @@ import scala.collection.mutable.ArrayBuffer
 class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameComponent {
     private var text = ""
 
-    this.radius = 30
-    this.stroke = Gray
-    this.fill = White
+    radius = 30
+    stroke = Gray
+    fill = White
 
     private var dxToParent = 0.0
     private var dyToParent = -200.0
 
-    private val frameData = ArrayBuffer.fill(this.frameCount)((this.dxToParent, this.dyToParent, this.text))
+    private val frameData = ArrayBuffer.fill(frameCount)((dxToParent, dyToParent, text))
 
-    def getText = this.text
+    def getText = text
 
     def setText(newText: String): Unit = {
-        this.text = newText
+        text = newText
     }
 
-    this.onMouseDragged = (event) => {
-        val x = this.centerX.toDouble
-        val y = this.centerY.toDouble
+    onMouseDragged = (event) => {
+        val x = centerX.toDouble
+        val y = centerY.toDouble
 
         val mouseX = event.getX
         val mouseY = event.getY
 
-        this.centerX = mouseX
-        this.centerY = mouseY
+        centerX = mouseX
+        centerY = mouseY
 
-        this.dxToParent += mouseX - x
-        this.dyToParent += mouseY - y
+        dxToParent += mouseX - x
+        dyToParent += mouseY - y
 
     }
 
     def addFrame(): Unit = {
-        this.frameData += this.frameData.last
-        this.children.foreach(_.addFrame())
+        frameData += frameData.last
+        children.foreach(_.addFrame())
     }
 
     def deleteFrame(): Unit = {
-        this.frameData -= this.frameData.last
-        this.children.foreach(_.deleteFrame())
+        frameData -= frameData.last
+        children.foreach(_.deleteFrame())
     }
 
     def update(): Unit = {
-        this.centerX = this.parentCP.centerX.toDouble + dxToParent
-        this.centerY = this.parentCP.centerY.toDouble + dyToParent
+        centerX = parentCP.centerX.toDouble + dxToParent
+        centerY = parentCP.centerY.toDouble + dyToParent
     }
 
     def loadFrameData(): Unit = {
-        val frame = this.frameData(this.currIdx)
+        val frame = frameData(currIdx)
 
-        this.dxToParent = frame._1
-        this.dyToParent = frame._2
-        this.setText(frame._3)
+        dxToParent = frame._1
+        dyToParent = frame._2
+        setText(frame._3)
     }
 
     def saveFrameData(): Unit = {
-        this.frameData(this.currIdx) = Tuple3(this.dxToParent, this.dyToParent, this.text)
+        frameData(currIdx) = Tuple3(dxToParent, dyToParent, text)
     }
 }

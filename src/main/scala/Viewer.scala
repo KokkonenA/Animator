@@ -3,7 +3,7 @@ import scalafx.scene.layout.{Background, BackgroundImage, BackgroundPosition, Ba
 
 object Viewer extends Pane {
     def setBackground(newBG: String) = {
-        this.background = new Background(
+        background = new Background(
             Array(
                 new BackgroundImage(
                     new Image(newBG),

@@ -7,27 +7,27 @@ import scalafx.Includes._
 import scala.collection.mutable.ArrayBuffer
 
 object Timeline extends Pane {
-    this.background = new Background(Array(new BackgroundFill((Gray), CornerRadii.Empty, Insets.Empty)))
+    background = new Background(Array(new BackgroundFill((Gray), CornerRadii.Empty, Insets.Empty)))
 
     val line = Line(0, 0.16 * 720 / 2, 0.7 * 1280, 0.16 * 720 / 2)
 
-    this.children.add(line)
+    children.add(line)
 
-    private var frames = ArrayBuffer.fill(this.frameCount)(new Frame)
+    private var frames = ArrayBuffer.fill(frameCount)(new Frame)
 
     def currIdx = Animator.currIdx
 
-    def currFrame = this.frames(this.currIdx)
+    def currFrame = frames(currIdx)
 
     def frameCount = Animator.frameCount
 
     def addFrame(): Unit = {
-        this.frames += new Frame
+        frames += new Frame
     }
 
     def deleteFrame(): Unit = {
-        this.children -= this.frames.last
-        this.frames -= this.frames.last
+        children -= frames.last
+        frames -= frames.last
     }
 
     def updateCursor(): Unit = {
@@ -35,12 +35,12 @@ object Timeline extends Pane {
     }
 
     def updateFrames(): Unit = {
-        val length = this.frames.length
+        val length = frames.length
 
         for (i <- 0 until length) {
-            val currFrame = this.frames(i)
+            val currFrame = frames(i)
             currFrame.startX =
-                this.line.startX.toDouble + i * (this.line.endX.toDouble - this.line.startX.toDouble) / length
+                line.startX.toDouble + i * (line.endX.toDouble - line.startX.toDouble) / length
             currFrame.endX = currFrame.startX.toDouble
         }
     }
@@ -48,11 +48,11 @@ object Timeline extends Pane {
     def newAnimation(): Unit = {
         frames.foreach(children.remove(_))
         frames.clear()
-        frames = ArrayBuffer.fill(this.frameCount)(new Frame)
+        frames = ArrayBuffer.fill(frameCount)(new Frame)
     }
 
     def update(): Unit = {
-        this.updateFrames()
-        this.updateCursor()
+        updateFrames()
+        updateCursor()
     }
 }

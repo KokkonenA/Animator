@@ -17,22 +17,22 @@ object Animator extends JFXApp {
     //create new Animation
     def newAnimation(): Unit = {
         Viewer.children.clear() //clear current objects in viewer
-        this.animation = new Animation
+        animation = new Animation
         Timeline.newAnimation()
     }
 
     //select one frame later as the current frame
     def nextFrame(): Unit = {
-        this.animation.nextFrame()
+        animation.nextFrame()
     }
 
-    def currIdx = this.animation.getCurrIdx
+    def currIdx = animation.getCurrIdx
 
-    def frameCount = this.animation.getFrameCount
+    def frameCount = animation.getFrameCount
 
     //select one frame earlier as the current frame
     def previousFrame(): Unit = {
-        this.animation.previousFrame()
+        animation.previousFrame()
     }
 
     //load an animation
@@ -47,12 +47,12 @@ object Animator extends JFXApp {
 
     //play the animation once from start to finnish
     def playAnimation() = {
-        this.animation.play()
+        animation.play()
     }
 
     //change background
     def setBackground(newBG: String): Unit = {
-        this.animation.setBackground(newBG)
+        animation.setBackground(newBG)
     }
 
     //add new Figure to current animation
@@ -66,16 +66,16 @@ object Animator extends JFXApp {
 
         val result = dialog.showAndWait()
 
-        if (result.isDefined) this.animation.addFigure(result.get)
+        if (result.isDefined) animation.addFigure(result.get)
     }
 
     //add new Frame to current Animation
     def addFrame(): Unit = {
-        this.animation.addFrame()
+        animation.addFrame()
     }
 
     def deleteFrame(): Unit = {
-        this.animation.deleteFrame()
+        animation.deleteFrame()
     }
 
     //exit the app
@@ -116,7 +116,7 @@ object Animator extends JFXApp {
 
 
     def update() = {
-        this.animation.update()
+        animation.update()
         Timeline.update()
     }
 

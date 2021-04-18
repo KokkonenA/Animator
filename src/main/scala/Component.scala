@@ -14,7 +14,7 @@ trait FrameComponent extends Node {
 
     def remove(): Unit = {
         Viewer.children.remove(this)
-        this.children.foreach(_.remove())
+        children.foreach(_.remove())
     }
 
     Viewer.children.add(this)

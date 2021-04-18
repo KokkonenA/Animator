@@ -10,37 +10,37 @@ class Animation {
     private var frameCount = 30
     private var currIdx = 0
 
-    def getCurrIdx = this.currIdx
+    def getCurrIdx = currIdx
 
-    def getFrameCount = this.frameCount
+    def getFrameCount = frameCount
 
     def addFrame(): Unit = {
-        this.frameCount += 1
-        this.figures.foreach(_.addFrame())
+        frameCount += 1
+        figures.foreach(_.addFrame())
         Timeline.addFrame()
     }
 
     def deleteFrame() = {
-        if (this.frameCount > 2) {
-            this.frameCount -= 1
-            if (this.currIdx == this.frameCount) this.currIdx -= 1
-            this.figures.foreach(_.deleteFrame())
+        if (frameCount > 2) {
+            frameCount -= 1
+            if (currIdx == frameCount) currIdx -= 1
+            figures.foreach(_.deleteFrame())
             Timeline.deleteFrame()
         }
     }
 
     def nextFrame(): Unit = {
-        if (this.currIdx < this.frameCount - 1) {
-            this.currIdx += 1
-            this.figures.foreach(_.loadFrameData())
+        if (currIdx < frameCount - 1) {
+            currIdx += 1
+            figures.foreach(_.loadFrameData())
             Timeline.updateCursor()
         }
     }
 
     def previousFrame(): Unit = {
-        if (this.currIdx > 0) {
-            this.currIdx -= 1
-            this.figures.foreach(_.loadFrameData())
+        if (currIdx > 0) {
+            currIdx -= 1
+            figures.foreach(_.loadFrameData())
             Timeline.updateCursor()
         }
     }
@@ -58,7 +58,7 @@ class Animation {
         val endIdx = lines.indexOf("/" + structure)
 
         if (startIdx != -1 || endIdx != -1) {
-            this.figures += new Figure(lines.slice(startIdx, endIdx + 1))
+            figures += new Figure(lines.slice(startIdx, endIdx + 1))
         } else {
             new Alert(AlertType.Error) {
                 initOwner(Animator.stage)
@@ -69,13 +69,13 @@ class Animation {
     }
 
     def deleteFigure(figure: Figure): Unit = {
-        this.figures -= figure
+        figures -= figure
         figure.remove()
     }
 
     def setBackground(newBG: String): Unit = {
         Viewer.setBackground(newBG)
-        this.background = newBG
+        background = newBG
     }
 
     def play(): Unit = {
@@ -83,8 +83,8 @@ class Animation {
     }
 
     def update(): Unit = {
-        this.figures.foreach(_.update())
+        figures.foreach(_.update())
     }
 
-    this.setBackground("file:basic.png")
+    setBackground("file:basic.png")
 }

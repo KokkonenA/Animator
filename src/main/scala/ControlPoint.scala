@@ -2,9 +2,9 @@ import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Circle
 
 trait ControlPoint extends Circle with FrameComponent {
-    this.radius = 10
-    this.stroke = Gray
-    this.fill = White
+    radius = 10
+    stroke = Gray
+    fill = White
 
     def getParent = this
     def angleToScene: Double

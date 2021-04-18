@@ -5,9 +5,9 @@ import scalafx.Includes._
 import scalafx.scene.control.Button
 
 object RightMenu extends VBox {
-    this.background = new Background(Array(new BackgroundFill((Black), CornerRadii.Empty, Insets.Empty)))
-    this.spacing = 50
-    this.alignment = Pos.Center
+    background = new Background(Array(new BackgroundFill((Black), CornerRadii.Empty, Insets.Empty)))
+    spacing = 50
+    alignment = Pos.Center
 
     //buttons for the right side menu
     val figureButton = new Button("Figure") {
@@ -29,5 +29,5 @@ object RightMenu extends VBox {
     }
 
     //add the buttons as the children of the rightMenu
-    this.children = Array [Button] (figureButton, bgButton)
+    children = Array [Button] (figureButton, bgButton)
 }

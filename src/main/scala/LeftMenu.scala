@@ -5,9 +5,9 @@ import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.control.Button
 
 object LeftMenu extends VBox {
-    this.background = new Background(Array(new BackgroundFill((Black), CornerRadii.Empty, Insets.Empty)))
-    this.spacing = 50
-    this.alignment = Pos.Center
+    background = new Background(Array(new BackgroundFill((Black), CornerRadii.Empty, Insets.Empty)))
+    spacing = 50
+    alignment = Pos.Center
 
 
     //buttons for the left side menu
@@ -45,5 +45,5 @@ object LeftMenu extends VBox {
         Animator.exit()
     }
 
-    this.children = Array [Button] (saveButton, loadButton, newButton, exitButton)
+    children = Array [Button] (saveButton, loadButton, newButton, exitButton)
 }

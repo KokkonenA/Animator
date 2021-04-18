@@ -5,13 +5,13 @@ import scalafx.scene.paint.Color.Gray
 import scalafx.Includes._
 
 object FrameController extends Pane {
-    this.background = new Background(Array(new BackgroundFill((Gray), CornerRadii.Empty, Insets.Empty)))
+    background = new Background(Array(new BackgroundFill((Gray), CornerRadii.Empty, Insets.Empty)))
 
     val addFrameButton = new Button ("+") {
-        this.relocate(50, 20)
+        relocate(50, 20)
     }
     val delFrameButton = new Button("-") {
-        this.relocate(100, 20)
+        relocate(100, 20)
     }
 
     addFrameButton.onMouseClicked = (event) => {
@@ -21,5 +21,5 @@ object FrameController extends Pane {
         Animator.deleteFrame()
     }
 
-    this.children.addAll(addFrameButton, delFrameButton)
+    children.addAll(addFrameButton, delFrameButton)
 }
