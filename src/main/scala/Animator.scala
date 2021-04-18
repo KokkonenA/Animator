@@ -91,8 +91,10 @@ object Animator extends JFXApp {
     //add objects LeftMenu, RightMenu, Controller and Viewer to root GridPane
     root.add(LeftMenu, 0, 0)
     root.add(RightMenu, 2, 0)
-    root.add(Controller, 0, 1, 3, 1)
     root.add(Viewer, 1, 0)
+    root.add(PlayController, 0, 1)
+    root.add(FrameController, 2, 1)
+    root.add(Timeline, 1, 1)
 
     //Define grid row and column sizes
     val column0 = new ColumnConstraints

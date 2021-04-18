@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Head position now fully static regarding its parent.&#10;+Small cleanups">
+    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="bug fix to joint locking system. It is still a bit weird">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/ControlPoint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ControlPoint.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Joint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Joint.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/ControlPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/ControlPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Controller.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Controller$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Controller.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -401,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618765916748</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="bug fix to joint locking system. It is still a bit weird">
+      <created>1618767230567</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1618767230567</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -418,7 +425,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="New methods added for Animator, some which not yet implemented. Also a text file where Structures.txt was created. There we have a description of a figure structure which will be used in the program later." />
     <MESSAGE value="Interim report 2 in project/progress_log.txt" />
     <MESSAGE value="Implemented actions on &quot;newButton.&quot; Also refactored &quot;stepButton&quot; to &quot;frameButton&quot;" />
     <MESSAGE value="Added new buttons for the controller unit (play, next frame, previous frame). Also there were some mistakes in the layout which I fixed" />
@@ -443,7 +449,8 @@
     <MESSAGE value="Classes Frame and CurrentFrameCurosor implemented" />
     <MESSAGE value="updating the positions of frame and timelinecomponents are now done via a ticker" />
     <MESSAGE value="Head position now fully static regarding its parent.&#10;+Small cleanups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Head position now fully static regarding its parent.&#10;+Small cleanups" />
+    <MESSAGE value="bug fix to joint locking system. It is still a bit weird" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix to joint locking system. It is still a bit weird" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
