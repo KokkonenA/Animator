@@ -1,5 +1,4 @@
 import scalafx.scene.paint.Color.{Red, White}
-import scala.collection.mutable.ArrayBuffer
 import scala.math._
 
 class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
@@ -8,7 +7,8 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
     private var locked = false
     private var angleToParent = angle - parentCP.angleToScene
 
-    private val frameData = ArrayBuffer.fill(frameCount)(angleToParent)
+    private val frameData =
+        collection.mutable.Map((frames zip Array.fill(frameCount)(angleToParent)).toSeq: _*)
 
     override def getParent = if (!parentCP.isLocked) parentCP else parentCP.getParent
 
@@ -42,23 +42,23 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
     }
 
     def loadFrameData(): Unit = {
-        rotate(frameData(currIdx) - angleToParent)
+        rotate(frameData(currFrame) - angleToParent)
         children.foreach(_.loadFrameData())
     }
 
     def saveFrameData(): Unit = {
-        frameData(currIdx) = angleToParent
+        frameData(currFrame) = angleToParent
         children.foreach(_.saveFrameData())
     }
 
-    def addFrame(): Unit = {
+    def addFrameToEnd(): Unit = {
         frameData += frameData.last
-        children.foreach(_.addFrame())
+        children.foreach(_.addFrameToEnd())
     }
 
-    def deleteFrame(): Unit = {
-        frameData -= frameData.last
-        children.foreach(_.deleteFrame())
+    def deleteLastFrame(): Unit = {
+        frameData -= frameData.last._1
+        children.foreach(_.deleteLastFrame())
     }
 
     onMouseClicked = (event) => {

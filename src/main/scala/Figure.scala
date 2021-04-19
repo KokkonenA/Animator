@@ -5,8 +5,8 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
     centerY = (Viewer.height / 2).toInt
 
     private var angle = 0.0
-
-    private var frameData = ArrayBuffer.fill(frameCount)(centerX.toDouble, centerY.toDouble)
+    private val frameData =
+        collection.mutable.Map((frames zip Array.fill(frameCount)(centerX.toDouble, centerY.toDouble)).toSeq: _*)
 
     def angleToScene = angle
 
@@ -53,24 +53,24 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
         children += new SpeechBubble(this)
     }
 
-    def addFrame(): Unit = {
-        frameData += frameData.last
-        children.foreach(_.addFrame())
+    def addFrameToEnd(): Unit = {
+        frameData.addOne(frames.last -> frameData.last._2)
+        children.foreach(_.addFrameToEnd())
     }
 
-    def deleteFrame(): Unit = {
-        frameData -= frameData.last
-        children.foreach(_.deleteFrame())
+    def deleteLastFrame(): Unit = {
+        frameData -= frameData.last._1
+        children.foreach(_.deleteLastFrame())
     }
 
     def loadFrameData(): Unit = {
-        val data = frameData(currIdx)
+        val data = frameData(currFrame)
         setPos(data._1, data._2)
         children.foreach(_.loadFrameData())
     }
 
     def saveFrameData(): Unit = {
-        frameData(currIdx) = (centerX.toDouble, centerY.toDouble)
+        frameData(currFrame) = (centerX.toDouble, centerY.toDouble)
         children.foreach(_.saveFrameData())
     }
 

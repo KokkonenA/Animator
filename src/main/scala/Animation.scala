@@ -5,43 +5,41 @@ import scala.io.Source
 
 class Animation {
     val figures = ArrayBuffer [Figure] ()
+    val frames = ArrayBuffer.iterate(new Frame(None), 30)(n => new Frame(Some(n)))
+
     private var background = ""
 
-    private var frameCount = 30
-    private var currIdx = 0
+    private var currFrame = frames(0)
 
-    def getCurrIdx = currIdx
+    def getCurrFrame = currFrame
 
-    def getFrameCount = frameCount
+    def frameCount = frames.length
 
-    def addFrame(): Unit = {
-        frameCount += 1
-        figures.foreach(_.addFrame())
-        Timeline.addFrame()
+    def addFrameToEnd(): Unit = {
+        frames += new Frame(Some(frames.last))
+        figures.foreach(_.addFrameToEnd())
     }
 
-    def deleteFrame() = {
+    def deleteLastFrame() = {
         if (frameCount > 2) {
-            frameCount -= 1
-            if (currIdx == frameCount) currIdx -= 1
-            figures.foreach(_.deleteFrame())
-            Timeline.deleteFrame()
+            if (currFrame == frames.last) currFrame = frames.last.previous.get
+            frames.last.remove()
+            frames -= frames.last
+            figures.foreach(_.deleteLastFrame())
         }
     }
 
     def nextFrame(): Unit = {
-        if (currIdx < frameCount - 1) {
-            currIdx += 1
+        if (currFrame != frames.last) {
+            currFrame = frames.find(_.previous == Some(currFrame)).get
             figures.foreach(_.loadFrameData())
-            Timeline.updateCursor()
         }
     }
 
     def previousFrame(): Unit = {
-        if (currIdx > 0) {
-            currIdx -= 1
+        if (currFrame != frames.head) {
+            currFrame = currFrame.previous.get
             figures.foreach(_.loadFrameData())
-            Timeline.updateCursor()
         }
     }
 
@@ -84,6 +82,8 @@ class Animation {
 
     def update(): Unit = {
         figures.foreach(_.update())
+        frames.foreach(_.update())
+        CurrentFrameCursor.update()
     }
 
     setBackground("file:basic.png")

@@ -18,17 +18,18 @@ object Animator extends JFXApp {
     def newAnimation(): Unit = {
         Viewer.children.clear() //clear current objects in viewer
         animation = new Animation
-        Timeline.newAnimation()
     }
+
+    def frames = animation.frames
 
     //select one frame later as the current frame
     def nextFrame(): Unit = {
         animation.nextFrame()
     }
 
-    def currIdx = animation.getCurrIdx
+    def currFrame = animation.getCurrFrame
 
-    def frameCount = animation.getFrameCount
+    def frameCount = animation.frameCount
 
     //select one frame earlier as the current frame
     def previousFrame(): Unit = {
@@ -71,11 +72,11 @@ object Animator extends JFXApp {
 
     //add new Frame to current Animation
     def addFrame(): Unit = {
-        animation.addFrame()
+        animation.addFrameToEnd()
     }
 
     def deleteFrame(): Unit = {
-        animation.deleteFrame()
+        animation.deleteLastFrame()
     }
 
     //exit the app
@@ -117,7 +118,6 @@ object Animator extends JFXApp {
 
     def update() = {
         animation.update()
-        Timeline.update()
     }
 
     val ticker = new Ticker(update)

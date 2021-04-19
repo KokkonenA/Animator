@@ -9,8 +9,8 @@ class Arm(val parentCP: Joint) extends Line with ChildFrameComponent {
         endY = parentCP.parentCP.centerY.toDouble
     }
 
-    def addFrame(): Unit = {}
-    def deleteFrame(): Unit = {}
+    def addFrameToEnd(): Unit = {}
+    def deleteLastFrame(): Unit = {}
     def loadFrameData(): Unit = {}
     def saveFrameData(): Unit = {}
 }

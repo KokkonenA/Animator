@@ -2,11 +2,12 @@ import scalafx.scene.Node
 import scala.collection.mutable.ArrayBuffer
 
 trait FrameComponent extends Node {
+    def frames = Animator.frames
     def frameCount = Animator.frameCount
-    def currIdx = Animator.currIdx
+    def currFrame = Animator.currFrame
 
-    def addFrame(): Unit
-    def deleteFrame(): Unit
+    def addFrameToEnd(): Unit
+    def deleteLastFrame(): Unit
     def loadFrameData(): Unit
     def saveFrameData(): Unit
 
@@ -26,5 +27,8 @@ trait ChildFrameComponent extends FrameComponent {
 }
 
 trait TimelineComponent extends Node {
+    def remove(): Unit = {
+        Timeline.children.remove(this)
+    }
     Timeline.children.add(this)
 }

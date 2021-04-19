@@ -13,7 +13,8 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
     private var dxToParent = 0.0
     private var dyToParent = -200.0
 
-    private val frameData = ArrayBuffer.fill(frameCount)((dxToParent, dyToParent, text))
+    private val frameData =
+        collection.mutable.Map((frames zip Array.fill(frameCount)((dxToParent, dyToParent, text))).toSeq: _*)
 
     def getText = text
 
@@ -33,17 +34,16 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
 
         dxToParent += mouseX - x
         dyToParent += mouseY - y
-
     }
 
-    def addFrame(): Unit = {
+    def addFrameToEnd(): Unit = {
         frameData += frameData.last
-        children.foreach(_.addFrame())
+        children.foreach(_.addFrameToEnd())
     }
 
-    def deleteFrame(): Unit = {
-        frameData -= frameData.last
-        children.foreach(_.deleteFrame())
+    def deleteLastFrame(): Unit = {
+        frameData -= frameData.last._1
+        children.foreach(_.deleteLastFrame())
     }
 
     def update(): Unit = {
@@ -52,7 +52,7 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
     }
 
     def loadFrameData(): Unit = {
-        val frame = frameData(currIdx)
+        val frame = frameData(currFrame)
 
         dxToParent = frame._1
         dyToParent = frame._2
@@ -60,6 +60,6 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
     }
 
     def saveFrameData(): Unit = {
-        frameData(currIdx) = Tuple3(dxToParent, dyToParent, text)
+        frameData(currFrame) = Tuple3(dxToParent, dyToParent, text)
     }
 }

@@ -2,9 +2,14 @@ import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Polygon
 
 object CurrentFrameCursor extends Polygon with TimelineComponent {
-    points.addAll(Timeline.line.startX.toDouble - 20, Timeline.line.startY.toDouble - 20,
-        Timeline.line.startX.toDouble + 20, Timeline.line.startY.toDouble - 20,
-        Timeline.line.startX.toDouble, Timeline.line.startY.toDouble)
+    private var line = Timeline.line
+    points.addAll(line.startX.toDouble - 20, line.startY.toDouble - 40,
+        line.startX.toDouble + 20, line.startY.toDouble - 40,
+        line.startX.toDouble, line.startY.toDouble - 20)
     fill = White
     stroke = Gray
+
+    def update(): Unit = {
+        this.layoutX = Animator.currFrame.startX.toDouble
+    }
 }

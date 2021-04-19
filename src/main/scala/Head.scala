@@ -9,7 +9,8 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
     stroke = Gray
     fill = White
 
-    private val frameData = ArrayBuffer.fill(frameCount)(expression)
+    private val frameData =
+        collection.mutable.Map((Animator.frames zip Array.fill(frameCount)(expression)).toSeq: _*)
 
     def getExpression = expression
 
@@ -17,22 +18,22 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
         expression = newExpression
     }
 
-    def addFrame(): Unit = {
+    def addFrameToEnd(): Unit = {
         frameData += frameData.last
-        children.foreach(_.addFrame())
+        children.foreach(_.addFrameToEnd())
     }
 
-    def deleteFrame(): Unit = {
+    def deleteLastFrame(): Unit = {
         frameData += frameData.last
-        children.foreach(_.deleteFrame())
+        children.foreach(_.deleteLastFrame())
     }
 
     def loadFrameData(): Unit = {
-        expression = frameData(currIdx)
+        expression = frameData(currFrame)
     }
 
     def saveFrameData(): Unit = {
-        frameData(currIdx) = expression
+        frameData(currFrame) = expression
     }
 
     def update(): Unit = {
