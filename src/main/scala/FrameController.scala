@@ -14,12 +14,19 @@ object FrameController extends Pane {
         relocate(100, 20)
     }
 
+    val keyButton = new Button("key") {
+        relocate(70, 50)
+    }
+
     addFrameButton.onMouseClicked = (event) => {
         Animator.addFrame()
     }
     delFrameButton.onMouseClicked = (event) => {
         Animator.deleteFrame()
     }
+    keyButton.onMouseClicked = (event) => {
+        Animator.currFrame.toggleKeyFrame()
+    }
 
-    children.addAll(addFrameButton, delFrameButton)
+    children.addAll(addFrameButton, delFrameButton, keyButton)
 }
