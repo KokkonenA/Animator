@@ -81,6 +81,10 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
             val dAngleToParent = angleMouse - angleToScene
 
             rotate(dAngleToParent)
+
+            if (!currFrame.isKeyFrame) {
+                currFrame.toggleKeyFrame()
+            }
         }
     }
 

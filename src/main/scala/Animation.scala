@@ -1,5 +1,7 @@
 import scalafx.scene.control.Alert
 import scalafx.scene.control.Alert.AlertType
+
+import java.util.{Timer, TimerTask}
 import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 
@@ -77,7 +79,18 @@ class Animation {
     }
 
     def play(): Unit = {
+        currFrame = frames(0)
 
+        val timer = new Timer
+        timer.scheduleAtFixedRate(new TimerTask {
+            var count = 0
+
+            override def run(): Unit = {
+                nextFrame()
+                count += 1
+                if (count == frameCount) timer.cancel()
+            }
+        }, 1000, 42)
     }
 
     def update(): Unit = {

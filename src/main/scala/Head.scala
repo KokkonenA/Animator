@@ -1,7 +1,5 @@
 import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Circle
-
-import scala.collection.mutable.ArrayBuffer
 import scala.math.{cos, sin}
 
 class Head (val parentCP: ControlPoint, private var expression: String) extends Circle with ChildFrameComponent {

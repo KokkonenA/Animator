@@ -1,8 +1,6 @@
 import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Circle
 
-import scala.collection.mutable.ArrayBuffer
-
 class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameComponent {
     private var text = ""
 
@@ -34,6 +32,10 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
 
         dxToParent += mouseX - x
         dyToParent += mouseY - y
+
+        if (!currFrame.isKeyFrame) {
+            currFrame.toggleKeyFrame()
+        }
     }
 
     def addFrameToEnd(): Unit = {
