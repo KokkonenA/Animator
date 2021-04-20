@@ -53,7 +53,7 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
     }
 
     def addFrameToEnd(): Unit = {
-        frameData.addOne(frames.last -> frameData.last._2)
+        frameData += (frames.last -> frameData.last._2)
         children.foreach(_.addFrameToEnd())
     }
 

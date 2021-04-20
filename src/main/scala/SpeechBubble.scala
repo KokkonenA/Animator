@@ -39,7 +39,7 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
     }
 
     def addFrameToEnd(): Unit = {
-        frameData += frameData.last
+        frameData += (frames.last -> frameData.last._2)
         children.foreach(_.addFrameToEnd())
     }
 

@@ -17,7 +17,7 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
     }
 
     def addFrameToEnd(): Unit = {
-        frameData += frameData.last
+        frameData += (frames.last -> frameData.last._2)
         children.foreach(_.addFrameToEnd())
     }
 

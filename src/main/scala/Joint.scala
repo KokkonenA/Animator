@@ -78,7 +78,7 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
     }
 
     def addFrameToEnd(): Unit = {
-        frameData += frameData.last
+        frameData += (frames.last -> frameData.last._2)
         children.foreach(_.addFrameToEnd())
     }
 
