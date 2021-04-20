@@ -34,6 +34,27 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
         frameData(currFrame) = expression
     }
 
+    def setDataEqual(start: Frame, end: Frame): Unit = {
+        var frame = end
+
+        while (frame != start) {
+            frameData(frame) = frameData(start)
+            frame = frame.previous.get
+        }
+    }
+
+    def interpolate(start: Frame, end: Frame, length: Int): Unit = {
+        var idx = 0
+
+        var frame = end
+
+        while(frame != start) {
+            frameData(frame) = frameData(start)
+            idx += 1
+            frame = frame.previous.get
+        }
+    }
+
     def update(): Unit = {
         val angle = parentCP.angleToScene.toRadians
 

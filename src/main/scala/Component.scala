@@ -10,6 +10,8 @@ trait FrameComponent extends Node {
     def deleteLastFrame(): Unit
     def loadFrameData(): Unit
     def saveFrameData(): Unit
+    def setDataEqual(start: Frame, end: Frame): Unit
+    def interpolate(start: Frame, end: Frame, length: Int): Unit
 
     val children = ArrayBuffer[ChildFrameComponent] ()
 

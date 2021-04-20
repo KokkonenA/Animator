@@ -15,6 +15,14 @@ class Animation {
 
     def getCurrFrame = currFrame
 
+    def firstFrame = frames.head
+
+    def lastFrame = frames.last
+
+    def keyFrames = frames.filter(_.isKeyFrame)
+
+    def keyFramesWithIndex = frames.zipWithIndex.filter(_._1.isKeyFrame)
+
     def frameCount = frames.length
 
     def addFrameToEnd(): Unit = {
@@ -32,6 +40,8 @@ class Animation {
     }
 
     def nextFrame(): Unit = {
+        calculateFrameData()
+
         if (currFrame != frames.last) {
             currFrame = frames.find(_.previous == Some(currFrame)).get
             figures.foreach(_.loadFrameData())
@@ -39,9 +49,50 @@ class Animation {
     }
 
     def previousFrame(): Unit = {
+        calculateFrameData()
+
         if (currFrame != frames.head) {
             currFrame = currFrame.previous.get
             figures.foreach(_.loadFrameData())
+        }
+    }
+
+    def saveFrameData(): Unit = {
+        figures.foreach(_.saveFrameData())
+    }
+
+    def framesBetween(start: Frame, end: Frame): Int = {
+        frames.indexOf(end) - frames.indexOf(start)
+    }
+
+    def calculateFrameData(): Unit = {
+        val frame = currFrame
+
+        val hasKey = frame.isKeyFrame
+
+        val idx = frames.indexOf(frame)
+
+        val findPrevious = keyFramesWithIndex.findLast(_._2 < idx)
+        val previous = if(findPrevious.isDefined) findPrevious.get._1 else firstFrame
+
+        val findNext = keyFramesWithIndex.find(_._2 > idx)
+        val next = if(findNext.isDefined) findNext.get._1 else lastFrame
+
+        val previousHasKey = previous.isKeyFrame
+        val nextHasKey = next.isKeyFrame
+
+        if (hasKey) {
+            saveFrameData()
+            if (previousHasKey) figures.foreach(_.interpolate(previous, frame, framesBetween(previous,frame)))
+
+            if (nextHasKey) figures.foreach(_.interpolate(frame, next, framesBetween(frame, next)))
+            else figures.foreach(_.setDataEqual(frame, next))
+        } else {
+            if (previousHasKey) figures.foreach(_.interpolate(previous, next, framesBetween(previous, next)))
+            else {
+                if (nextHasKey) figures.foreach(_.setDataEqual(previous, next))
+                else figures.foreach(_.setDataEqual(previous, next.previous.get))
+            }
         }
     }
 

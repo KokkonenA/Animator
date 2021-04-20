@@ -38,7 +38,6 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
             newJoints += (name -> newJoint)
             i += 1
         }
-
         children +: newJoints.values.toArray
 
         i += 1
@@ -74,6 +73,32 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
         children.foreach(_.saveFrameData())
     }
 
+    def setDataEqual(start: Frame, end: Frame): Unit = {
+        var frame = end
+
+        while (frame != start) {
+            frameData(frame) = frameData(start)
+            frame = frame.previous.get
+        }
+        children.foreach(_.setDataEqual(start, end))
+    }
+
+    def interpolate(start: Frame, end: Frame, length: Int): Unit = {
+        var idx = 0
+
+        var frame = end
+
+        while(frame != start) {
+            frameData(frame) = (
+                frameData(end)._1 + (frameData(start)._1 - frameData(end)._1) * idx / length,
+                    frameData(end)._2 + (frameData(start)._2 - frameData(end)._2) * idx / length
+                )
+            idx += 1
+            frame = frame.previous.get
+        }
+        children.foreach(_.interpolate(start, end, length))
+    }
+
     onMouseDragged = (event) => {
         val x = centerX.toDouble
         val y = centerY.toDouble
@@ -86,6 +111,10 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
 
         val dx = mouseX - x
         val dy = mouseY - y
+
+        if (!currFrame.isKeyFrame) {
+            currFrame.toggleKeyFrame()
+        }
     }
 
     def update(): Unit = {

@@ -10,6 +10,8 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
     private val frameData =
         collection.mutable.Map((frames zip Array.fill(frameCount)(angleToParent)).toSeq: _*)
 
+    private var arm = new Arm(this)
+
     override def getParent = if (!parentCP.isLocked) parentCP else parentCP.getParent
 
     def setPos(x: Double, y: Double): Unit = {
@@ -51,6 +53,30 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
         children.foreach(_.saveFrameData())
     }
 
+    def setDataEqual(start: Frame, end: Frame): Unit = {
+        var frame = end
+
+        while (frame != start) {
+            frameData(frame) = frameData(start)
+            frame = frame.previous.get
+        }
+        children.foreach(_.setDataEqual(start, end))
+    }
+
+    def interpolate(start: Frame, end: Frame, length: Int): Unit = {
+        var idx = 0
+
+        var frame = end
+
+        while(frame != start) {
+            frameData(frame) =
+                (frameData(end) + (frameData(start) - frameData(end)) * idx / length)
+            idx += 1
+            frame = frame.previous.get
+        }
+        children.foreach(_.interpolate(start, end, length))
+    }
+
     def addFrameToEnd(): Unit = {
         frameData += frameData.last
         children.foreach(_.addFrameToEnd())
@@ -64,7 +90,6 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
     onMouseClicked = (event) => {
         toggleLocked()
     }
-
 
     onMouseDragged = (event) => {
         if (!isLocked) {
@@ -92,12 +117,11 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
         val angleRadian = toRadians(angleToScene)
 
         val newX = cos(angleRadian) * jointRadius + parentCP.centerX.toDouble
-
         val newY = -sin(angleRadian) * jointRadius + parentCP.centerY.toDouble
 
         setPos(newX, newY)
-        children.foreach(_.update())
-    }
 
-    children += new Arm(this)
+        children.foreach(_.update())
+        arm.update()
+    }
 }

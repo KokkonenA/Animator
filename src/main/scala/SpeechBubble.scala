@@ -64,4 +64,29 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
     def saveFrameData(): Unit = {
         frameData(currFrame) = Tuple3(dxToParent, dyToParent, text)
     }
+
+    def setDataEqual(start: Frame, end: Frame): Unit = {
+        var frame = end
+
+        while (frame != start) {
+            frameData(frame) = frameData(start)
+            frame = frame.previous.get
+        }
+    }
+
+    def interpolate(start: Frame, end: Frame, length: Int): Unit = {
+        var idx = 0
+
+        var frame = end
+
+        while(frame != start) {
+            frameData(frame) = (
+                frameData(end)._1 + (frameData(start)._1 - frameData(end)._1) * idx / length,
+                frameData(end)._2 + (frameData(start)._2 - frameData(end)._2) * idx / length,
+                    frameData(end)._3
+                )
+            idx += 1
+            frame = frame.previous.get
+        }
+    }
 }

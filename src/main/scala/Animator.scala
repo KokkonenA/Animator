@@ -20,12 +20,12 @@ object Animator extends JFXApp {
         animation = new Animation
     }
 
-    def frames = animation.frames
-
     //select one frame later as the current frame
     def nextFrame(): Unit = {
         animation.nextFrame()
     }
+
+    def frames = animation.frames
 
     def currFrame = animation.getCurrFrame
 
@@ -77,6 +77,10 @@ object Animator extends JFXApp {
 
     def deleteFrame(): Unit = {
         animation.deleteLastFrame()
+    }
+
+    def saveFrameData(): Unit = {
+        animation.saveFrameData()
     }
 
     //exit the app

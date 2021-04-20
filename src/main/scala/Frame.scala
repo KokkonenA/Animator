@@ -26,7 +26,6 @@ class Frame (val previous: Option[Frame]) extends Line with TimelineComponent {
                 previous.get.startX.toDouble + (timeline.endX.toDouble - timeline.startX.toDouble) / Animator.frameCount
             endX = startX.toDouble
         }
-
         if (isKeyFrame) {
             key.get.update()
         }

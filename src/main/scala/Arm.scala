@@ -1,6 +1,6 @@
 import scalafx.scene.shape.Line
 
-class Arm(val parentCP: Joint) extends Line with ChildFrameComponent {
+class Arm(val parentCP: Joint) extends Line {
     def update(): Unit = {
         startX = parentCP.centerX.toDouble
         startY = parentCP.centerY.toDouble
@@ -8,9 +8,5 @@ class Arm(val parentCP: Joint) extends Line with ChildFrameComponent {
         endX = parentCP.parentCP.centerX.toDouble
         endY = parentCP.parentCP.centerY.toDouble
     }
-
-    def addFrameToEnd(): Unit = {}
-    def deleteLastFrame(): Unit = {}
-    def loadFrameData(): Unit = {}
-    def saveFrameData(): Unit = {}
+    Viewer.children.add(this)
 }
