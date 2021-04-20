@@ -150,5 +150,10 @@ class Animation {
         CurrentFrameCursor.update()
     }
 
+    def close(): Unit = {
+        this.figures.foreach(_.remove())
+        this.frames.foreach(_.remove())
+    }
+
     setBackground("file:basic.png")
 }

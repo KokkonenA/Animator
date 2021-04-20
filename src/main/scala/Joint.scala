@@ -124,4 +124,9 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
         children.foreach(_.update())
         arm.update()
     }
+
+    override def remove(): Unit = {
+        Viewer.children.removeAll(this, arm)
+        children.foreach(_.remove())
+    }
 }

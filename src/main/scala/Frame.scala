@@ -30,4 +30,9 @@ class Frame (val previous: Option[Frame]) extends Line with TimelineComponent {
             key.get.update()
         }
     }
+
+    override def remove(): Unit = {
+        Viewer.children.remove(this)
+        if (isKeyFrame) Viewer.children.remove(key.get)
+    }
 }

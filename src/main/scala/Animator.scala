@@ -16,7 +16,7 @@ object Animator extends JFXApp {
 
     //create new Animation
     def newAnimation(): Unit = {
-        Viewer.children.clear() //clear current objects in viewer
+        animation.close()
         animation = new Animation
     }
 
