@@ -1,37 +1,26 @@
-import scalafx.scene.paint.Color.{Gray, White}
-import scalafx.scene.shape.Circle
+import scalafx.scene.paint.Color.Black
+import scalafx.scene.text.{Font, Text}
 
-class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameComponent {
-    private var text = ""
-
-    radius = 30
-    stroke = Gray
-    fill = White
+class Speech(val parentCP: ControlPoint) extends Text with ChildFrameComponent {
+    fill = Black
+    font = new Font(50)
+    text = ""
 
     private var dxToParent = 0.0
-    private var dyToParent = -200.0
+    private var dyToParent = -100.0
 
     private val frameData =
-        collection.mutable.Map((frames zip Array.fill(frameCount)((dxToParent, dyToParent, text))).toSeq: _*)
-
-    def getText = text
-
-    def setText(newText: String): Unit = {
-        text = newText
-    }
+        collection.mutable.Map((frames zip Array.fill(frameCount)((dxToParent, dyToParent, text.value))).toSeq: _*)
 
     onMouseDragged = (event) => {
-        val x = centerX.toDouble
-        val y = centerY.toDouble
+        val x = parentCP.centerX.toDouble
+        val y = parentCP.centerY.toDouble
 
         val mouseX = event.getX
         val mouseY = event.getY
 
-        centerX = mouseX
-        centerY = mouseY
-
-        dxToParent += mouseX - x
-        dyToParent += mouseY - y
+        dxToParent = mouseX - x
+        dyToParent = mouseY - y
 
         if (!currFrame.isKeyFrame) {
             currFrame.toggleKeyFrame()
@@ -49,8 +38,8 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
     }
 
     def update(): Unit = {
-        centerX = parentCP.centerX.toDouble + dxToParent
-        centerY = parentCP.centerY.toDouble + dyToParent
+        x = parentCP.centerX.toDouble + dxToParent
+        y = parentCP.centerY.toDouble + dyToParent
     }
 
     def loadFrameData(): Unit = {
@@ -58,11 +47,12 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
 
         dxToParent = frame._1
         dyToParent = frame._2
-        setText(frame._3)
+        println(frame._3)
+        text = frame._3
     }
 
     def saveFrameData(): Unit = {
-        frameData(currFrame) = Tuple3(dxToParent, dyToParent, text)
+        frameData(currFrame) = Tuple3(dxToParent, dyToParent, text.value)
     }
 
     def setDataEqual(start: Frame, end: Frame): Unit = {
@@ -83,7 +73,7 @@ class SpeechBubble (val parentCP: ControlPoint) extends Circle with ChildFrameCo
             frameData(frame) = (
                 frameData(end)._1 + (frameData(start)._1 - frameData(end)._1) * idx / length,
                 frameData(end)._2 + (frameData(start)._2 - frameData(end)._2) * idx / length,
-                    frameData(end)._3
+                    if (frame != end) frameData(start)._3 else frameData(end)._3
                 )
             idx += 1
             frame = frame.previous.get

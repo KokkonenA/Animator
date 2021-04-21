@@ -24,7 +24,6 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
     def rotate(dAngleToParent: Double): Unit = {
         if (!parentCP.isLocked) angleToParent = (angleToParent + dAngleToParent) % 360
         else parentCP.rotate(dAngleToParent)
-        println(angleToParent + " " + angleToScene)
     }
 
     def isLocked = locked
@@ -40,7 +39,7 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
     }
 
     def loadFrameData(): Unit = {
-        rotate(frameData(currFrame) - angleToParent)
+        angleToParent = frameData(currFrame)
         children.foreach(_.loadFrameData())
     }
 

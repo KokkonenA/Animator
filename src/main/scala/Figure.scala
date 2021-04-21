@@ -49,7 +49,6 @@ class Figure (structure: ArrayBuffer[String]) extends ControlPoint {
 
             parent.children += new Head(parent, expression)
         }
-        children += new SpeechBubble(this)
     }
 
     def addFrameToEnd(): Unit = {

@@ -1,6 +1,5 @@
 import scalafx.scene.control.Alert
 import scalafx.scene.control.Alert.AlertType
-
 import java.util.{Timer, TimerTask}
 import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
@@ -39,21 +38,20 @@ class Animation {
         }
     }
 
-    def nextFrame(): Unit = {
-        if (currFrame.isKeyFrame) updateFrameData()
+    def setCurrFrame(frame: Frame) {
+        currFrame = frame
+        figures.foreach(_.loadFrameData())
+    }
 
+    def nextFrame(): Unit = {
         if (currFrame != frames.last) {
-            currFrame = frames.find(_.previous == Some(currFrame)).get
-            figures.foreach(_.loadFrameData())
+            setCurrFrame(frames.find(_.previous == Some(currFrame)).get)
         }
     }
 
     def previousFrame(): Unit = {
-        if (currFrame.isKeyFrame) updateFrameData()
-
         if (currFrame != frames.head) {
-            currFrame = currFrame.previous.get
-            figures.foreach(_.loadFrameData())
+            setCurrFrame(currFrame.previous.get)
         }
     }
 
@@ -83,16 +81,16 @@ class Animation {
 
         if (hasKey) {
             saveFrameData()
-            if (previousHasKey) figures.foreach(_.interpolate(previous, frame, framesBetween(previous,frame)))
 
             if (nextHasKey) figures.foreach(_.interpolate(frame, next, framesBetween(frame, next)))
             else figures.foreach(_.setDataEqual(frame, next))
+
+            if (previousHasKey) figures.foreach(_.interpolate(previous, frame, framesBetween(previous, frame)))
+            else figures.foreach(_.setDataEqual(previous, frame.previous.get))
         } else {
-            if (previousHasKey) figures.foreach(_.interpolate(previous, next, framesBetween(previous, next)))
-            else {
-                if (nextHasKey) figures.foreach(_.setDataEqual(previous, next.previous.get))
-                else figures.foreach(_.setDataEqual(previous, next.previous.get))
-            }
+            if (previousHasKey && nextHasKey) figures.foreach(_.interpolate(previous, next, framesBetween(previous, next)))
+            else if (nextHasKey) figures.foreach(_.setDataEqual(previous, next.previous.get))
+            else figures.foreach(_.setDataEqual(previous, next))
         }
     }
 
@@ -130,7 +128,7 @@ class Animation {
     }
 
     def play(): Unit = {
-        currFrame = frames(0)
+        setCurrFrame(firstFrame)
 
         val timer = new Timer
         timer.scheduleAtFixedRate(new TimerTask {

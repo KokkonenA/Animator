@@ -1,5 +1,7 @@
+import scalafx.scene.control.TextInputDialog
 import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Circle
+
 import scala.math.{cos, sin}
 
 class Head (val parentCP: ControlPoint, private var expression: String) extends Circle with ChildFrameComponent {
@@ -9,6 +11,9 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
 
     private val frameData =
         collection.mutable.Map((Animator.frames zip Array.fill(frameCount)(expression)).toSeq: _*)
+
+    private val speech = new Speech(parentCP)
+    this.parentCP.children += speech
 
     def getExpression = expression
 
@@ -52,6 +57,25 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
             frameData(frame) = frameData(start)
             idx += 1
             frame = frame.previous.get
+        }
+    }
+
+    onMouseClicked = (event) => {
+        val dialog = new TextInputDialog(defaultValue = speech.text.value) {
+            initOwner(Animator.stage)
+            title = "Add speech"
+            headerText = "Please type text for the stick figure to say"
+            contentText = "Speech: "
+        }
+
+        val result = dialog.showAndWait()
+
+        if (result.isDefined) {
+            speech.text = result.get
+
+            if (!currFrame.isKeyFrame) {
+                currFrame.toggleKeyFrame()
+            }
         }
     }
 
