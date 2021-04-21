@@ -19,16 +19,12 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
         centerY = y
     }
 
-    def angleToScene = parentCP.angleToScene + angleToParent
+    def angleToScene = (parentCP.angleToScene + angleToParent) % 360
 
     def rotate(dAngleToParent: Double): Unit = {
-        if (!parentCP.isLocked) {
-            angleToParent += {
-                if (dAngleToParent < 0) dAngleToParent + 360
-                else if (dAngleToParent > 360) dAngleToParent - 360
-                else dAngleToParent
-            }
-        } else parentCP.rotate(dAngleToParent)
+        if (!parentCP.isLocked) angleToParent = (angleToParent + dAngleToParent) % 360
+        else parentCP.rotate(dAngleToParent)
+        println(angleToParent + " " + angleToScene)
     }
 
     def isLocked = locked

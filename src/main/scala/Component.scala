@@ -19,7 +19,6 @@ trait FrameComponent extends Node {
         Viewer.children.remove(this)
         children.foreach(_.remove())
     }
-
     Viewer.children.add(this)
 }
 

@@ -40,7 +40,7 @@ class Animation {
     }
 
     def nextFrame(): Unit = {
-        calculateFrameData()
+        if (currFrame.isKeyFrame) updateFrameData()
 
         if (currFrame != frames.last) {
             currFrame = frames.find(_.previous == Some(currFrame)).get
@@ -49,7 +49,7 @@ class Animation {
     }
 
     def previousFrame(): Unit = {
-        calculateFrameData()
+        if (currFrame.isKeyFrame) updateFrameData()
 
         if (currFrame != frames.head) {
             currFrame = currFrame.previous.get
@@ -65,7 +65,7 @@ class Animation {
         frames.indexOf(end) - frames.indexOf(start)
     }
 
-    def calculateFrameData(): Unit = {
+    def updateFrameData(): Unit = {
         val frame = currFrame
 
         val hasKey = frame.isKeyFrame
@@ -90,7 +90,7 @@ class Animation {
         } else {
             if (previousHasKey) figures.foreach(_.interpolate(previous, next, framesBetween(previous, next)))
             else {
-                if (nextHasKey) figures.foreach(_.setDataEqual(previous, next))
+                if (nextHasKey) figures.foreach(_.setDataEqual(previous, next.previous.get))
                 else figures.foreach(_.setDataEqual(previous, next.previous.get))
             }
         }
@@ -147,6 +147,9 @@ class Animation {
     def update(): Unit = {
         figures.foreach(_.update())
         frames.foreach(_.update())
+
+        updateFrameData()
+
         CurrentFrameCursor.update()
     }
 
