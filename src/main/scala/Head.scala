@@ -9,6 +9,8 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
     stroke = Gray
     fill = White
 
+    private val face = new Face(this, expression)
+
     private val frameData =
         collection.mutable.Map((Animator.frames zip Array.fill(frameCount)(expression)).toSeq: _*)
 
@@ -84,5 +86,7 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
 
         centerX = parentCP.centerX.toDouble + radius.toDouble * cos(angle)
         centerY = parentCP.centerY.toDouble - radius.toDouble * sin(angle)
+
+        face.update()
     }
 }

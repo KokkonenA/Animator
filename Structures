@@ -12,3 +12,13 @@ Basic
     /Joints
     Neck,Happy
 /Basic
+
+Dog
+    Joints
+        Head,Center,50,90
+        Nose,Head,50,315
+        RLeg,Center,50,315
+        Tail,Center,80,180
+        LLeg,Tail,50,225
+    /Joints
+/Dog

@@ -47,7 +47,6 @@ class Speech(val parentCP: ControlPoint) extends Text with ChildFrameComponent {
 
         dxToParent = frame._1
         dyToParent = frame._2
-        println(frame._3)
         text = frame._3
     }
 
