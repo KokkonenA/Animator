@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Adding speech &quot;bubbles&quot; for figures added">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Face.scala" afterDir="false" />
+    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Initial implentation for the face of a stick figure. Default happy face.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Structures" beforeDir="false" afterPath="$PROJECT_DIR$/Structures" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Animation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animation.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Face.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Face.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Head.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Head.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Speech.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Speech.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Speech.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Speech.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,12 +94,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/scala/Head.scala" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Scala" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/main/scala/Head.scala" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -485,8 +485,25 @@
       <option name="project" value="LOCAL" />
       <updated>1619009152250</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Initial implentation for the face of a stick figure. Default happy face.">
+      <created>1619440996899</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1619440996899</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -502,7 +519,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="New files LeftMenu, RightMenu, Viewer and Controller added. They are just separate objects for the layout components.&#10;&#10;Added trait Component that is base for classes Figure, Joint, SpeechBubble, Head&#10;&#10;Viewer is now Pane. That caused a lot of changes. Currently nothing is drawn on the viewer" />
     <MESSAGE value="Big changes. Now classes Joint, SpeechBubble and Head inherit from scalafx.scene.shape.Circle so I can add them straight to the Viewer Pane. Currently there is some problem regarding the position of the joints when added." />
     <MESSAGE value="calculatePos() now works correctly" />
     <MESSAGE value="clicking on the joints toggles the variable locked between true and false and the color of the circle between red and grey" />
@@ -527,7 +543,8 @@
     <MESSAGE value="bug fixes:&#10;- adding new frame did not correctly add new frame data element&#10;- Frame.remove() was incorrectly implemented" />
     <MESSAGE value="bug fix relating to calculation of the frames." />
     <MESSAGE value="Adding speech &quot;bubbles&quot; for figures added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding speech &quot;bubbles&quot; for figures added" />
+    <MESSAGE value="Initial implentation for the face of a stick figure. Default happy face." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial implentation for the face of a stick figure. Default happy face." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

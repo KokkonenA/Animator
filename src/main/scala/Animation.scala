@@ -32,9 +32,9 @@ class Animation {
     def deleteLastFrame() = {
         if (frameCount > 2) {
             if (currFrame == frames.last) currFrame = frames.last.previous.get
+            figures.foreach(_.deleteLastFrame())
             lastFrame.remove()
             frames -= lastFrame
-            figures.foreach(_.deleteLastFrame())
         }
     }
 

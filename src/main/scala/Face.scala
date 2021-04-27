@@ -34,20 +34,22 @@ class Face(val head: Head, expression: String) {
     private def happy(): Unit ={
         mouth.radiusY = 5
         mouth.rotate = 180
+        head.setExpression("happy")
     }
 
     private def sad(): Unit = {
         mouth.radiusY = 5
         mouth.rotate = 0
+        head.setExpression("sad")
     }
 
     private def neutral(): Unit = {
         mouth.radiusY = 0
+        head.setExpression("neutral")
     }
 
-
     def setExpression(newExpression: String): Unit = {
-        expression.toLowerCase match {
+        newExpression.toLowerCase match {
             case "happy" => happy()
             case "sad" => sad()
             case "neutral" => neutral()
@@ -55,7 +57,13 @@ class Face(val head: Head, expression: String) {
         }
     }
 
+    def remove(): Unit = {
+        Viewer.children.removeAll(leftEye, rightEye, mouth)
+    }
+
     def update(): Unit = {
+        val angle = head.parentCP.angleToScene
+
         leftEye.centerX = head.centerX.toDouble - 10
         leftEye.centerY = head.centerY.toDouble - 7
 
@@ -64,6 +72,7 @@ class Face(val head: Head, expression: String) {
 
         mouth.centerX = head.centerX.toDouble
         mouth.centerY = head.centerY.toDouble + 10
+
     }
     setExpression(expression)
     Viewer.children.addAll(leftEye, rightEye, mouth)

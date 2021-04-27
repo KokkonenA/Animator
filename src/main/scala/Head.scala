@@ -1,7 +1,6 @@
 import scalafx.scene.control.TextInputDialog
 import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Circle
-
 import scala.math.{cos, sin}
 
 class Head (val parentCP: ControlPoint, private var expression: String) extends Circle with ChildFrameComponent {
@@ -34,7 +33,7 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
     }
 
     def loadFrameData(): Unit = {
-        expression = frameData(currFrame)
+        face.setExpression(frameData(currFrame))
     }
 
     def saveFrameData(): Unit = {
@@ -51,34 +50,56 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
     }
 
     def interpolate(start: Frame, end: Frame, length: Int): Unit = {
-        var idx = 0
+        if (length > 0) {
+            var frame = end.previous.get
 
-        var frame = end
-
-        while(frame != start) {
-            frameData(frame) = frameData(start)
-            idx += 1
-            frame = frame.previous.get
+            while (frame != start) {
+                frameData(frame) = frameData(start)
+                frame = frame.previous.get
+            }
         }
     }
 
     onMouseClicked = (event) => {
-        val dialog = new TextInputDialog(defaultValue = speech.text.value) {
+        val dialog1 = new TextInputDialog(defaultValue = speech.text.value) {
             initOwner(Animator.stage)
             title = "Add speech"
             headerText = "Please type text for the stick figure to say"
             contentText = "Speech: "
         }
 
-        val result = dialog.showAndWait()
+        val dialog2 = new TextInputDialog(defaultValue = expression) {
+            initOwner(Animator.stage)
+            title = "Change expression: "
+            headerText = "Insert new expression"
+            contentText = "Expression: "
+        }
 
-        if (result.isDefined) {
-            speech.text = result.get
+        val result1 = dialog1.showAndWait()
+        val result2 = dialog2.showAndWait()
+
+        if (result1.isDefined) {
+            speech.text = result1.get
 
             if (!currFrame.isKeyFrame) {
                 currFrame.toggleKeyFrame()
             }
         }
+
+        if (result2.isDefined) {
+            face.setExpression(result2.get)
+
+            if (!currFrame.isKeyFrame) {
+                currFrame.toggleKeyFrame()
+            }
+        }
+
+
+    }
+
+    override def remove(): Unit = {
+        Viewer.children.remove(this)
+        face.remove()
     }
 
     def update(): Unit = {
