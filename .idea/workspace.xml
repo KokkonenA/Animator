@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Initial implentation for the face of a stick figure. Default happy face.">
+    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Facial expression can now be changed. Dialog for doing that shows after the speech dialog.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Animation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animation.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Face.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Face.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Head.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Head.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Speech.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Speech.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Viewer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Viewer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Speech.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Speech.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -492,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619440996899</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Facial expression can now be changed. Dialog for doing that shows after the speech dialog.">
+      <created>1619530942867</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1619530942867</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -519,7 +530,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Big changes. Now classes Joint, SpeechBubble and Head inherit from scalafx.scene.shape.Circle so I can add them straight to the Viewer Pane. Currently there is some problem regarding the position of the joints when added." />
     <MESSAGE value="calculatePos() now works correctly" />
     <MESSAGE value="clicking on the joints toggles the variable locked between true and false and the color of the circle between red and grey" />
     <MESSAGE value="partially implemented the rotation of the joints by clicking and dragging" />
@@ -544,7 +554,8 @@
     <MESSAGE value="bug fix relating to calculation of the frames." />
     <MESSAGE value="Adding speech &quot;bubbles&quot; for figures added" />
     <MESSAGE value="Initial implentation for the face of a stick figure. Default happy face." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial implentation for the face of a stick figure. Default happy face." />
+    <MESSAGE value="Facial expression can now be changed. Dialog for doing that shows after the speech dialog." />
+    <option name="LAST_COMMIT_MESSAGE" value="Facial expression can now be changed. Dialog for doing that shows after the speech dialog." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -52,8 +52,16 @@ object Animator extends JFXApp {
     }
 
     //change background
-    def setBackground(newBG: String): Unit = {
-        animation.setBackground(newBG)
+    def setBackground(): Unit = {
+        val dialog = new TextInputDialog(defaultValue = "basic.png") {
+            initOwner(stage)
+            title = "Change background"
+            headerText = "Please type the name of the background file."
+            contentText = "File name: "
+        }
+        val result = dialog.showAndWait()
+
+        if (result.isDefined) animation.setBackground(result.get)
     }
 
     //add new Figure to current animation
@@ -64,7 +72,6 @@ object Animator extends JFXApp {
             headerText = "Please type the name of the structure."
             contentText = "Structure name: "
         }
-
         val result = dialog.showAndWait()
 
         if (result.isDefined) animation.addFigure(result.get)

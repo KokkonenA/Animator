@@ -25,7 +25,7 @@ object RightMenu extends VBox {
     }
 
     bgButton.onAction = (event) => {
-        Animator.setBackground("file:basic.png")
+        Animator.setBackground()
     }
 
     //add the buttons as the children of the rightMenu

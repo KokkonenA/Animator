@@ -3,7 +3,7 @@ import scalafx.scene.text.{Font, Text}
 
 class Speech(val parentCP: ControlPoint) extends Text with ChildFrameComponent {
     fill = Black
-    font = new Font(50)
+    font = new Font(30)
     text = ""
 
     private var dxToParent = 0.0

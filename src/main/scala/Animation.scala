@@ -156,5 +156,5 @@ class Animation {
         this.frames.foreach(_.remove())
     }
 
-    setBackground("file:basic.png")
+    setBackground("basic.png")
 }
