@@ -4,7 +4,7 @@ import scalafx.scene.image.Image
 import scalafx.scene.layout.{Background, BackgroundImage, BackgroundPosition, BackgroundRepeat, BackgroundSize, Pane}
 
 object Viewer extends Pane {
-    def setBackground(newBG: String) = {
+    def setBackground(newBG: String): Unit = {
         try {
             val img  = new Image("file:" + newBG)
 

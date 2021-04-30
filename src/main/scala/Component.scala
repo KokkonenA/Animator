@@ -1,4 +1,6 @@
 import scalafx.scene.Node
+
+import java.io.PrintWriter
 import scala.collection.mutable.ArrayBuffer
 
 trait FrameComponent extends Node {
@@ -12,6 +14,9 @@ trait FrameComponent extends Node {
     def saveFrameData(): Unit
     def setDataEqual(start: Frame, end: Frame): Unit
     def interpolate(start: Frame, end: Frame, length: Int): Unit
+
+    def read(lines: Array[String]): Array[String]
+    def write(file: PrintWriter): Unit
 
     val children = ArrayBuffer[ChildFrameComponent] ()
 

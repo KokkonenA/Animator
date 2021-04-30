@@ -1,6 +1,8 @@
 import scalafx.scene.control.TextInputDialog
 import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Circle
+
+import java.io.PrintWriter
 import scala.math.{cos, sin}
 
 class Head (val parentCP: ControlPoint, private var expression: String) extends Circle with ChildFrameComponent {
@@ -100,6 +102,25 @@ class Head (val parentCP: ControlPoint, private var expression: String) extends 
     override def remove(): Unit = {
         Viewer.children.remove(this)
         face.remove()
+    }
+
+    def read(lines: Array[String]): Array[String] = {
+        var left = lines.tail
+
+        Animator.keyFrames.foreach(n => {
+            frameData(n) = left.head
+            left = left.tail
+        })
+        left
+    }
+
+    def write(file: PrintWriter): Unit = {
+        file.write("Head\n")
+
+        Animator.keyFrames.foreach(n => {
+            file.write(frameData(n))
+            file.write("\n")
+        })
     }
 
     def update(): Unit = {

@@ -1,4 +1,6 @@
 import scalafx.scene.paint.Color.{Red, White}
+
+import java.io.PrintWriter
 import scala.math._
 
 class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
@@ -106,6 +108,30 @@ class Joint(val parentCP: ControlPoint, val jointRadius: Double, angle: Double)
                 currFrame.toggleKeyFrame()
             }
         }
+    }
+
+    def read(lines: Array[String]): Array[String] = {
+        var left = lines.tail
+
+        Animator.keyFrames.foreach(n => {
+            frameData(n) = left.head.toDouble
+            left = left.tail
+        })
+
+        children.foreach(n => {
+            left = n.read(left)
+        })
+        left
+    }
+
+    def write(file: PrintWriter): Unit = {
+        file.write("Joint\n")
+
+        Animator.keyFrames.foreach(n => {
+            file.write(frameData(n).toString)
+            file.write("\n")
+        })
+        children.foreach(_.write(file))
     }
 
     def update(): Unit = {

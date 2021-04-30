@@ -4,16 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Facial expression can now be changed. Dialog for doing that shows after the speech dialog.">
+    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Changing background implemented">
+      <change afterPath="$PROJECT_DIR$/kakka.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Animation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animation.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Component.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Component.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Figure.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Figure.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Head.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Head.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Joint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Joint.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Speech.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Speech.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Viewer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Viewer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animation$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animation$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animation$$anon$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$delayedInit$body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$delayedInit$body.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/FrameComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/FrameComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Head$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Head$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Head$$anon$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Head$$anon$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Head.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Speech.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Speech.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/TimelineComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/TimelineComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Viewer$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Viewer$.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,13 +178,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614855577162</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Project started.">
-      <created>1614855808440</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1614855808440</updated>
     </task>
     <task id="LOCAL-00002" summary=".gitignore file modified and a test app &quot;Hello.scala&quot; created">
       <created>1614865394848</created>
@@ -503,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619530942867</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Changing background implemented">
+      <created>1619619192876</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1619619192877</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -530,7 +549,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="calculatePos() now works correctly" />
     <MESSAGE value="clicking on the joints toggles the variable locked between true and false and the color of the circle between red and grey" />
     <MESSAGE value="partially implemented the rotation of the joints by clicking and dragging" />
     <MESSAGE value="there are now lines as arms betweeen the joints" />
@@ -555,7 +573,8 @@
     <MESSAGE value="Adding speech &quot;bubbles&quot; for figures added" />
     <MESSAGE value="Initial implentation for the face of a stick figure. Default happy face." />
     <MESSAGE value="Facial expression can now be changed. Dialog for doing that shows after the speech dialog." />
-    <option name="LAST_COMMIT_MESSAGE" value="Facial expression can now be changed. Dialog for doing that shows after the speech dialog." />
+    <MESSAGE value="Changing background implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing background implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

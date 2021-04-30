@@ -1,7 +1,9 @@
 import scalafx.application.JFXApp
 import scalafx.scene.Scene
-import scalafx.scene.control.TextInputDialog
+import scalafx.scene.control.Alert.AlertType
+import scalafx.scene.control.{Alert, TextInputDialog}
 import scalafx.scene.layout.{ColumnConstraints, GridPane, RowConstraints}
+import java.io._
 
 object Animator extends JFXApp {
     //create stage for scalaFX
@@ -12,12 +14,12 @@ object Animator extends JFXApp {
     }
 
     //current animation
-    private var animation = new Animation
+    private var animation = new Animation(30)
 
     //create new Animation
     def newAnimation(): Unit = {
         animation.close()
-        animation = new Animation
+        animation = new Animation(30)
     }
 
     //select one frame later as the current frame
@@ -26,6 +28,8 @@ object Animator extends JFXApp {
     }
 
     def frames = animation.frames
+
+    def keyFrames = animation.keyFrames
 
     def currFrame = animation.getCurrFrame
 
@@ -38,12 +42,51 @@ object Animator extends JFXApp {
 
     //load an animation
     def loadAnimation(): Unit = {
+        val dialog = new TextInputDialog {
+            initOwner(stage)
+            title = "Load Animation"
+            headerText = "Type the name of the animation file"
+            contentText = "File name: "
+        }
+        val result = dialog.showAndWait()
 
+        if (result.isDefined) {
+            try {
+                val source = scala.io.Source.fromFile(result.get + ".txt")
+                val lines = source.getLines().toArray
+                animation.close()
+                animation = new Animation(lines.head.toInt)
+                animation.read(lines.tail)
+                source.close()
+            } catch {
+                case e: FileNotFoundException => new Alert(AlertType.Error) {
+                    contentText = "File not found"
+                }.showAndWait()
+            }
+        }
     }
 
     //save current animation
     def saveAnimation(): Unit = {
+        val dialog = new TextInputDialog() {
+            initOwner(stage)
+            title = "Save Animation"
+            headerText = "Please type the name of the new file"
+            contentText = "File name: "
+        }
+        val result = dialog.showAndWait()
 
+        if (result.isDefined) {
+            try {
+                val file = new PrintWriter(new File(result.get + ".txt"))
+                animation.write(file)
+                file.close()
+            } catch {
+                case e: Exception => new Alert(AlertType.Error) {
+                    contentText = "Could not save the file"
+                }.showAndWait()
+            }
+        }
     }
 
     //play the animation once from start to finnish

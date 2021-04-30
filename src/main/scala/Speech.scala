@@ -1,6 +1,8 @@
 import scalafx.scene.paint.Color.Black
 import scalafx.scene.text.{Font, Text}
 
+import java.io.PrintWriter
+
 class Speech(val parentCP: ControlPoint) extends Text with ChildFrameComponent {
     fill = Black
     font = new Font(30)
@@ -77,5 +79,25 @@ class Speech(val parentCP: ControlPoint) extends Text with ChildFrameComponent {
             idx += 1
             frame = frame.previous.get
         }
+    }
+
+    def read(lines: Array[String]): Array[String] = {
+        var left = lines.tail
+
+        Animator.keyFrames.foreach(n => {
+            val line = left.head.split(",")
+            frameData(n) = Tuple3(line(0).toDouble, line(1).toDouble, if (line.length == 3) line(2) else "")
+            left = left.tail
+        })
+        left
+    }
+
+    def write(file: PrintWriter): Unit = {
+        file.write("Speech\n")
+
+        Animator.keyFrames.foreach(n => {
+            file.write(frameData(n)._1.toString + "," + frameData(n)._2.toString + "," + frameData(n)._3)
+            file.write("\n")
+        })
     }
 }

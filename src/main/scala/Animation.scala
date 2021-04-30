@@ -1,12 +1,10 @@
-import scalafx.scene.control.Alert
-import scalafx.scene.control.Alert.AlertType
+import java.io.PrintWriter
 import java.util.{Timer, TimerTask}
 import scala.collection.mutable.ArrayBuffer
-import scala.io.Source
 
-class Animation {
+class Animation(initFrameCount: Int) {
+    val frames = ArrayBuffer.iterate(new Frame(None), initFrameCount)(n => new Frame(Some(n)))
     val figures = ArrayBuffer [Figure] ()
-    val frames = ArrayBuffer.iterate(new Frame(None), 30)(n => new Frame(Some(n)))
 
     private var background = ""
 
@@ -95,26 +93,7 @@ class Animation {
     }
 
     def addFigure(structure: String): Unit = {
-        val lines = ArrayBuffer [String] ()
-        val bufferedSource = Source.fromFile("Structures")
-
-        for (line <- bufferedSource.getLines()) {
-            lines += line.trim
-        }
-        bufferedSource.close()
-
-        val startIdx = lines.indexOf(structure)
-        val endIdx = lines.indexOf("/" + structure)
-
-        if (startIdx != -1 || endIdx != -1) {
-            figures += new Figure(lines.slice(startIdx, endIdx + 1))
-        } else {
-            new Alert(AlertType.Error) {
-                initOwner(Animator.stage)
-                title = "Error"
-                headerText = "Couldn't find a structure \"" + structure + "\""
-            }.showAndWait()
-        }
+        figures += new Figure(structure)
     }
 
     def deleteFigure(figure: Figure): Unit = {
@@ -142,6 +121,38 @@ class Animation {
         }, 1000, 42)
     }
 
+    def read(lines: Array[String]): Unit = {
+        val head = lines.head
+
+        val keyframeIdxs = if (head.isEmpty) Array [Int] () else head.split(",").map(_.toInt)
+
+        (frames.zipWithIndex).foreach( n => {
+            if (keyframeIdxs.contains(n._2)) {
+                n._1.toggleKeyFrame()
+            }
+        })
+        setBackground(lines(1))
+
+        var reading = true
+        var left = lines.drop(2)
+
+        while (reading) {
+            if (left.nonEmpty && left.head == "Figure") {
+                addFigure(left(1))
+                left = figures.last.read(left.tail)
+            } else {
+                reading = false
+            }
+        }
+    }
+
+    def write(file: PrintWriter): Unit = {
+        file.write(frameCount + "\n")
+        file.write(keyFramesWithIndex.map(_._2).mkString(",") + "\n")
+        file.write(background + "\n")
+        figures.foreach(_.write(file))
+    }
+
     def update(): Unit = {
         figures.foreach(_.update())
         frames.foreach(_.update())
@@ -155,6 +166,5 @@ class Animation {
         this.figures.foreach(_.remove())
         this.frames.foreach(_.remove())
     }
-
     setBackground("basic.png")
 }
