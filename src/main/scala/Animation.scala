@@ -57,10 +57,12 @@ class Animation(initFrameCount: Int) {
         figures.foreach(_.saveFrameData())
     }
 
+    //count of frames from start _until_ end
     def framesBetween(start: Frame, end: Frame): Int = {
         frames.indexOf(end) - frames.indexOf(start)
     }
 
+    //update frame data regarding the changes in key frames
     def updateFrameData(): Unit = {
         val frame = currFrame
 
@@ -121,6 +123,7 @@ class Animation(initFrameCount: Int) {
         }, 1000, 42)
     }
 
+    //loading animation
     def read(lines: Array[String]): Unit = {
         val head = lines.head
 
@@ -148,6 +151,7 @@ class Animation(initFrameCount: Int) {
         figures.foreach(_.loadFrameData())
     }
 
+    //saving animation
     def write(file: PrintWriter): Unit = {
         file.write(frameCount + "\n")
         file.write(keyFramesWithIndex.map(_._2).mkString(",") + "\n")

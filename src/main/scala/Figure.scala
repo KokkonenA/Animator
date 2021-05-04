@@ -86,6 +86,7 @@ class Figure (val structureName: String) extends ControlPoint {
         children.foreach(_.saveFrameData())
     }
 
+    //set data from start to end equal to start
     def setDataEqual(start: Frame, end: Frame): Unit = {
         var frame = end
 
@@ -96,6 +97,7 @@ class Figure (val structureName: String) extends ControlPoint {
         children.foreach(_.setDataEqual(start, end))
     }
 
+    //calculate linear interpolation between key frames
     def interpolate(start: Frame, end: Frame, length: Int): Unit = {
         var idx = 0
 

@@ -4,6 +4,7 @@ import scalafx.scene.layout.{Background, BackgroundFill, CornerRadii, Pane}
 import scalafx.scene.paint.Color.Gray
 import scalafx.Includes._
 
+//buttons on the right side of the timeline
 object FrameController extends Pane {
     background = new Background(Array(new BackgroundFill((Gray), CornerRadii.Empty, Insets.Empty)))
 

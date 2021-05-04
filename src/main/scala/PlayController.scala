@@ -4,6 +4,8 @@ import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Polygon
 import scalafx.Includes._
 
+
+//buttons on the left side of the timeline
 object PlayController extends Pane {
     background = new Background(Array(new BackgroundFill((Gray), CornerRadii.Empty, Insets.Empty)))
 

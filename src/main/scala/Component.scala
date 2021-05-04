@@ -3,6 +3,7 @@ import scalafx.scene.Node
 import java.io.PrintWriter
 import scala.collection.mutable.ArrayBuffer
 
+//Components that are in the Viewer window
 trait FrameComponent extends Node {
     def frames = Animator.frames
     def frameCount = Animator.frameCount
@@ -27,11 +28,13 @@ trait FrameComponent extends Node {
     Viewer.children.add(this)
 }
 
+//frame components that have a parent
 trait ChildFrameComponent extends FrameComponent {
     val parentCP: ControlPoint
     def update(): Unit
 }
 
+//components that show in the timeline
 trait TimelineComponent extends Node {
     def remove(): Unit = {
         Timeline.children.remove(this)

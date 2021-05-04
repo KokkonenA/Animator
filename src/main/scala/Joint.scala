@@ -1,5 +1,4 @@
 import scalafx.scene.paint.Color.{Red, White}
-
 import java.io.PrintWriter
 import scala.math._
 

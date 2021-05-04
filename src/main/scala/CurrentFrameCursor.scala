@@ -1,6 +1,7 @@
 import scalafx.scene.paint.Color.{Gray, White}
 import scalafx.scene.shape.Polygon
 
+//curser that points to the current frame in the timeline
 object CurrentFrameCursor extends Polygon with TimelineComponent {
     private var line = Timeline.line
     points.addAll(line.startX.toDouble - 20, line.startY.toDouble - 40,

@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="New background file added">
-      <change afterPath="$PROJECT_DIR$/s.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testi.txt" afterDir="false" />
+    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Bug fixes regarding animation loading">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Animation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animation.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Component.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Component.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/ControlPoint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ControlPoint.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/CurrentFrameCursor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/CurrentFrameCursor.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Figure.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Figure.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Figure$$anon$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/FrameController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/FrameController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Joint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Joint.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/LeftMenu.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/LeftMenu.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/PlayController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/PlayController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,13 +162,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614855577162</updated>
-    </task>
-    <task id="LOCAL-00004" summary="File Animator.scala created. Basic layout of the app sketched">
-      <created>1615204078488</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1615204078488</updated>
     </task>
     <task id="LOCAL-00005" summary="Buttons added for the right and left side menus. Currently the actions are simply text printed to the console">
       <created>1615207109828</created>
@@ -505,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620123844782</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Bug fixes regarding animation loading">
+      <created>1620127732514</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1620127732514</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -532,7 +533,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="there are now lines as arms betweeen the joints" />
     <MESSAGE value="Interim report 3 in project/progress.txt" />
     <MESSAGE value="Large commit&#10;Added file component.scala that includes traits for the objects&#10;Implemented class Animation.&#10;Deleted class Frame. New frame system implementation is coming up.&#10;Deleted ticker.&#10;Every frame object now has reference both to their parent and children&#10;+ some smaller changes" />
     <MESSAGE value="Joint angle relative to parent stays now constant when parent moved.&#10;If parent is moved it will rotate with its child when the child is moved. It is still a bit buggy when mouse is close to the center of the rotation.&#10;Progress regarding speech bubble. It is now a white cicle above the head of the structure that can be moved." />
@@ -557,7 +557,8 @@
     <MESSAGE value="Changing background implemented" />
     <MESSAGE value="Saving and loading the file implemented" />
     <MESSAGE value="New background file added" />
-    <option name="LAST_COMMIT_MESSAGE" value="New background file added" />
+    <MESSAGE value="Bug fixes regarding animation loading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes regarding animation loading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

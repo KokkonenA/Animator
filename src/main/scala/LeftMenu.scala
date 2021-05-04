@@ -4,6 +4,7 @@ import scalafx.Includes._
 import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.control.Button
 
+//Menu buttons on the left side of the viewer
 object LeftMenu extends VBox {
     background = new Background(Array(new BackgroundFill((Black), CornerRadii.Empty, Insets.Empty)))
     spacing = 50

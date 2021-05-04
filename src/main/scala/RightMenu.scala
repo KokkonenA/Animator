@@ -4,6 +4,7 @@ import scalafx.scene.paint.Color.Black
 import scalafx.Includes._
 import scalafx.scene.control.Button
 
+//buttons on the right side of the timeline
 object RightMenu extends VBox {
     background = new Background(Array(new BackgroundFill((Black), CornerRadii.Empty, Insets.Empty)))
     spacing = 50

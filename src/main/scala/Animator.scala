@@ -202,5 +202,5 @@ object Animator extends JFXApp {
     }
 
     val ticker = new Ticker(update)
-    ticker.start() // Remember this!
+    ticker.start()
 }
