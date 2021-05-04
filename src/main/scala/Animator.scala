@@ -3,7 +3,10 @@ import scalafx.scene.Scene
 import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.control.{Alert, TextInputDialog}
 import scalafx.scene.layout.{ColumnConstraints, GridPane, RowConstraints}
+
 import java.io._
+import scala.collection.mutable.ArrayBuffer
+import scala.io.Source
 
 object Animator extends JFXApp {
     //create stage for scalaFX
@@ -115,9 +118,33 @@ object Animator extends JFXApp {
             headerText = "Please type the name of the structure."
             contentText = "Structure name: "
         }
-        val result = dialog.showAndWait()
+        val dialogResult = dialog.showAndWait()
 
-        if (result.isDefined) animation.addFigure(result.get)
+        if (dialogResult.isDefined) {
+            val lines = ArrayBuffer [String] ()
+            val bufferedSource = Source.fromFile("Structures")
+
+            for (line <- bufferedSource.getLines()) {
+                lines += line.trim
+            }
+            bufferedSource.close()
+
+            val startIdx = lines.indexOf(dialogResult.get)
+            val endIdx = lines.indexOf("/" + dialogResult)
+
+            if (startIdx != -1 || endIdx != -1) animation.addFigure(dialogResult.get)
+            else {
+                new Alert(AlertType.Error) {
+                    initOwner(Animator.stage)
+                    title = "Error"
+                    headerText = "Couldn't find a structure \"" + dialogResult.get + "\""
+                }.showAndWait()
+            }
+        }
+    }
+
+    def deleteFigure(figure: Figure): Unit = {
+        animation.deleteFigure(figure)
     }
 
     //add new Frame to current Animation

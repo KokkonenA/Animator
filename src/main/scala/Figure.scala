@@ -1,6 +1,3 @@
-import scalafx.scene.control.Alert
-import scalafx.scene.control.Alert.AlertType
-
 import java.io.PrintWriter
 import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
@@ -38,41 +35,33 @@ class Figure (val structureName: String) extends ControlPoint {
         val startIdx = lines.indexOf(structureName)
         val endIdx = lines.indexOf("/" + structureName)
 
-        if (startIdx != -1 || endIdx != -1) {
-            val structure = lines.slice(startIdx, endIdx + 1)
-            var newJoints = Map [String, Joint] ()
+        val structure = lines.slice(startIdx, endIdx + 1)
+        var newJoints = Map [String, Joint] ()
 
-            var i = 2
+        var i = 2
 
-            while (structure(i).trim != "/Joints") {
-                val line = structure(i).split(",")
-                val name = line(0)
-                val parentName = line(1)
-                val parent = if (parentName == "Center") this else newJoints(parentName)
-                val radius = line(2).toInt
-                val angle = line(3).toInt
-                val newJoint = new Joint(parent, radius, angle)
-                parent.children += newJoint
-                newJoints += (name -> newJoint)
-                i += 1
-            }
-            children +: newJoints.values.toArray
-
+        while (structure(i).trim != "/Joints") {
+            val line = structure(i).split(",")
+            val name = line(0)
+            val parentName = line(1)
+            val parent = if (parentName == "Center") this else newJoints(parentName)
+            val radius = line(2).toInt
+            val angle = line(3).toInt
+            val newJoint = new Joint(parent, radius, angle)
+            parent.children += newJoint
+            newJoints += (name -> newJoint)
             i += 1
+        }
+        children +: newJoints.values.toArray
 
-            if (structure(i)(0) != '/') {
-                val split = structure(i).split(",")
-                val parent = newJoints(split(0))
-                val expression = split(1)
+        i += 1
 
-                parent.children += new Head(parent, expression)
-            }
-        } else {
-            new Alert(AlertType.Error) {
-                initOwner(Animator.stage)
-                title = "Error"
-                headerText = "Couldn't find a structure \"" + structureName + "\""
-            }.showAndWait()
+        if (structure(i)(0) != '/') {
+            val split = structure(i).split(",")
+            val parent = newJoints(split(0))
+            val expression = split(1)
+
+            parent.children += new Head(parent, expression)
         }
     }
 
@@ -144,6 +133,12 @@ class Figure (val structureName: String) extends ControlPoint {
     def read(lines: Array[String]): Array[String] = {
         var left = lines.tail
 
+        Animator.keyFrames.foreach(n => {
+            val line = left.head.split(",")
+            frameData(n) = Tuple2(line(0).toDouble, line(1).toDouble)
+            left = left.tail
+        })
+
         children.foreach(n => {
             left = n.read(left)
         })
@@ -153,6 +148,11 @@ class Figure (val structureName: String) extends ControlPoint {
     def write(file: PrintWriter): Unit = {
         file.write("Figure\n")
         file.write(structureName + "\n")
+
+        Animator.keyFrames.foreach(n => {
+            file.write(frameData(n)._1 + "," + frameData(n)._2)
+            file.write("\n")
+        })
         children.foreach(_.write(file))
     }
 

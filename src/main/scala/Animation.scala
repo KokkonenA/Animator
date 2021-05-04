@@ -144,6 +144,8 @@ class Animation(initFrameCount: Int) {
                 reading = false
             }
         }
+
+        figures.foreach(_.loadFrameData())
     }
 
     def write(file: PrintWriter): Unit = {
