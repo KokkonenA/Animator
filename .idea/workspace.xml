@@ -4,19 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Bug fixes regarding animation loading">
+    <list default="true" id="e3fcd430-6c66-4e77-a3f8-807df5c036be" name="Default Changelist" comment="Added comments">
+      <change afterPath="$PROJECT_DIR$/Hello!.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/Project document.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Animation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animation.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Animator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Animator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Component.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Component.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/ControlPoint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ControlPoint.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/CurrentFrameCursor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/CurrentFrameCursor.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Figure.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Figure.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/FrameController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/FrameController.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Joint.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Joint.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/LeftMenu.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/LeftMenu.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/PlayController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/PlayController.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/RightMenu.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Structures" beforeDir="false" afterPath="$PROJECT_DIR$/Structures" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animation$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animation$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$$anon$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$delayedInit$body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Animator$delayedInit$body.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/ControlPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/ControlPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/CurrentFrameCursor$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/CurrentFrameCursor$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Figure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/FrameComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/FrameComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/FrameController$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/FrameController$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/FrameController$$anon$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/FrameController$$anon$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/FrameController$$anon$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/FrameController$$anon$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/FrameController$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/FrameController$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Joint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/LeftMenu$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/LeftMenu$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/LeftMenu$$anon$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/LeftMenu$$anon$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/LeftMenu$$anon$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/LeftMenu$$anon$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/LeftMenu$$anon$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/LeftMenu$$anon$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/LeftMenu$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/LeftMenu$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/PlayController$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/PlayController$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$$anon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$$anon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$$anon$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$$anon$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/RightMenu$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/TimelineComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/TimelineComponent.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,13 +183,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614855577162</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Buttons added for the right and left side menus. Currently the actions are simply text printed to the console">
-      <created>1615207109828</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1615207109828</updated>
     </task>
     <task id="LOCAL-00006" summary="exit button closes the program">
       <created>1615207443309</created>
@@ -506,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620127732514</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Added comments">
+      <created>1620128389812</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1620128389812</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -533,7 +554,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Interim report 3 in project/progress.txt" />
     <MESSAGE value="Large commit&#10;Added file component.scala that includes traits for the objects&#10;Implemented class Animation.&#10;Deleted class Frame. New frame system implementation is coming up.&#10;Deleted ticker.&#10;Every frame object now has reference both to their parent and children&#10;+ some smaller changes" />
     <MESSAGE value="Joint angle relative to parent stays now constant when parent moved.&#10;If parent is moved it will rotate with its child when the child is moved. It is still a bit buggy when mouse is close to the center of the rotation.&#10;Progress regarding speech bubble. It is now a white cicle above the head of the structure that can be moved." />
     <MESSAGE value="Implemented parts of the actual timeline. There is now a timeline that shows how many frames you have. You can add and remove frames. At this moment key frames are not implemented. So no change in the position of a figure stays after switching frames." />
@@ -558,7 +578,8 @@
     <MESSAGE value="Saving and loading the file implemented" />
     <MESSAGE value="New background file added" />
     <MESSAGE value="Bug fixes regarding animation loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes regarding animation loading" />
+    <MESSAGE value="Added comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
